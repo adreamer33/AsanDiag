@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="175dp"
+    android:layout_height="175dp"
+    app:layout_constraintWidth_percent="0.5"
+    app:layout_constraintHeight_percent="0.5"
+    android:layout_gravity="center"
+    android:layout_margin="1dp"
+    android:background="#E3E2E2"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_company_item_logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_company_item_tv_top"
+        app:layout_constraintDimensionRatio="w,1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        app:srcCompat="@drawable/ic_logo_kia" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_company_item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/iransans_medium"
+        android:gravity="center"
+        android:lineSpacingExtra="9sp"
+        android:text="کیا موتور"
+        android:textAlignment="gravity"
+        android:textColor="#202020"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_company_item_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_company_item_tv_top" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_company_item_description"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/iransans_medium"
+        android:lineSpacingExtra="7sp"
+        android:text="اپتیما، اسپورتیج و ..."
+        android:textAlignment="textStart"
+        android:textColor="#202020"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_company_item_title" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_company_item_tv_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.60" />
+</androidx.constraintlayout.widget.ConstraintLayout>

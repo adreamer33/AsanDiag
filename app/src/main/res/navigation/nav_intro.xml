@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_intro"
+    app:startDestination="@id/fragment_intro1">
+
+    <fragment
+        android:id="@+id/fragment_intro1"
+        android:name="ir.asandiag.obd.view.intro.FragmentIntro1"
+        android:label="intro1"
+        tools:layout="@layout/fragment_intro1" >
+        <action
+            android:id="@+id/action_fragmentIntro1_to_fragmentIntro2"
+            app:destination="@id/fragment_intro2"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/fragment_intro1" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_intro2"
+        android:name="ir.asandiag.obd.view.intro.FragmentIntro2"
+        android:label="fragment_intro2"
+        tools:layout="@layout/fragment_intro2" >
+        <action
+            android:id="@+id/action_fragment_intro2_to_fragment_intro3"
+            app:destination="@id/fragment_intro3"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/fragment_intro2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_intro3"
+        android:name="ir.asandiag.obd.view.intro.FragmentIntro3"
+        android:label="fragment_intro3"
+        tools:layout="@layout/fragment_intro3" >
+        <action
+            android:id="@+id/action_fragment_intro3_to_activity_sign_up"
+            app:destination="@id/activity_sign_up"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <activity
+        android:id="@+id/activity_sign_up"
+        android:name="ir.asandiag.obd.view.signup.ActivitySignUp"
+        android:label="activity_sign_up"
+        tools:layout="@layout/activity_sign_up" />
+</navigation>

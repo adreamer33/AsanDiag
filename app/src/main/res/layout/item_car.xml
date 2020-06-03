@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="175dp"
+    android:layout_height="175dp"
+    app:layout_constraintWidth_percent="0.5"
+    app:layout_constraintHeight_percent="0.5"
+    android:layout_gravity="center"
+    android:layout_margin="1dp"
+    android:background="#E3E2E2"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_car_item"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_car_item_tv_top"
+        app:layout_constraintDimensionRatio="w,1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.85"
+        app:srcCompat="@drawable/ic_pars_lx" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_car_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/iransans_medium"
+        android:gravity="center"
+        android:lineSpacingExtra="9sp"
+        android:text="پژو پارس"
+        android:textAlignment="gravity"
+        android:textColor="#202020"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_car_item_tv_top" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_car_item_tv_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.73" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,154 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="#fff"
+    tools:context="ir.asandiag.obd.view.signup.FragmentSignup">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@android:drawable/sym_def_app_icon"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_signup_img_bottom"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_signup_img_top" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_signup_title_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.461" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_signup_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/iransans_medium"
+        android:gravity="end"
+        android:lineSpacingExtra="11sp"
+        android:shadowColor="#29c8c8c8"
+        android:shadowDx="-1"
+        android:shadowDy="-1"
+        android:shadowRadius="2"
+        android:text="ایجاد حساب کاربری"
+        android:textColor="#555770"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_signup_username"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_signup_right_margin"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline_signup_left_margin"
+        app:layout_constraintTop_toTopOf="@+id/guideline_signup_title_top"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_signup_img_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.355" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_signup_img_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_signup_left_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.078" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_signup_right_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_signup_btn_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.886" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_signup_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/iransans_medium"
+        android:gravity="end"
+        android:hint="نام کاربری"
+        android:lineSpacingExtra="9sp"
+        android:lines="1"
+        android:maxLength="11"
+        android:maxLines="1"
+        android:padding="15dp"
+        android:singleLine="true"
+        android:textAlignment="viewEnd"
+        android:textColor="#555770"
+        android:textColorHint="#555770"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_signup_phone"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_signup_right_margin"
+        app:layout_constraintStart_toStartOf="@+id/guideline_signup_left_margin"
+        app:layout_constraintTop_toBottomOf="@+id/tv_signup_title"
+        app:layout_constraintVertical_bias="0.56" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_signup_phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/iransans_medium"
+        android:gravity="end"
+        android:hint="شمارە موبایل"
+        android:inputType="phone"
+        android:lineSpacingExtra="9sp"
+        android:lines="1"
+        android:maxLength="11"
+        android:maxLines="1"
+        android:padding="15dp"
+        android:singleLine="true"
+        android:textAlignment="viewEnd"
+        android:textColor="#555770"
+        android:textColorHint="#555770"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_signup_btn_top"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_signup_right_margin"
+        app:layout_constraintStart_toStartOf="@+id/guideline_signup_left_margin"
+        app:layout_constraintTop_toBottomOf="@+id/et_signup_username" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_signup_btn_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.802" />
+
+    <Button
+        android:id="@+id/btn_signup_register"
+        style="@style/style_signup_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="ثبت نام"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_signup_btn_bottom"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_signup_btn_top"
+        app:layout_constraintWidth_max="260dp"
+        app:layout_constraintWidth_min="200dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

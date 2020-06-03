@@ -1,10 +1,63 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowAnimationStyle">@style/Animations.SplashScreen</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+        <item name="colorControlNormal">#555770</item>
     </style>
 
+    <style name="Animations" parent="@android:style/Animation" />
+    <style name="Animations.SplashScreen">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+
+    <style name="iransans_medium">
+        <item name="android:fontFamily">@font/iransans_medium</item>
+    </style>
+
+    <style name="style_intro_tv_title">
+        <item name="android:fontFamily">@font/iransans_medium</item>
+        <item name="android:textColor">#7d8490</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="style_intro_tv_description">
+        <item name="android:ems">8</item>
+        <item name="android:fontFamily">@font/iransans_medium</item>
+        <item name="android:lineSpacingExtra">10sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="style_intro_btn_next">
+        <item name="android:fontFamily">@font/iransans_medium</item>
+        <item name="android:textColor">#3e7afa</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="style_signup_btn">
+        <item name="android:fontFamily">@font/iransans_medium</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:background">#0063f7</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="style_intro_tv_login">
+        <item name="android:fontFamily">@font/iransans_medium</item>
+        <item name="android:lines">1</item>
+        <item name="android:minLines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">#8f90a6</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

@@ -1,0 +1,80 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context="ir.asandiag.obd.view.signup.FragmentLogin">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_sigunp_login"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="38dp"
+        app:srcCompat="@drawable/ic_motor"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_signup_login_img_bottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_signup_login_img_top" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:fontFamily="@font/iransans_medium"
+        android:gravity="center"
+        android:lineSpacingExtra="16sp"
+        android:text="آسان دیاگ"
+        android:textColor="#373960"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/img_sigunp_login"
+        app:layout_constraintStart_toStartOf="@+id/img_sigunp_login"
+        app:layout_constraintTop_toBottomOf="@+id/img_sigunp_login" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_signup_login_img_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".39" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_signup_login_img_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_signup_login_btn_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.67" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_signup_login_btn_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.76" />
+
+    <Button
+        android:id="@+id/btn_signup_login"
+        style="@style/style_signup_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="ورود به برنامه"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_signup_login_btn_bottom"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_signup_login_btn_top"
+        app:layout_constraintWidth_max="260dp"
+        app:layout_constraintWidth_min="200dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
