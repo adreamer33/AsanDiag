@@ -7,7 +7,7 @@
     android:layout_gravity="bottom|center"
     android:background="@drawable/bg_car_parts_fragment"
     app:layout_behavior="androidx.design.widget.BottomSheetBehaviour"
-    tools:context="ir.asandiag.obd.view.main.DialogFragmentCarPartConfig"
+    tools:context="ir.asandiag.obd.view.main.DialogFragmentCarPartConfigs"
     tools:layout_height="580dp">
 
     <androidx.appcompat.widget.AppCompatTextView

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -78,7 +77,7 @@ public class DialogFragmentCarPartDetails extends BottomSheetDialogFragment impl
     @Override
     public void onCarPartClicked(CarPartDetailsItem carPartDetailsItem, int pos) {
         if (navController != null) {
-            navController.navigate(DialogFragmentCarPartDetailsDirections.actionDialogFragmentCarPartDetailsToDialogFragmentCarPartConfig());
+            navController.navigate(DialogFragmentCarPartDetailsDirections.actionDialogFragmentCarPartDetailsToDialogFragmentCarPartConfigs());
         }
     }
 }

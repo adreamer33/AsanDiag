@@ -25,20 +25,20 @@ import ir.asandiag.obd.model.CarPartConfigItem;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link DialogFragmentCarPartConfig#newInstance} factory method to
+ * Use the {@link DialogFragmentCarPartConfigs#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DialogFragmentCarPartConfig extends BottomSheetDialogFragment implements CarPartConfigAdapter.OnCarPartConfigItemClickListener {
+public class DialogFragmentCarPartConfigs extends BottomSheetDialogFragment implements CarPartConfigAdapter.OnCarPartConfigItemClickListener {
     private NavController navController;
     private List<CarPartConfigItem> carPartConfigItems = new ArrayList<>();
 
 
-    public DialogFragmentCarPartConfig() {
+    public DialogFragmentCarPartConfigs() {
         // Required empty public constructor
     }
 
-    public static DialogFragmentCarPartConfig newInstance(String param1, String param2) {
-        DialogFragmentCarPartConfig fragment = new DialogFragmentCarPartConfig();
+    public static DialogFragmentCarPartConfigs newInstance(String param1, String param2) {
+        DialogFragmentCarPartConfigs fragment = new DialogFragmentCarPartConfigs();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -72,7 +72,7 @@ public class DialogFragmentCarPartConfig extends BottomSheetDialogFragment imple
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.dialog_fragment_car_part_config, container, false);
+        return inflater.inflate(R.layout.dialog_fragment_car_part_configs, container, false);
     }
 
     @Override
