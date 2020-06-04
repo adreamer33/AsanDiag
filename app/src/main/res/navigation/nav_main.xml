@@ -39,5 +39,15 @@
         android:id="@+id/dialogFragmentCarPartDetails"
         android:name="ir.asandiag.obd.view.main.DialogFragmentCarPartDetails"
         android:label="dialog_fragment_car_part_details"
-        tools:layout="@layout/dialog_fragment_car_part_details" />
+        tools:layout="@layout/dialog_fragment_car_part_details" >
+        <action
+            android:id="@+id/action_dialogFragmentCarPartDetails_to_dialogFragmentCarPartConfig"
+            app:destination="@id/dialogFragmentCarPartConfig"
+            app:popUpTo="@id/dialogFragmentCarPartDetails" />
+    </dialog>
+    <dialog
+        android:id="@+id/dialogFragmentCarPartConfig"
+        android:name="ir.asandiag.obd.view.main.DialogFragmentCarPartConfig"
+        android:label="dialog_fragment_car_part_config"
+        tools:layout="@layout/dialog_fragment_car_part_config" />
 </navigation>

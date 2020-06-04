@@ -77,6 +77,8 @@ public class DialogFragmentCarPartDetails extends BottomSheetDialogFragment impl
 
     @Override
     public void onCarPartClicked(CarPartDetailsItem carPartDetailsItem, int pos) {
-        Toast.makeText(getContext(), carPartDetailsItem.getName(), Toast.LENGTH_SHORT).show();
+        if (navController != null) {
+            navController.navigate(DialogFragmentCarPartDetailsDirections.actionDialogFragmentCarPartDetailsToDialogFragmentCarPartConfig());
+        }
     }
 }
