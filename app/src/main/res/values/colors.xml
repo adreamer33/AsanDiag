@@ -3,6 +3,6 @@
     <color name="colorPrimary">#f1f1f1</color>
     <color name="colorPrimaryDark">#BFBDBD</color>
     <color name="colorAccent">#e2e3e7</color>\
-    <color name="bkgColor">#ebebeb</color>
-    <color name="bg_car_detail">#F1F1F1</color>
+    <color name="bgColor">#ebebeb</color>
+    <color name="bgCarDetail">#F1F1F1</color>
 </resources>

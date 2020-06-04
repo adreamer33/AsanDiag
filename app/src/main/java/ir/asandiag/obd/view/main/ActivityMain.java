@@ -52,6 +52,7 @@ public class ActivityMain extends AppCompatActivity {
                     break;
                 default:
                     model.state.setValue(model.state.getValue() - 1);
+                    navController.navigateUp();
             }
         } else {
             super.onBackPressed();

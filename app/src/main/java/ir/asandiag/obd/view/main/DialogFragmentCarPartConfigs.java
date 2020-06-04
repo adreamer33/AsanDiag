@@ -91,6 +91,8 @@ public class DialogFragmentCarPartConfigs extends BottomSheetDialogFragment impl
 
     @Override
     public void onCarPartConfigItemClick(CarPartConfigItem carPartConfigItem, int pos) {
-        Toast.makeText(getContext(), carPartConfigItem.getName(), Toast.LENGTH_SHORT).show();
+        if (carPartConfigItem.getId() == 0 && navController != null) {
+            navController.navigate(DialogFragmentCarPartConfigsDirections.actionDialogFragmentCarPartConfigsToFragmentCheckSensors());
+        }
     }
 }

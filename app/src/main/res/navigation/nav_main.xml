@@ -49,5 +49,19 @@
         android:id="@+id/dialogFragmentCarPartConfigs"
         android:name="ir.asandiag.obd.view.main.DialogFragmentCarPartConfigs"
         android:label="dialog_fragment_car_part_configs"
-        tools:layout="@layout/dialog_fragment_car_part_configs" />
+        tools:layout="@layout/dialog_fragment_car_part_configs" >
+        <action
+            android:id="@+id/action_dialogFragmentCarPartConfigs_to_fragmentCheckSensors"
+            app:destination="@id/fragmentCheckSensors"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_bottom"
+            app:popUpTo="@id/dialogFragmentCarPartConfigs" />
+    </dialog>
+    <fragment
+        android:id="@+id/fragmentCheckSensors"
+        android:name="ir.asandiag.obd.view.main.FragmentCheckSensors"
+        android:label="fragment_check_sensors"
+        tools:layout="@layout/fragment_check_sensors" />
 </navigation>

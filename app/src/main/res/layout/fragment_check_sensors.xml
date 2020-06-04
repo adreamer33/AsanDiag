@@ -1,0 +1,96 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/bgColor"
+    tools:context="ir.asandiag.obd.view.main.FragmentCheckSensors">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_check_sensors_more_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_check_sensors_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.045" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_check_sensors_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.955" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imgBtn_check_sensors_more"
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_check_sensors_left"
+        app:layout_constraintTop_toTopOf="@+id/guideline_check_sensors_more_top"
+        app:srcCompat="@drawable/ic_more" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_check_sensors_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_check_sensors_right"
+        app:layout_constraintTop_toTopOf="@+id/guideline_check_sensors_more_top"
+        app:srcCompat="@drawable/ic_arrow_back" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_check_sensors_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="17dp"
+        android:fontFamily="@font/iransans_medium"
+        android:lineSpacingExtra="11sp"
+        android:text="بررسی سنسورها"
+        android:textAlignment="textStart"
+        android:textColor="#555770"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBtn_check_sensors_more"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtn_check_sensors_back"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_check_sensors_more"
+        app:layout_constraintTop_toTopOf="@+id/guideline_check_sensors_more_top" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_check_sensors_rv_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.133" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_check_sensors_items"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_check_sensors_right"
+        app:layout_constraintStart_toEndOf="@id/guideline_check_sensors_left"
+        app:layout_constraintTop_toBottomOf="@id/guideline_check_sensors_rv_top"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_sensor" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_check_sensors_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/bg_check_sensors_fab"
+        android:clickable="true"
+        app:srcCompat="@drawable/ic_pause"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
