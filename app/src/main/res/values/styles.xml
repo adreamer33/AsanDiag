@@ -15,6 +15,22 @@
         <item name="colorControlNormal">#555770</item>
     </style>
 
+
+
+    <!-- set the rounded drawable as background to your bottom sheet -->
+    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_car_parts_fragment</item>
+    </style>
+
+    <style name="BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog" />
+
+
+
     <style name="Animations" parent="@android:style/Animation" />
     <style name="Animations.SplashScreen">
         <item name="android:windowEnterAnimation">@anim/fade_in</item>

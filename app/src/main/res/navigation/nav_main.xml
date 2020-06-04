@@ -7,9 +7,37 @@
 
     <fragment
         android:id="@+id/home"
-        android:label="home"
         android:name="ir.asandiag.obd.view.main.FragmentHome"
+        android:label="home"
         tools:layout="@layout/fragment_home">
 
+        <action
+            android:id="@+id/action_home_to_dialog_fragment_car_parts"
+            app:destination="@id/dialogFragmentCarParts"
+            app:popUpTo="@id/home" />
+        <action
+            android:id="@+id/action_home_to_dialogFragmentSort"
+            app:destination="@id/dialogFragmentSort"
+            app:popUpTo="@id/home" />
     </fragment>
+    <dialog
+        android:id="@+id/dialogFragmentCarParts"
+        android:name="ir.asandiag.obd.view.main.DialogFragmentCarParts"
+        android:label="dialog_fragment_car_parts"
+        tools:layout="@layout/dialog_fragment_car_parts">
+        <action
+            android:id="@+id/action_dialogFragmentCarParts_to_dialogFragmentCarPartDetails"
+            app:destination="@id/dialogFragmentCarPartDetails"
+            app:popUpTo="@id/dialogFragmentCarParts" />
+    </dialog>
+    <dialog
+        android:id="@+id/dialogFragmentSort"
+        android:name="ir.asandiag.obd.view.main.DialogFragmentSort"
+        android:label="dialog_fragment_sort"
+        tools:layout="@layout/dialog_fragment_sort" />
+    <dialog
+        android:id="@+id/dialogFragmentCarPartDetails"
+        android:name="ir.asandiag.obd.view.main.DialogFragmentCarPartDetails"
+        android:label="dialog_fragment_car_part_details"
+        tools:layout="@layout/dialog_fragment_car_part_details" />
 </navigation>
