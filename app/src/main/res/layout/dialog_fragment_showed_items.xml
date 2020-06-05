@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom|center"
+    android:background="@drawable/bg_car_parts_fragment"
+    app:layout_behavior="androidx.design.widget.BottomSheetBehaviour"
+    tools:context="ir.asandiag.obd.view.main.DialogFragmentShowedItems"
+    tools:layout_height="290dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_showed_items_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/iransans_medium"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="9sp"
+        android:text="آیتم‌های نمایش داده شده"
+        android:textColor="#5c5d6d"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_showed_items_sep"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_showed_items_right"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline_car_detail_left"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_showed_items"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_showed_items_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_showed_items_left"
+        app:layout_constraintTop_toBottomOf="@id/guideline_showed_items_sep"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_showed" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="#5c5d6d"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_showed_items_sep"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_showed_items_sep" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_showed_items_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".956" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_showed_items_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.044" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_showed_items_sep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="53dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

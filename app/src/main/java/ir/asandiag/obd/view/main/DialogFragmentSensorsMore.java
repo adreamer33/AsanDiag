@@ -72,6 +72,8 @@ public class DialogFragmentSensorsMore extends BottomSheetDialogFragment impleme
 
     @Override
     public void onMoreItemClicked(MoreItem item, int pos) {
-
+        if (item.getId() == 2 && navController != null) {
+            navController.navigate(DialogFragmentSensorsMoreDirections.actionDialogFragmentSensorsMoreToDialogFragmentShowedItems());
+        }
     }
 }
