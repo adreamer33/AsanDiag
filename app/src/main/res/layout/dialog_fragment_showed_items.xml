@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="bottom|center"
     android:background="@drawable/bg_car_parts_fragment"
+    android:layoutDirection="ltr"
     app:layout_behavior="androidx.design.widget.BottomSheetBehaviour"
     tools:context="ir.asandiag.obd.view.main.DialogFragmentShowedItems"
     tools:layout_height="290dp">
@@ -24,7 +25,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline_showed_items_sep"
         app:layout_constraintEnd_toStartOf="@+id/guideline_showed_items_right"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline_car_detail_left"
+        app:layout_constraintStart_toStartOf="@+id/guideline_showed_items_left"
         app:layout_constraintTop_toTopOf="parent" />
 
 

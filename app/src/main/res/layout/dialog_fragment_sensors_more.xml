@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="bottom|center"
     android:background="@drawable/bg_car_parts_fragment"
+    android:layoutDirection="ltr"
     app:layout_behavior="androidx.design.widget.BottomSheetBehaviour"
     tools:context="ir.asandiag.obd.view.main.DialogFragmentSensorsMore"
     tools:layout_height="230dp">

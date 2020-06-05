@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:layout_height="270dp"
     android:layout_gravity="bottom|center"
+    android:layoutDirection="ltr"
     android:background="@drawable/bg_car_parts_fragment"
     app:layout_behavior="androidx.design.widget.BottomSheetBehaviour"
     tools:context="ir.asandiag.obd.view.main.DialogFragmentCarParts"
-    >
+    tools:layout_height="270dp">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_car_detail_title"
@@ -34,14 +34,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center|top"
-        tools:listitem="@layout/item_car_part"
-        tools:itemCount="3"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline_car_detail_right"
         app:layout_constraintStart_toStartOf="@id/guideline_car_detail_left"
-        app:layout_constraintTop_toBottomOf="@id/guideline_car_detail_sep" />
+        app:layout_constraintTop_toBottomOf="@id/guideline_car_detail_sep"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_car_part" />
 
     <View
         android:layout_width="0dp"
