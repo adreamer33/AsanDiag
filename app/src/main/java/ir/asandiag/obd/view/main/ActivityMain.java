@@ -66,7 +66,10 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
         ViewCompat.setLayoutDirection(navigationView, ViewCompat.LAYOUT_DIRECTION_LTR);
 
         btnLogOut.setOnClickListener(v -> {
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+            if (navController != null) {
+                closeDrawer();
+                navController.navigate(FragmentHomeDirections.actionHomeFragmentToFragmentLogout());
+            }
         });
     }
 
@@ -112,6 +115,11 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
     public void openDrawer() {
         if (!drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.openDrawer(GravityCompat.START);
+        }
+    }
+    public void closeDrawer() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
         }
     }
 }

@@ -19,6 +19,14 @@
             android:id="@+id/action_home_to_dialogFragmentSort"
             app:destination="@id/dialogFragmentSort"
             app:popUpTo="@id/home" />
+        <action
+            android:id="@+id/action_home_fragment_to_fragmentLogout"
+            app:destination="@id/fragmentLogout"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/home_fragment" />
     </fragment>
     <dialog
         android:id="@+id/dialogFragmentCarParts"
@@ -84,4 +92,9 @@
         android:name="ir.asandiag.obd.view.main.DialogFragmentShowedItems"
         android:label="dialog_fragment_showed_items"
         tools:layout="@layout/dialog_fragment_showed_items" />
+    <fragment
+        android:id="@+id/fragmentLogout"
+        android:name="ir.asandiag.obd.view.main.FragmentLogout"
+        android:label="fragment_logout"
+        tools:layout="@layout/fragment_logout" />
 </navigation>

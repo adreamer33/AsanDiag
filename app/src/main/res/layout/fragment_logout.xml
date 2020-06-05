@@ -1,0 +1,165 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@drawable/bg_logout"
+    tools:context="ir.asandiag.obd.view.main.FragmentLogout">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="38dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_logout_img_bottom"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_logout_img_top"
+        app:srcCompat="@drawable/ic_user" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_logout_img_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12101911" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_logout_img_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.355" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_logout_title_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.536" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_logout_btn_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.747" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_logout_left_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.078" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_logout_right_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_logout_btn_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.91" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_logout_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/iransans_medium"
+        android:gravity="end"
+        android:lineSpacingExtra="11sp"
+        android:text="حساب کاربری"
+        android:textColor="#555770"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgbtn_logout_back"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtn_logout_back"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline_logout_left_margin"
+        app:layout_constraintTop_toTopOf="@+id/imgbtn_logout_back" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_logout_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/iransans_medium"
+        android:gravity="end"
+        android:hint="نام کاربری"
+        android:lineSpacingExtra="9sp"
+        android:lines="1"
+        android:maxLength="11"
+        android:maxLines="1"
+        android:padding="15dp"
+        android:singleLine="true"
+        android:textAlignment="viewEnd"
+        android:textColor="#555770"
+        android:textColorHint="#555770"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_logout_phone"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_logout_right_margin"
+        app:layout_constraintStart_toStartOf="@+id/guideline_logout_left_margin"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_logout_title_top"
+        app:layout_constraintVertical_bias="0.56" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_logout_phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/iransans_medium"
+        android:gravity="end"
+        android:hint="شمارە موبایل"
+        android:inputType="phone"
+        android:lineSpacingExtra="9sp"
+        android:lines="1"
+        android:maxLength="11"
+        android:maxLines="1"
+        android:padding="15dp"
+        android:singleLine="true"
+        android:textAlignment="viewEnd"
+        android:textColor="#555770"
+        android:textColorHint="#555770"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_logout_btn_top"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_logout_right_margin"
+        app:layout_constraintStart_toStartOf="@+id/guideline_logout_left_margin"
+        app:layout_constraintTop_toBottomOf="@+id/et_logout_username" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_logout_register"
+        style="@style/style_logout_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="خروج از حساب کاربری"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_logout_btn_bottom"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_logout_btn_top"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintWidth_max="260dp"
+        app:layout_constraintWidth_min="200dp" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imgbtn_logout_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_logout_img_top"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_logout_right_margin"
+        app:layout_constraintStart_toStartOf="@+id/guideline_logout_right_margin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_arrow_back" />
+</androidx.constraintlayout.widget.ConstraintLayout>

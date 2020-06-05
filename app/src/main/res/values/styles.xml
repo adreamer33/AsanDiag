@@ -16,7 +16,6 @@
     </style>
 
 
-
     <!-- set the rounded drawable as background to your bottom sheet -->
     <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/bg_car_parts_fragment</item>
@@ -30,8 +29,8 @@
     <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog" />
 
 
-
     <style name="Animations" parent="@android:style/Animation" />
+
     <style name="Animations.SplashScreen">
         <item name="android:windowEnterAnimation">@anim/fade_in</item>
         <item name="android:windowExitAnimation">@anim/fade_out</item>
@@ -61,10 +60,18 @@
         <item name="android:textColor">#3e7afa</item>
         <item name="android:textSize">18sp</item>
     </style>
+
     <style name="style_signup_btn">
         <item name="android:fontFamily">@font/iransans_medium</item>
         <item name="android:textColor">#fff</item>
         <item name="android:background">#0063f7</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="style_logout_btn">
+        <item name="android:fontFamily">@font/iransans_medium</item>
+        <item name="android:textColor">#2b2c44</item>
+        <item name="android:background">#eaebf0</item>
         <item name="android:textSize">18sp</item>
     </style>
 
