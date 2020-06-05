@@ -78,7 +78,9 @@ public class FragmentCheckSensors extends BottomSheetDialogFragment implements S
         imgBtnMore = view.findViewById(R.id.imgBtn_check_sensors_more);
 
         imgBtnMore.setOnClickListener(v -> {
-
+            if (navController != null) {
+                navController.navigate(FragmentCheckSensorsDirections.actionFragmentCheckSensorsToDialogFragmentSensorsMore());
+            }
         });
 
         imgBtnBack.setOnClickListener(v -> {

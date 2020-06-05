@@ -63,5 +63,15 @@
         android:id="@+id/fragmentCheckSensors"
         android:name="ir.asandiag.obd.view.main.FragmentCheckSensors"
         android:label="fragment_check_sensors"
-        tools:layout="@layout/fragment_check_sensors" />
+        tools:layout="@layout/fragment_check_sensors" >
+        <action
+            android:id="@+id/action_fragmentCheckSensors_to_dialogFragmentSensorsMore"
+            app:destination="@id/dialogFragmentSensorsMore"
+            app:popUpTo="@id/fragmentCheckSensors" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogFragmentSensorsMore"
+        android:name="ir.asandiag.obd.view.main.DialogFragmentSensorsMore"
+        android:label="dialog_fragment_sensors_more"
+        tools:layout="@layout/dialog_fragment_sensors_more" />
 </navigation>
