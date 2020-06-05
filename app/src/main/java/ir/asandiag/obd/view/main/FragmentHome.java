@@ -34,6 +34,7 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
     private RecyclerView rvItems;
     private NavController navController;
     private AppCompatImageButton imgBtnSort;
+    private AppCompatImageButton imgBtnMenu;
 
     private List<CompanyItem> companyItems = new ArrayList<>();
     private List<CarItem> carItems = new ArrayList<>();
@@ -78,6 +79,7 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
         super.onViewCreated(view, savedInstanceState);
         rvItems = view.findViewById(R.id.rv_home_items);
         imgBtnSort = view.findViewById(R.id.imgbtn_home_sort);
+        imgBtnMenu = view.findViewById(R.id.imgbtn_home_menu);
 
         navController = NavHostFragment.findNavController(this);
 
@@ -90,6 +92,14 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
         imgBtnSort.setOnClickListener(v -> {
             if (navController != null) {
                 navController.navigate(FragmentHomeDirections.actionHomeToDialogFragmentSort());
+            }
+        });
+
+        imgBtnMenu.setOnClickListener(v -> {
+            try {
+                ((ActivityMain)v.getContext()).openDrawer();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
     }

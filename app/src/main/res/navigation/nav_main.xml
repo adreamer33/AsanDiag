@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    app:startDestination="@id/home">
+    app:startDestination="@id/home_fragment">
 
     <fragment
-        android:id="@+id/home"
+        android:id="@+id/home_fragment"
         android:name="ir.asandiag.obd.view.main.FragmentHome"
-        android:label="home"
+        android:label="homeFragment"
         tools:layout="@layout/fragment_home">
 
         <action
@@ -39,7 +39,7 @@
         android:id="@+id/dialogFragmentCarPartDetails"
         android:name="ir.asandiag.obd.view.main.DialogFragmentCarPartDetails"
         android:label="dialog_fragment_car_part_details"
-        tools:layout="@layout/dialog_fragment_car_part_details" >
+        tools:layout="@layout/dialog_fragment_car_part_details">
         <action
             android:id="@+id/action_dialogFragmentCarPartDetails_to_dialogFragmentCarPartConfigs"
             app:destination="@id/dialogFragmentCarPartConfigs"
@@ -49,7 +49,7 @@
         android:id="@+id/dialogFragmentCarPartConfigs"
         android:name="ir.asandiag.obd.view.main.DialogFragmentCarPartConfigs"
         android:label="dialog_fragment_car_part_configs"
-        tools:layout="@layout/dialog_fragment_car_part_configs" >
+        tools:layout="@layout/dialog_fragment_car_part_configs">
         <action
             android:id="@+id/action_dialogFragmentCarPartConfigs_to_fragmentCheckSensors"
             app:destination="@id/fragmentCheckSensors"
@@ -63,7 +63,7 @@
         android:id="@+id/fragmentCheckSensors"
         android:name="ir.asandiag.obd.view.main.FragmentCheckSensors"
         android:label="fragment_check_sensors"
-        tools:layout="@layout/fragment_check_sensors" >
+        tools:layout="@layout/fragment_check_sensors">
         <action
             android:id="@+id/action_fragmentCheckSensors_to_dialogFragmentSensorsMore"
             app:destination="@id/dialogFragmentSensorsMore"
@@ -73,7 +73,7 @@
         android:id="@+id/dialogFragmentSensorsMore"
         android:name="ir.asandiag.obd.view.main.DialogFragmentSensorsMore"
         android:label="dialog_fragment_sensors_more"
-        tools:layout="@layout/dialog_fragment_sensors_more" >
+        tools:layout="@layout/dialog_fragment_sensors_more">
         <action
             android:id="@+id/action_dialogFragmentSensorsMore_to_dialogFragmentShowedItems"
             app:destination="@id/dialogFragmentShowedItems"
