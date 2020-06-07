@@ -83,4 +83,9 @@
         <item name="android:textColor">#8f90a6</item>
         <item name="android:textSize">18sp</item>
     </style>
+
+    <style name="CustomShapeAppearance">
+        <item name="neumorph_cornerFamily">oval</item>
+        <item name="neumorph_cornerSize">4dp</item>
+    </style>
 </resources>

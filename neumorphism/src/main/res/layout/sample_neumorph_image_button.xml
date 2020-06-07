@@ -1,0 +1,22 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ir.asandiag.neumorphism.NeumorphImageButton
+        style="@style/Widget.Neumorph.ImageButton"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_gravity="center"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_car"
+        app:neumorph_shadowColorDark="#eaebf0"
+        app:neumorph_shadowColorLight="#f0f1f6"
+        app:neumorph_shadowElevation="12dp"
+        app:neumorph_shapeType="basin" />
+    <!--        app:exampleColor="#33b5e5"-->
+    <!--        app:exampleDimension="24sp"-->
+    <!--        app:exampleDrawable="@android:drawable/ic_menu_add"-->
+    <!--        app:exampleString="Hello, NeumorphImageButton" />-->
+
+</FrameLayout>

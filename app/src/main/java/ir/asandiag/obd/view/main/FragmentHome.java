@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import ir.asandiag.neumorphism.NeumorphImageButton;
 import ir.asandiag.obd.R;
 import ir.asandiag.obd.adapter.CarAdapter;
 import ir.asandiag.obd.adapter.CompanyAdapter;
@@ -88,6 +89,8 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
         rvItems.setNestedScrollingEnabled(false);
 
         initRecyclerView();
+
+        imgBtnSort.setBackground(getResources().getDrawable(R.drawable.ic_sensor));
 
         imgBtnSort.setOnClickListener(v -> {
             if (navController != null) {
