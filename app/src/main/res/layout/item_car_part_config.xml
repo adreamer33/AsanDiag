@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ir.asandiag.neumorphism.widgetMode.NeumorphCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/CardView.Home.CarPartItem"
     android:layout_width="match_parent"
     android:layout_height="70dp">
@@ -9,6 +10,6 @@
         style="@style/TextView.Home.DialogItem"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:drawableEnd="@drawable/ic_sensor"
-        android:text="بررسی سنسورها" />
+        android:text="بررسی سنسورها"
+        app:drawableEndCompat="@drawable/ic_sensor" />
 </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>
