@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
@@ -48,7 +49,8 @@ public class SortAdapter extends ListAdapter<SortItem, SortAdapter.ViewHolder> {
         if (sortItem != null) {
             holder.sortItem = sortItem;
             holder.position = position;
-            ((AppCompatButton) holder.itemView).setText(sortItem.getName());
+            AppCompatTextView content = holder.itemView.findViewById(R.id.tv_item_sort_title);
+            content.setText(sortItem.getName());
             holder.itemView.setOnClickListener(v -> {
                 if (onSortItemClickListener != null) {
                     onSortItemClickListener.onCarPartClicked(holder.sortItem, position);
@@ -66,9 +68,10 @@ public class SortAdapter extends ListAdapter<SortItem, SortAdapter.ViewHolder> {
                     img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_sort_ecu);
                     break;
             }
-            img.setBounds(0, 0, (int) dp2px(holder.itemView.getContext(), 20), (int) dp2px(holder.itemView.getContext(), 20));
-            ((AppCompatButton) holder.itemView).setCompoundDrawables(null, null, img, null);
-
+            if (img != null) {
+                img.setBounds(0, 0, (int) dp2px(holder.itemView.getContext(), 20), (int) dp2px(holder.itemView.getContext(), 20));
+            }
+            content.setCompoundDrawables(null, null, img, null);
         }
 
 

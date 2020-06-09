@@ -20,6 +20,7 @@ import java.util.List;
 
 import ir.asandiag.obd.R;
 import ir.asandiag.obd.adapter.CarPartAdapter;
+import ir.asandiag.obd.adapter.EqualSpacingItemDecoration;
 import ir.asandiag.obd.model.CarPartItem;
 
 public class DialogFragmentCarParts extends BottomSheetDialogFragment implements CarPartAdapter.OnCarPartClickListener {
@@ -49,6 +50,7 @@ public class DialogFragmentCarParts extends BottomSheetDialogFragment implements
         final RecyclerView recyclerView = view.findViewById(R.id.rv_car_parts_items);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new CarPartAdapter(new CarPartAdapter.ItemDiffCallBack(), this));
+        recyclerView.addItemDecoration(new EqualSpacingItemDecoration(-10));
         ((CarPartAdapter) recyclerView.getAdapter()).submitList(carPartItemList);
         navController = NavHostFragment.findNavController(this);
     }

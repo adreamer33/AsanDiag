@@ -1,168 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ir.asandiag.neumorphism.widgetMode.NeumorphCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="120dp"
     android:layout_gravity="center"
-    tools:background="@color/bgColor">
+    style="@style/CardView.CheckSensors.Item"
+    tools:background="@drawable/bg_activity_main">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_item_sensor_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/iransans_medium"
-        android:gravity="end"
-        android:lineSpacingExtra="9sp"
-        android:text="زاویه دریچه گاز"
-        android:textColor="#202020"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_item_sensor_title_right"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/fl_item_sensor_current"
-        app:layout_constraintTop_toTopOf="@+id/guideline_item_sensor_title_top" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_item_sensor_title_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_item_sensor_minmax_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.128" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_item_sensor_minmax_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.04" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_item_sensor_minmax_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.872" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_item_sensor_title_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.954" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_item_sensor_desc"
-        android:layout_width="94dp"
-        android:layout_height="18dp"
-        android:fontFamily="@font/lato"
-        android:gravity="end"
-        android:lineSpacingExtra="3sp"
-        android:text="(Range 0-100)"
-        android:textColor="#4d131313"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_item_sensor_title_right"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/fl_item_sensor_current"
-        app:layout_constraintTop_toBottomOf="@+id/tv_item_sensor_title"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <FrameLayout
-        android:id="@+id/fl_item_sensor_minmax"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/bg_item_sensor_minmax"
-        android:paddingStart="11dp"
-        android:paddingTop="4dp"
-        android:paddingEnd="11dp"
-        android:paddingBottom="4dp"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_item_sensor_minmax_bottom"
-        app:layout_constraintDimensionRatio="h,0.94"
-        app:layout_constraintStart_toEndOf="@id/guideline_item_sensor_minmax_left"
-        app:layout_constraintTop_toTopOf="@id/guideline_item_sensor_minmax_top">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_item_sensor_max"
-            android:layout_width="match_parent"
+            android:id="@+id/tv_item_sensor_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|top"
-            android:drawableStart="@drawable/ic_arrow_up"
-            android:drawablePadding="8dp"
-            android:fontFamily="@font/lato"
-            android:lineSpacingExtra="3sp"
-            android:text="13"
-            android:textColor="#3568d4"
-            android:textSize="16sp" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_item_sensor_min"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:drawableStart="@drawable/ic_arrow_down"
-            android:drawablePadding="8dp"
-            android:fontFamily="@font/lato"
-            android:lineSpacingExtra="3sp"
-            android:text="0"
-            android:textColor="#3568d4"
-            android:textSize="16sp" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_item_sensor_avg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|bottom"
-            android:drawableStart="@drawable/ic_cross"
-            android:drawablePadding="8dp"
-            android:fontFamily="@font/lato"
-            android:lineSpacingExtra="3sp"
-            android:text="6.5"
-            android:textColor="#3568d4"
-            android:textSize="16sp" />
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/fl_item_sensor_current"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="9dp"
-        android:background="@drawable/bg_item_sensor_minmax"
-        android:paddingStart="11dp"
-        android:paddingTop="12dp"
-        android:paddingEnd="11dp"
-        android:paddingBottom="12dp"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_item_sensor_minmax_bottom"
-        app:layout_constraintDimensionRatio="h,0.7"
-        app:layout_constraintStart_toEndOf="@id/fl_item_sensor_minmax"
-        app:layout_constraintTop_toTopOf="@id/guideline_item_sensor_minmax_top">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_item_sensor_current"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|top"
-            android:lineSpacingExtra="3sp"
-            android:text="13V"
-            android:textColor="#3fa534"
+            android:fontFamily="@font/iransans_medium"
+            android:gravity="end"
+            android:lineSpacingExtra="9sp"
+            android:text="زاویه دریچه گاز"
+            android:textColor="#202020"
             android:textSize="16sp"
-            app:fontFamily="@font/lato" />
+            app:layout_constraintEnd_toStartOf="@+id/guideline_item_sensor_title_right"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/fl_item_sensor_current"
+            app:layout_constraintTop_toTopOf="@+id/guideline_item_sensor_title_top" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_item_sensor_title_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_item_sensor_minmax_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.128" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_item_sensor_minmax_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_item_sensor_minmax_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.872" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_item_sensor_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.954" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_item_sensor_na"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|bottom"
+            android:id="@+id/tv_item_sensor_desc"
+            android:layout_width="94dp"
+            android:layout_height="18dp"
             android:fontFamily="@font/lato"
+            android:gravity="end"
             android:lineSpacingExtra="3sp"
-            android:text="0"
-            android:textColor="#d45635"
-            android:textSize="16sp" />
-    </FrameLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="(Range 0-100)"
+            android:textColor="#4d131313"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_item_sensor_title_right"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/fl_item_sensor_current"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_sensor_title"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <FrameLayout
+            android:id="@+id/fl_item_sensor_minmax"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_item_sensor_minmax"
+            android:paddingStart="11dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="11dp"
+            android:paddingBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_item_sensor_minmax_bottom"
+            app:layout_constraintDimensionRatio="h,0.94"
+            app:layout_constraintStart_toEndOf="@id/guideline_item_sensor_minmax_left"
+            app:layout_constraintTop_toTopOf="@id/guideline_item_sensor_minmax_top">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_item_sensor_max"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:drawableStart="@drawable/ic_arrow_up"
+                android:drawablePadding="8dp"
+                android:fontFamily="@font/lato"
+                android:lineSpacingExtra="3sp"
+                android:text="13"
+                android:textColor="#3568d4"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_item_sensor_min"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/ic_arrow_down"
+                android:drawablePadding="8dp"
+                android:fontFamily="@font/lato"
+                android:lineSpacingExtra="3sp"
+                android:text="0"
+                android:textColor="#3568d4"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_item_sensor_avg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:drawableStart="@drawable/ic_cross"
+                android:drawablePadding="8dp"
+                android:fontFamily="@font/lato"
+                android:lineSpacingExtra="3sp"
+                android:text="6.5"
+                android:textColor="#3568d4"
+                android:textSize="16sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_item_sensor_current"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="9dp"
+            android:background="@drawable/bg_item_sensor_minmax"
+            android:paddingStart="11dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="11dp"
+            android:paddingBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_item_sensor_minmax_bottom"
+            app:layout_constraintDimensionRatio="h,0.7"
+            app:layout_constraintStart_toEndOf="@id/fl_item_sensor_minmax"
+            app:layout_constraintTop_toTopOf="@id/guideline_item_sensor_minmax_top">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_item_sensor_current"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:lineSpacingExtra="3sp"
+                android:text="13V"
+                android:textColor="#3fa534"
+                android:textSize="16sp"
+                app:fontFamily="@font/lato" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_item_sensor_na"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:fontFamily="@font/lato"
+                android:lineSpacingExtra="3sp"
+                android:text="0"
+                android:textColor="#d45635"
+                android:textSize="16sp" />
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ir.asandiag.neumorphism.widgetMode.NeumorphCardView>

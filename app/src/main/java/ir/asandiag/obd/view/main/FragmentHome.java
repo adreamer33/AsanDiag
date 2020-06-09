@@ -1,12 +1,11 @@
 package ir.asandiag.obd.view.main;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,16 +14,19 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import ir.asandiag.neumorphism.NeumorphImageButton;
+import ir.asandiag.neumorphism.widgetMode.NeumorphImageButton;
+import ir.asandiag.neumorphism.widgetMode.model.ShapeType;
 import ir.asandiag.obd.R;
 import ir.asandiag.obd.adapter.CarAdapter;
 import ir.asandiag.obd.adapter.CompanyAdapter;
+import ir.asandiag.obd.adapter.EqualSpacingItemDecoration;
 import ir.asandiag.obd.model.CarItem;
 import ir.asandiag.obd.model.CompanyItem;
 import ir.asandiag.obd.viewmodel.main.FragmentHomeViewModel;
@@ -87,20 +89,27 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
         rvItems.setLayoutManager(gridLayoutManager);
         rvItems.setNestedScrollingEnabled(false);
-
+        // For example 10 pixels
+        int spaceInPixels = 20;
+        rvItems.setHasFixedSize(true);
+        rvItems.addItemDecoration(new EqualSpacingItemDecoration(-spaceInPixels));
         initRecyclerView();
 
-        imgBtnSort.setBackground(getResources().getDrawable(R.drawable.ic_sensor));
 
         imgBtnSort.setOnClickListener(v -> {
             if (navController != null) {
+//                if (((NeumorphImageButton) v).getShapeType() == ShapeType.FLAT) {
+//                    ((NeumorphImageButton) v).setShapeType(ShapeType.PRESSED);
+//                } else {
+//                    ((NeumorphImageButton) v).setShapeType(ShapeType.FLAT);
+//                }
                 navController.navigate(FragmentHomeDirections.actionHomeToDialogFragmentSort());
             }
         });
 
         imgBtnMenu.setOnClickListener(v -> {
             try {
-                ((ActivityMain)v.getContext()).openDrawer();
+                ((ActivityMain) v.getContext()).openDrawer();
             } catch (Exception e) {
                 e.printStackTrace();
             }

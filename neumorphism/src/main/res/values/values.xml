@@ -9,7 +9,7 @@
     <color name="design_dark_default_color_shadow_dark">#111111</color>
 
     <!-- Default padding to avoid shadow clipping -->
-    <dimen name="design_default_shadow_padding">20dp</dimen>
+    <dimen name="design_default_shadow_padding">10dp</dimen>
 
     <dimen name="edit_text_underline_inset_bottom">4dp</dimen>
     <dimen name="edit_text_underline_height">5dp</dimen>

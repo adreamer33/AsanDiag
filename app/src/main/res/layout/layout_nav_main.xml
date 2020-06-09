@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_drawer_layout"
-    tools:layoutDirection="ltr"
-    >
+    tools:layoutDirection="ltr">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_drawer_logo_top"
@@ -34,14 +33,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.055" />
+        app:layout_constraintGuide_percent="0.035" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_drawer_items_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.945" />
+        app:layout_constraintGuide_percent="0.965" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_drawer_logo"
@@ -53,192 +52,158 @@
         app:srcCompat="@drawable/ic_motor" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        style="@style/TextView.Home.Drawer.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:fontFamily="@font/iransans_medium"
-        android:gravity="end"
-        android:lineSpacingExtra="14sp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintVertical_bias="0"
         android:text="آسان دیاگ"
-        android:textColor="#0063f7"
-        android:textSize="24sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline_drawer_items_top"
         app:layout_constraintEnd_toEndOf="@+id/img_drawer_logo"
         app:layout_constraintStart_toStartOf="@+id/img_drawer_logo"
-        app:layout_constraintTop_toBottomOf="@+id/img_drawer_logo"
-         />
+        app:layout_constraintTop_toBottomOf="@+id/img_drawer_logo" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_drawer_app_version"
+        style="@style/TextView.Home.Drawer.AppVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/lato"
-        android:gravity="end"
-        android:lineSpacingExtra="3sp"
         android:text="version 2.1"
-        android:textColor="#A4202020"
-        android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/guideline_drawer_items_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_drawer_items_left"
         app:layout_constraintTop_toBottomOf="@+id/guideline_drawer_items_bottom" />
 
 
-
-
-
-
-
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_drawer_account"
+    <ir.asandiag.neumorphism.widgetMode.NeumorphCardView
+        android:id="@+id/cv_drawer_account"
+        style="@style/CardView.Home.DrawerButton"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:drawableEnd="@drawable/ic_menu_user"
-        android:drawablePadding="12.5dp"
-        android:fontFamily="@font/iransans_medium"
-        android:gravity="end|center"
-        android:lineSpacingExtra="9sp"
-        android:paddingStart="0dp"
-        android:paddingEnd="24dp"
-        android:text="حساب کاربری"
-        android:textAlignment="viewEnd"
-        android:textColor="#202020"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_drawer_terminal"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_drawer_terminal"
         app:layout_constraintEnd_toStartOf="@+id/guideline_drawer_items_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_drawer_items_left"
         app:layout_constraintTop_toTopOf="@+id/guideline_drawer_items_top"
         app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_drawer_terminal"
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextView.Home.Drawer.Item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="حساب کاربری"
+            app:drawableEndCompat="@drawable/ic_menu_user" />
+    </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>
+
+
+    <ir.asandiag.neumorphism.widgetMode.NeumorphCardView
+        android:id="@+id/cv_drawer_terminal"
+        style="@style/CardView.Home.DrawerButton"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="17dp"
-        android:drawableEnd="@drawable/ic_menu_terminal"
-        android:drawablePadding="12.5dp"
-        android:fontFamily="@font/iransans_medium"
-        android:gravity="end|center"
-        android:lineSpacingExtra="9sp"
-        android:paddingStart="0dp"
-        android:paddingEnd="24dp"
-        android:text="ترمینال"
-        android:textAlignment="viewEnd"
-        android:textColor="#202020"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_drawer_settings"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_drawer_settings"
         app:layout_constraintEnd_toStartOf="@+id/guideline_drawer_items_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_drawer_items_left"
-        app:layout_constraintTop_toBottomOf="@+id/btn_drawer_account" />
+        app:layout_constraintTop_toBottomOf="@+id/cv_drawer_account">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_drawer_settings"
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextView.Home.Drawer.Item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="ترمینال"
+            app:drawableEndCompat="@drawable/ic_menu_terminal" />
+    </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>
+
+
+    <ir.asandiag.neumorphism.widgetMode.NeumorphCardView
+        android:id="@+id/cv_drawer_settings"
+        style="@style/CardView.Home.DrawerButton"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="17dp"
-        android:drawableEnd="@drawable/ic_menu_settings"
-        android:drawablePadding="12.5dp"
-        android:fontFamily="@font/iransans_medium"
-        android:gravity="end|center"
-        android:lineSpacingExtra="9sp"
-        android:paddingStart="0dp"
-        android:paddingEnd="24dp"
-        android:text="تنظیمات"
-        android:textAlignment="viewEnd"
-        android:textColor="#202020"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_drawer_repair_history"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_drawer_repair_history"
         app:layout_constraintEnd_toStartOf="@+id/guideline_drawer_items_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_drawer_items_left"
-        app:layout_constraintTop_toBottomOf="@+id/btn_drawer_terminal" />
+        app:layout_constraintTop_toBottomOf="@+id/cv_drawer_terminal">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_drawer_repair_history"
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextView.Home.Drawer.Item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="تنظیمات"
+            app:drawableEndCompat="@drawable/ic_menu_settings" />
+    </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>
+
+    <ir.asandiag.neumorphism.widgetMode.NeumorphCardView
+        android:id="@+id/cv_drawer_repair_history"
+        style="@style/CardView.Home.DrawerButton"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="17dp"
-        android:drawableEnd="@drawable/ic_menu_history"
-        android:drawablePadding="12.5dp"
-        android:fontFamily="@font/iransans_medium"
-        android:gravity="end|center"
-        android:lineSpacingExtra="9sp"
-        android:paddingStart="0dp"
-        android:paddingEnd="24dp"
-        android:text="تاریخچه عیب‌یابی"
-        android:textAlignment="viewEnd"
-        android:textColor="#202020"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_drawer_send_data"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_drawer_send_data"
         app:layout_constraintEnd_toStartOf="@+id/guideline_drawer_items_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_drawer_items_left"
-        app:layout_constraintTop_toBottomOf="@+id/btn_drawer_settings" />
+        app:layout_constraintTop_toBottomOf="@+id/cv_drawer_settings">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_drawer_send_data"
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextView.Home.Drawer.Item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="تاریخچه عیب‌یابی"
+            app:drawableEndCompat="@drawable/ic_menu_history" />
+    </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>
+
+    <ir.asandiag.neumorphism.widgetMode.NeumorphCardView
+        android:id="@+id/cv_drawer_send_data"
+        style="@style/CardView.Home.DrawerButton"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="17dp"
-        android:drawableEnd="@drawable/ic_menu_send"
-        android:drawablePadding="12.5dp"
-        android:fontFamily="@font/iransans_medium"
-        android:gravity="end|center"
-        android:lineSpacingExtra="9sp"
-        android:paddingStart="0dp"
-        android:paddingEnd="24dp"
-        android:text="ارسال اطلاعات"
-        android:textAlignment="viewEnd"
-        android:textColor="#202020"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_drawer_contact_us"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_drawer_contact_us"
         app:layout_constraintEnd_toStartOf="@+id/guideline_drawer_items_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_drawer_items_left"
-        app:layout_constraintTop_toBottomOf="@+id/btn_drawer_repair_history" />
+        app:layout_constraintTop_toBottomOf="@+id/cv_drawer_repair_history">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_drawer_contact_us"
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextView.Home.Drawer.Item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="ارسال اطلاعات"
+            app:drawableEndCompat="@drawable/ic_menu_send" />
+    </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>
+
+    <ir.asandiag.neumorphism.widgetMode.NeumorphCardView
+        android:id="@+id/cv_drawer_contact_us"
+        style="@style/CardView.Home.DrawerButton"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="17dp"
-        android:drawableEnd="@drawable/ic_menu_call"
-        android:drawablePadding="12.5dp"
-        android:fontFamily="@font/iransans_medium"
-        android:gravity="end|center"
-        android:lineSpacingExtra="9sp"
-        android:paddingStart="0dp"
-        android:paddingEnd="24dp"
-        android:text="تماس با ما"
-        android:textAlignment="viewEnd"
-        android:textColor="#202020"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_drawer_logout"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_drawer_logout"
         app:layout_constraintEnd_toStartOf="@+id/guideline_drawer_items_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_drawer_items_left"
-        app:layout_constraintTop_toBottomOf="@+id/btn_drawer_send_data" />
+        app:layout_constraintTop_toBottomOf="@+id/cv_drawer_send_data">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_drawer_logout"
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextView.Home.Drawer.Item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="تماس با ما"
+            app:drawableEndCompat="@drawable/ic_menu_call" />
+    </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>
+
+    <ir.asandiag.neumorphism.widgetMode.NeumorphCardView
+        android:id="@+id/cv_drawer_logout"
+        style="@style/CardView.Home.DrawerButton"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="17dp"
-        android:drawableEnd="@drawable/ic_menu_logout"
-        android:drawablePadding="12.5dp"
-        android:fontFamily="@font/iransans_medium"
-        android:gravity="end|center"
-        android:lineSpacingExtra="9sp"
-        android:paddingStart="0dp"
-        android:paddingEnd="24dp"
-        android:text="خروج از حساب کاربری"
-        android:textAlignment="viewEnd"
-        android:textColor="#202020"
-        android:textSize="16sp"
+        android:layout_height="66dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_drawer_items_bottom"
         app:layout_constraintEnd_toStartOf="@+id/guideline_drawer_items_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_drawer_items_left"
-        app:layout_constraintTop_toBottomOf="@+id/btn_drawer_contact_us" />
+        app:layout_constraintTop_toBottomOf="@+id/cv_drawer_contact_us">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextView.Home.Drawer.Item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="خروج از حساب کاربری"
+            app:drawableEndCompat="@drawable/ic_menu_logout" />
+    </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

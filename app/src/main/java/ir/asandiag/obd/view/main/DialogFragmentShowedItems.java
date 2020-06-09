@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ir.asandiag.obd.R;
+import ir.asandiag.obd.adapter.EqualSpacingItemDecoration;
 import ir.asandiag.obd.adapter.ShowedItemsAdapter;
 import ir.asandiag.obd.model.ShowedItem;
 
@@ -65,6 +66,7 @@ public class DialogFragmentShowedItems extends BottomSheetDialogFragment impleme
         final RecyclerView recyclerView = view.findViewById(R.id.rv_showed_items);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new ShowedItemsAdapter(new ShowedItemsAdapter.ItemDiffCallBack(), this));
+        recyclerView.addItemDecoration(new EqualSpacingItemDecoration(-10));
         ((ShowedItemsAdapter) recyclerView.getAdapter()).submitList(itemList);
         navController = NavHostFragment.findNavController(this);
     }

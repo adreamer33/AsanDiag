@@ -20,14 +20,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ir.asandiag.obd.R;
+import ir.asandiag.obd.adapter.EqualSpacingItemDecoration;
 import ir.asandiag.obd.adapter.SortAdapter;
 import ir.asandiag.obd.model.SortItem;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DialogFragmentSort#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class DialogFragmentSort extends BottomSheetDialogFragment implements SortAdapter.OnSortItemClickListener {
 
     private NavController navController;
@@ -75,6 +71,7 @@ public class DialogFragmentSort extends BottomSheetDialogFragment implements Sor
         final RecyclerView recyclerView = view.findViewById(R.id.rv_dialog_fragment_sort_items);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new SortAdapter(new SortAdapter.ItemDiffCallBack(), this));
+        recyclerView.addItemDecoration(new EqualSpacingItemDecoration(-10));
         ((SortAdapter) recyclerView.getAdapter()).submitList(sortItems);
         navController = NavHostFragment.findNavController(this);
     }

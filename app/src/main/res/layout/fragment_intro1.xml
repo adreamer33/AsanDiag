@@ -5,30 +5,39 @@
     android:layout_height="match_parent"
     tools:context="ir.asandiag.obd.view.intro.FragmentIntro1">
 
-    <ImageView
-        android:id="@+id/img_intro1_info"
+    <ir.asandiag.neumorphism.shapeMode.neu.shapes.CircleView
+        style="@style/CircleView.Intro.Icon"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@android:drawable/sym_def_app_icon"
         app:layout_constraintBottom_toTopOf="@+id/guideline_intro1_info_bottom"
         app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_intro1_info_top" />
+        app:layout_constraintTop_toTopOf="@+id/guideline_intro1_info_top">
 
-    <TextView
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_intro1_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="center"
+            app:srcCompat="@drawable/ic_car" />
+    </ir.asandiag.neumorphism.shapeMode.neu.shapes.CircleView>
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_intro1_title"
+        style="@style/TextView.Intro.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" ویژگی اول"
         app:layout_constraintBottom_toTopOf="@+id/tv_into1_desc"
-        app:layout_constraintEnd_toEndOf="@+id/img_intro1_info"
-        app:layout_constraintStart_toStartOf="@+id/img_intro1_info"
-        app:layout_constraintTop_toBottomOf="@+id/guideline_intro1_title_top"
-        style="@style/style_intro_tv_title" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_intro1_title_top" />
 
     <TextView
         android:id="@+id/tv_into1_desc"
+        style="@style/TextView.Intro.Description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
@@ -38,26 +47,26 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_intro1_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_intro1_title"
-        style="@style/style_intro_tv_description" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_intro1_title" />
 
-    <Button
+    <ir.asandiag.neumorphism.widgetMode.NeumorphButton
         android:id="@+id/btn_intro1_next"
+        style="@style/Button.Intro.Next"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="43dp"
         android:text="بعدی"
         app:layout_constraintBottom_toTopOf="@+id/btn_intro1_login"
-        app:layout_constraintDimensionRatio="w,0.21"
+        app:layout_constraintDimensionRatio="w,0.25"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_into1_desc"
         app:layout_constraintWidth_max="290dp"
-        app:layout_constraintWidth_percent="0.69"
-        style="@style/style_intro_btn_next" />
+        app:layout_constraintWidth_percent="0.69" />
 
     <TextView
         android:id="@+id/btn_intro1_login"
+        style="@style/TextView.Intro.Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -65,8 +74,7 @@
         app:layout_constraintBottom_toTopOf="@id/guideline_intro1_login_bottom"
         app:layout_constraintEnd_toEndOf="@+id/btn_intro1_next"
         app:layout_constraintStart_toStartOf="@+id/btn_intro1_next"
-        app:layout_constraintTop_toBottomOf="@+id/btn_intro1_next"
-        style="@style/style_intro_tv_login" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_intro1_next" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_intro1_info_top"

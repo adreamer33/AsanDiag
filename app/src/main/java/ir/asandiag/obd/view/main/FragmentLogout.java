@@ -5,11 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import ir.asandiag.obd.R;
 
 public class FragmentLogout extends Fragment {
+
+    private AppCompatImageButton imgbtnBack;
+    private NavController navController;
 
     public FragmentLogout() {
         // Required empty public constructor
@@ -33,5 +41,16 @@ public class FragmentLogout extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_logout, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        navController = NavHostFragment.findNavController(this);
+
+        imgbtnBack = view.findViewById(R.id.imgbtn_logout_back);
+        imgbtnBack.setOnClickListener(v -> {
+            navController.navigateUp();
+        });
     }
 }

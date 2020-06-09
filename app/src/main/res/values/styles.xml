@@ -36,56 +36,609 @@
         <item name="android:windowExitAnimation">@anim/fade_out</item>
     </style>
 
+    <!--  fonts  -->
+
+    <style name="iransans_normal">
+        <item name="android:fontFamily">@font/iransans_normal</item>
+    </style>
+
+    <style name="iransans_black">
+        <item name="android:fontFamily">@font/iransans_black</item>
+    </style>
 
     <style name="iransans_medium">
         <item name="android:fontFamily">@font/iransans_medium</item>
     </style>
 
-    <style name="style_intro_tv_title">
-        <item name="android:fontFamily">@font/iransans_medium</item>
-        <item name="android:textColor">#7d8490</item>
+    <style name="iransans_bold">
+        <item name="android:fontFamily">@font/iransans_bold</item>
+    </style>
+
+    <style name="iransans_light">
+        <item name="android:fontFamily">@font/iransans_light</item>
+    </style>
+
+    <style name="iransans_ultralight">
+        <item name="android:fontFamily">@font/iransans_ultralight</item>
+    </style>
+
+    <!--  ShapeAppearance  -->
+
+    <style name="ShapeAppearance" parent="">
+
+    </style>
+
+    <style name="ShapeAppearance.Intro" parent="ShapeAppearance">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">27dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Signup" parent="">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">27dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Signup.Register" parent="">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">32dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Home" parent="">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">27dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Home.ImageButton" parent="">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">4dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Home.Dashboard" parent="">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">4dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Home.OBD" parent="">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">4dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Home.DrawerButton" parent="">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">4dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Home.SortItem" parent="">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">4dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Home.CarPartItem" parent="">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">4dp</item>
+    </style>
+    <!--   TextView -->
+
+    <style name="TextView" parent="Widget.AppCompat.TextView">
+
+    </style>
+
+    <style name="TextView.Intro" parent="TextView">
+        <item name="fontFamily">@font/iransans_normal</item>
+
+    </style>
+
+    <style name="TextView.Signup" parent="TextView">
+
+    </style>
+
+    <style name="TextView.Home." parent="TextView">
+
+    </style>
+
+    <style name="TextView.Intro.Title" parent="TextView.Intro">
+        <item name="android:textColor">@color/tvTextColorIntro</item>
         <item name="android:textSize">22sp</item>
     </style>
 
-    <style name="style_intro_tv_description">
+
+    <style name="TextView.Intro.Description" parent="TextView.Intro">
         <item name="android:ems">8</item>
-        <item name="android:fontFamily">@font/iransans_medium</item>
         <item name="android:lineSpacingExtra">10sp</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/tvTextColorIntro</item>
     </style>
 
-    <style name="style_intro_btn_next">
-        <item name="android:fontFamily">@font/iransans_medium</item>
-        <item name="android:textColor">#3e7afa</item>
-        <item name="android:textSize">18sp</item>
-    </style>
-
-    <style name="style_signup_btn">
-        <item name="android:fontFamily">@font/iransans_medium</item>
-        <item name="android:textColor">#fff</item>
-        <item name="android:background">#0063f7</item>
-        <item name="android:textSize">18sp</item>
-    </style>
-
-    <style name="style_logout_btn">
-        <item name="android:fontFamily">@font/iransans_medium</item>
-        <item name="android:textColor">#2b2c44</item>
-        <item name="android:background">#eaebf0</item>
-        <item name="android:textSize">18sp</item>
-    </style>
-
-    <style name="style_intro_tv_login">
-        <item name="android:fontFamily">@font/iransans_medium</item>
+    <style name="TextView.Intro.Login" parent="TextView.Intro">
+        <item name="android:fontFamily">@font/iransans_ultralight</item>
         <item name="android:lines">1</item>
-        <item name="android:minLines">1</item>
+        <item name="android:maxLines">1</item>
         <item name="android:singleLine">true</item>
         <item name="android:textColor">#8f90a6</item>
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="CustomShapeAppearance">
-        <item name="neumorph_cornerFamily">oval</item>
-        <item name="neumorph_cornerSize">4dp</item>
+    <style name="TextView.Signup.Login" parent="TextView.Signup">
+        <item name="fontFamily">@font/iransans_bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingExtra">16sp</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">#373960</item>
     </style>
+
+    <style name="TextView.Signup.Register" parent="TextView.Signup">
+        <item name="fontFamily">@font/iransans_normal</item>
+        <item name="android:gravity">center</item>
+        <item name="lineHeight">29sp</item>
+        <item name="android:lineSpacingExtra">11sp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#555770</item>
+    </style>
+
+    <style name="TextView.Signup.Loading">
+        <item name="android:fontFamily">@font/iransans_light</item>
+        <item name="android:gravity">end</item>
+        <item name="android:lineSpacingExtra">11sp</item>
+        <item name="android:textColor">#555770</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+    <style name="TextView.Home.ItemCompany" parent="TextView.Home.">
+        <item name="android:fontFamily">@font/iransans_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:textColor">#202020</item>
+    </style>
+
+    <style name="TextView.Home.ItemCompany.Title" parent="TextView.Home.ItemCompany">
+        <item name="android:textSize">16sp</item>
+        <item name="android:maxLength">15</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+    </style>
+
+    <style name="TextView.Home.ItemCompany.Desc" parent="TextView.Home.ItemCompany">
+        <item name="android:textSize">13sp</item>
+        <item name="android:maxLength">25</item>
+        <item name="android:lineSpacingExtra">7sp</item>
+    </style>
+
+    <style name="TextView.Home.ItemCar" parent="TextView.Home.">
+        <item name="android:fontFamily">@font/iransans_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:textColor">#202020</item>
+    </style>
+
+    <style name="TextView.Home.ItemCar.Title" parent="TextView.Home.ItemCar">
+        <item name="android:textSize">16sp</item>
+        <item name="android:maxLength">20</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+    </style>
+
+
+    <style name="TextView.Home.Drawer" parent="TextView.Home." />
+
+    <style name="TextView.Home.Drawer.Item" parent="TextView.Home.Drawer">
+        <item name="android:textAlignment">viewEnd</item>
+        <item name="android:textColor">#202020</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center|end</item>
+        <item name="android:fontFamily">@font/iransans_normal</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+        <item name="android:drawablePadding">22.5dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">24dp</item>
+    </style>
+
+    <style name="TextView.Home.Drawer.Title" parent="TextView.Home.">
+        <item name="android:fontFamily">@font/iransans_bold</item>
+        <item name="android:gravity">end</item>
+        <item name="android:lineSpacingExtra">14sp</item>
+        <item name="android:textColor">#0063f7</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="TextView.Home.Drawer.AppVersion">
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:gravity">end</item>
+        <item name="android:lineSpacingExtra">3sp</item>
+        <item name="android:textColor">#A4202020</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <!--    <style name="TextView.Home.SortDialog" parent="TextView.Home."></style>-->
+
+    <style name="TextView.Home.SortDialog.Title" parent="">
+        <item name="android:fontFamily">@font/iransans_bold</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+        <item name="android:textColor">#5c5d6d</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextView.Home.CarPartsDialog.Title" parent="">
+        <item name="android:fontFamily">@font/iransans_bold</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+        <item name="android:textColor">#5c5d6d</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextView.Home.DialogItem" parent="">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:fontFamily">@font/iransans_normal</item>
+        <item name="android:gravity">center|end</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:textAlignment">viewEnd</item>
+        <item name="android:textColor">#202020</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextView.CheckSensors.Title" parent="">
+        <item name="android:fontFamily">@font/iransans_medium</item>
+        <item name="android:lineSpacingExtra">11sp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">#555770</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextView.ShowedItems.Title" parent="">
+        <item name="android:fontFamily">@font/iransans_normal</item>
+        <item name="android:gravity">end</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+        <item name="android:textColor">#202020</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextView.ShowedItems.Desc" parent="">
+        <item name="android:fontFamily">@font/iransans_normal</item>
+        <item name="android:gravity">end</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">#202020</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--  EditText  -->
+    <style name="EditText" parent="Widget.AppCompat.EditText" />
+
+    <style name="EditText.Signup" parent="EditText" />
+
+    <style name="EditText.Signup.Register" parent="EditText.Signup">
+        <item name="fontFamily">@font/iransans_normal</item>
+        <item name="hintTextColor">#87555770</item>
+        <item name="android:textColor">#555770</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:gravity">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="singleLine">true</item>
+        <item name="android:lines">1</item>
+        <item name="android:textAlignment">viewEnd</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+
+    </style>
+
+
+    <!--  Button  -->
+
+    <style name="Button" parent="Widget.AppCompat.Button">
+        <item name="fontFamily">@font/iransans_normal</item>
+    </style>
+
+    <style name="Button.Intro" parent="Button">
+
+    </style>
+
+    <style name="Button.Signup" parent="Button">
+
+    </style>
+
+    <style name="Button.Intro.Next" parent="Button.Intro">
+        <item name="android:textColor">@color/btnNextTextColorIntro</item>
+        <item name="android:textSize">18sp</item>
+
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:padding">@dimen/design_default_shadow_padding</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
+        <item name="android:minHeight">72dip</item>
+        <item name="android:minWidth">112dip</item>
+
+        <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="neumorph_shadowColorDark">#C3CFCFCF</item>
+        <item name="neumorph_shadowColorLight">#AEFFFFFF</item>
+        <item name="neumorph_shadowElevation">6dp</item>
+        <item name="neumorph_shapeType">flat</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Intro</item>
+    </style>
+
+    <style name="Button.Signup.Login" parent="Button.Signup">
+        <item name="android:textColor">@color/btnLoginTextColorSignup</item>
+        <!--        <item name="android:background">@color/btnLoginBackgroundSignup</item>-->
+        <item name="android:textSize">18sp</item>
+
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:padding">@dimen/design_default_shadow_padding</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
+        <item name="android:minHeight">72dip</item>
+        <item name="android:minWidth">112dip</item>
+
+        <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="neumorph_shadowColorDark">#ADCFCFCF</item>
+        <item name="neumorph_shadowColorLight">#610063f7</item>
+        <item name="neumorph_shadowElevation">3dp</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Signup</item>
+        <item name="neumorph_shapeType">flat</item>
+        <item name="neumorph_backgroundColor">#0063F7</item>
+    </style>
+
+    <style name="Button.Home.OBD" parent="">
+        <item name="android:padding">10dp</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
+        <item name="android:minHeight">72dip</item>
+        <item name="android:minWidth">112dip</item>
+        <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="neumorph_shadowElevation">8dp</item>
+        <item name="neumorph_shadowColorLight">#f5f6f9</item>
+        <item name="neumorph_shadowColorDark">#e1e2e6</item>
+        <item name="neumorph_shapeType">flat</item>
+        <item name="neumorph_backgroundColor">#e7e8ed</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.OBD</item>
+
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">#202020</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/iransans_medium</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+    </style>
+
+
+    <style name="Button.Logout" parent="">
+        <item name="android:textColor">#2b2c44</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">11sp</item>
+        <item name="fontFamily">@font/iransans_normal</item>
+
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:padding">@dimen/design_default_shadow_padding</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
+        <item name="android:minHeight">72dip</item>
+        <item name="android:minWidth">112dip</item>
+
+        <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="neumorph_shadowColorDark">#C3CFCFCF</item>
+        <item name="neumorph_shadowColorLight">#AEFFFFFF</item>
+        <item name="neumorph_backgroundColor">#e7e8ed</item>
+        <item name="neumorph_shadowElevation">6dp</item>
+        <item name="neumorph_shapeType">flat</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Intro</item>
+    </style>
+
+
+    <!--  ImageButton  -->
+    <style name="ImageButton" parent="Widget.Neumorph.ImageButton" />
+
+    <style name="ImageButton.Home" parent="ImageButton">
+        <item name="android:padding">10dp</item>
+        <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:scaleType">center</item>
+        <item name="neumorph_shadowElevation">6dp</item>
+        <item name="neumorph_shadowColorLight">#f5f6f9</item>
+        <item name="neumorph_shadowColorDark">#e1e2e6</item>
+        <item name="neumorph_shapeType">flat</item>
+        <item name="neumorph_backgroundColor">#80E1E2E6</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.ImageButton</item>
+    </style>
+
+    <style name="ImageButton.CheckSensorsMore" parent="ImageButton">
+        <item name="android:padding">10dp</item>
+        <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:scaleType">center</item>
+        <item name="neumorph_shadowElevation">6dp</item>
+        <item name="neumorph_shadowColorLight">#f5f6f9</item>
+        <item name="neumorph_shadowColorDark">#26131313</item>
+        <item name="neumorph_shapeType">flat</item>
+        <item name="neumorph_backgroundColor">#80E1E2E6</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.ImageButton</item>
+    </style>
+
+    <!--  CircleView  -->
+
+    <style name="CircleView" parent=""></style>
+
+    <style name="CircleView.Intro" parent="CircleView"></style>
+
+    <style name="CircleView.Intro.Icon" parent="CircleView.Intro">
+        <item name="shape_circle_dark_color">#6A000000</item>
+        <item name="shape_circle_light_color">#FFFFFF</item>
+        <item name="shape_circle_shadow_type">small_inner_shadow</item>
+        <item name="shape_circle_backgroundColor">#eaebf0</item>
+        <item name="shape_circle_radius">3dp</item>
+        <item name="shape_circle_borderWidth">0.1dp</item>
+        <item name="shape_circle_borderColor">#0D000000</item>
+        <item name="shape_circle_shadow_position_x">5dp</item>
+        <item name="shape_circle_shadow_position_y">8dp</item>
+    </style>
+
+    <!--  CardView  -->
+
+    <style name="CardView" parent="Widget.Neumorph.CardView"></style>
+
+    <style name="CardView.Signup" parent="CardView"></style>
+
+    <style name="CardView.Signup.Register" parent="">
+        <item name="android:padding">@dimen/design_default_shadow_padding</item>
+        <item name="neumorph_backgroundColor">#4FE7E8ED</item>
+        <item name="neumorph_shadowColorDark">#4D000000</item>
+        <item name="neumorph_shadowColorLight">#ECEEFA</item>
+        <item name="neumorph_shadowElevation">5dp</item>
+        <item name="neumorph_shapeType">pressed</item>
+        <item name="neumorph_strokeColor">#72E7E8ED</item>
+        <item name="neumorph_strokeWidth">1dp</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Signup.Register</item>
+    </style>
+
+    <style name="CardView.Home.Dashboard" parent="CardView">
+        <item name="android:padding">@dimen/design_default_shadow_padding</item>
+        <item name="neumorph_shadowElevation">0.5dp</item>
+        <item name="neumorph_shadowColorLight">#FFFFFF</item>
+        <item name="neumorph_shadowColorDark">#51000000</item>
+        <item name="neumorph_shapeType">pressed</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.Dashboard</item>
+    </style>
+
+
+    <style name="CardView.Home.DrawerButton" parent="">
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
+        <item name="android:minHeight">72dip</item>
+        <item name="android:minWidth">112dip</item>
+        <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="neumorph_shadowElevation">5dp</item>
+        <item name="neumorph_shadowColorLight">#80FFFFFF</item>
+        <item name="neumorph_shadowColorDark">#E2E3E7</item>
+        <item name="neumorph_shapeType">flat</item>
+        <item name="neumorph_backgroundColor">#80E2E3E7</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.DrawerButton</item>
+        <item name="layout_constrainedWidth">true</item>
+        <item name="layout_constraintWidth_max">320dp</item>
+    </style>
+
+    <style name="CardView.Home.SortItem" parent="">
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
+        <item name="android:minHeight">72dip</item>
+        <item name="android:minWidth">112dip</item>
+        <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="neumorph_shadowElevation">5dp</item>
+        <item name="neumorph_shadowColorLight">#4DFFFFFF</item>
+        <item name="neumorph_shadowColorDark">#26131313</item>
+        <item name="neumorph_shapeType">flat</item>
+        <item name="neumorph_backgroundColor">#e9eaed</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.SortItem</item>
+        <item name="layout_constrainedWidth">true</item>
+        <item name="layout_constraintWidth_max">320dp</item>
+    </style>
+
+    <style name="CardView.Home.CarPartItem" parent="">
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
+        <item name="android:minHeight">72dip</item>
+        <item name="android:minWidth">112dip</item>
+        <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="neumorph_shadowElevation">5dp</item>
+        <item name="neumorph_shadowColorLight">#4DFFFFFF</item>
+        <item name="neumorph_shadowColorDark">#26131313</item>
+        <item name="neumorph_shapeType">flat</item>
+        <item name="neumorph_backgroundColor">#e9eaed</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.CarPartItem</item>
+        <item name="layout_constrainedWidth">true</item>
+        <item name="layout_constraintWidth_max">320dp</item>
+    </style>
+
+    <style name="CardView.CheckSensors.Item" parent="">
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
+        <item name="android:minHeight">72dip</item>
+        <item name="android:minWidth">112dip</item>
+        <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="neumorph_shadowElevation">5dp</item>
+        <item name="neumorph_shadowColorLight">#4DFFFFFF</item>
+        <item name="neumorph_shadowColorDark">#33131313</item>
+        <item name="neumorph_shapeType">flat</item>
+        <item name="neumorph_backgroundColor">#e9eaed</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.CarPartItem</item>
+        <item name="layout_constrainedWidth">true</item>
+        <item name="layout_constraintWidth_max">320dp</item>
+    </style>
+
+
+    <!--    RoundRectView-->
+    <style name="RoundRectView" parent="" />
+
+    <style name="RoundRectView.Home" parent="RoundRectView" />
+
+    <style name="RoundRectView.Home.ItemCompany" parent="RoundRectView.Home">
+        <item name="shape_roundRect_shadow_position_x">5dp</item>
+        <item name="shape_roundRect_shadow_position_y">4dp</item>
+        <item name="shape_roundRect_shadow_type">drop_shadow</item>
+        <item name="shape_roundRect_dark_color">#23000000</item>
+        <item name="shape_roundRect_light_color">#D8FFFFFF</item>
+        <item name="shape_roundRect_topLeftRadius">4dp</item>
+        <item name="shape_roundRect_topRightRadius">4dp</item>
+        <item name="shape_roundRect_bottomRightRadius">4dp</item>
+        <item name="shape_roundRect_bottomLeftRadius">4dp</item>
+        <item name="shape_roundRect_borderWidth">0dp</item>
+        <item name="shape_roundRect_backgroundColor">#F4F5F8</item>
+        <item name="shape_roundRect_radius">4dp</item>
+    </style>
+
+    <style name="RoundRectView.Home.ItemCar" parent="RoundRectView.Home">
+        <item name="shape_roundRect_shadow_position_x">5dp</item>
+        <item name="shape_roundRect_shadow_position_y">4dp</item>
+        <item name="shape_roundRect_shadow_type">drop_shadow</item>
+        <item name="shape_roundRect_dark_color">#23000000</item>
+        <item name="shape_roundRect_light_color">#D8FFFFFF</item>
+        <item name="shape_roundRect_topLeftRadius">4dp</item>
+        <item name="shape_roundRect_topRightRadius">4dp</item>
+        <item name="shape_roundRect_bottomRightRadius">4dp</item>
+        <item name="shape_roundRect_bottomLeftRadius">4dp</item>
+        <item name="shape_roundRect_borderWidth">0dp</item>
+        <item name="shape_roundRect_backgroundColor">#F4F5F8</item>
+        <item name="shape_roundRect_radius">4dp</item>
+    </style>
+
+
+    <!--  Others  -->
+
+
+    <style name="style_logout_btn">
+        <item name="android:fontFamily">@font/iransans_normal</item>
+        <item name="android:textColor">#2b2c44</item>
+        <item name="android:background">#eaebf0</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
 </resources>

@@ -21,14 +21,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ir.asandiag.obd.R;
+import ir.asandiag.obd.adapter.EqualSpacingItemDecoration;
 import ir.asandiag.obd.adapter.SensorItemAdapter;
 import ir.asandiag.obd.model.SensorItem;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentCheckSensors#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class FragmentCheckSensors extends BottomSheetDialogFragment implements SensorItemAdapter.OnSensorItemClickListener {
     private NavController navController;
     private List<SensorItem> sensorItems = new ArrayList<>();
@@ -91,6 +87,7 @@ public class FragmentCheckSensors extends BottomSheetDialogFragment implements S
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.addItemDecoration(new EqualSpacingItemDecoration(-10));
         recyclerView.setAdapter(new SensorItemAdapter(new SensorItemAdapter.ItemDiffCallBack(), this));
         ((SensorItemAdapter) recyclerView.getAdapter()).submitList(sensorItems);
     }

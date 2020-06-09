@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
@@ -48,7 +49,8 @@ public class CarPartAdapter extends ListAdapter<CarPartItem, CarPartAdapter.View
         if (carPartItem != null) {
             holder.carPartItem = carPartItem;
             holder.position = position;
-            ((AppCompatButton) holder.itemView).setText(carPartItem.getName());
+            AppCompatTextView content = holder.itemView.findViewById(R.id.tv_item_car_part_title);
+            content.setText(carPartItem.getName());
             holder.itemView.setOnClickListener(v -> {
                 if (onCarPartClickListener != null) {
                     onCarPartClickListener.onCarPartClicked(holder.carPartItem, position);
@@ -66,8 +68,10 @@ public class CarPartAdapter extends ListAdapter<CarPartItem, CarPartAdapter.View
                     img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_gearshift);
                     break;
             }
-            img.setBounds(0, 0, (int) dp2px(holder.itemView.getContext(),20), (int) dp2px(holder.itemView.getContext(),20));
-            ((AppCompatButton) holder.itemView).setCompoundDrawables(null, null, img, null);
+            if (img != null) {
+                img.setBounds(0, 0, (int) dp2px(holder.itemView.getContext(),20), (int) dp2px(holder.itemView.getContext(),20));
+            }
+            content.setCompoundDrawables(null, null, img, null);
 
         }
 

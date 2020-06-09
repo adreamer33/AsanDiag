@@ -3,20 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:background="#fff"
     tools:context="ir.asandiag.obd.view.signup.FragmentSignup">
 
-
-    <ImageView
-        android:id="@+id/imageView"
+    <ir.asandiag.neumorphism.shapeMode.neu.shapes.CircleView
+        style="@style/CircleView.Intro.Icon"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@android:drawable/sym_def_app_icon"
         app:layout_constraintBottom_toTopOf="@+id/guideline_signup_img_bottom"
         app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_signup_img_top" />
+        app:layout_constraintTop_toTopOf="@+id/guideline_signup_img_top">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_user" />
+    </ir.asandiag.neumorphism.shapeMode.neu.shapes.CircleView>
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_signup_title_top"
@@ -27,22 +33,14 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_signup_title"
+        style="@style/TextView.Signup.Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/iransans_medium"
-        android:gravity="end"
-        android:lineSpacingExtra="11sp"
-        android:shadowColor="#29c8c8c8"
-        android:shadowDx="-1"
-        android:shadowDy="-1"
-        android:shadowRadius="2"
         android:text="ایجاد حساب کاربری"
-        android:textColor="#555770"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/et_signup_username"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_signup_right_margin"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline_signup_left_margin"
+        app:layout_constraintBottom_toTopOf="@+id/cv_signup_username"
+        app:layout_constraintEnd_toEndOf="@id/cv_signup_username"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="@id/cv_signup_username"
         app:layout_constraintTop_toTopOf="@+id/guideline_signup_title_top"
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintVertical_chainStyle="packed" />
@@ -82,53 +80,56 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.886" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/et_signup_username"
+    <ir.asandiag.neumorphism.widgetMode.NeumorphCardView
+        android:id="@+id/cv_signup_username"
+        style="@style/CardView.Signup.Register"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:fontFamily="@font/iransans_medium"
-        android:gravity="end"
-        android:hint="نام کاربری"
-        android:lineSpacingExtra="9sp"
-        android:lines="1"
-        android:maxLength="11"
-        android:maxLines="1"
-        android:padding="15dp"
-        android:singleLine="true"
-        android:textAlignment="viewEnd"
-        android:textColor="#555770"
-        android:textColorHint="#555770"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/et_signup_phone"
+        android:layout_height="75dp"
+        android:layout_marginTop="11dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@+id/cv_signup_phone"
         app:layout_constraintEnd_toStartOf="@+id/guideline_signup_right_margin"
         app:layout_constraintStart_toStartOf="@+id/guideline_signup_left_margin"
         app:layout_constraintTop_toBottomOf="@+id/tv_signup_title"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintVertical_bias="0.56"
+        app:layout_constraintWidth_max="340dp">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/et_signup_phone"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_signup_username"
+            style="@style/EditText.Signup.Register"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:hint="نام کاربری"
+            android:inputType="textPersonName"
+            android:maxLength="11" />
+    </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>
+
+    <ir.asandiag.neumorphism.widgetMode.NeumorphCardView
+        android:id="@+id/cv_signup_phone"
+        style="@style/CardView.Signup.Register"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:fontFamily="@font/iransans_medium"
-        android:gravity="end"
-        android:hint="شمارە موبایل"
-        android:inputType="phone"
-        android:lineSpacingExtra="9sp"
-        android:lines="1"
-        android:maxLength="11"
-        android:maxLines="1"
-        android:padding="15dp"
-        android:singleLine="true"
-        android:textAlignment="viewEnd"
-        android:textColor="#555770"
-        android:textColorHint="#555770"
-        android:textSize="16sp"
+        android:layout_height="75dp"
+        android:layout_marginTop="11dp"
+        app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toTopOf="@+id/guideline_signup_btn_top"
         app:layout_constraintEnd_toStartOf="@+id/guideline_signup_right_margin"
         app:layout_constraintStart_toStartOf="@+id/guideline_signup_left_margin"
-        app:layout_constraintTop_toBottomOf="@+id/et_signup_username" />
+        app:layout_constraintTop_toBottomOf="@+id/cv_signup_username"
+        app:layout_constraintWidth_max="340dp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_signup_phone"
+            style="@style/EditText.Signup.Register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="شمارە موبایل"
+            android:inputType="phone"
+            android:maxLength="11" />
+
+    </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_signup_btn_top"
@@ -137,16 +138,19 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.802" />
 
-    <Button
+    <ir.asandiag.neumorphism.widgetMode.NeumorphButton
         android:id="@+id/btn_signup_register"
-        style="@style/style_signup_btn"
+        style="@style/Button.Signup.Login"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="ثبت نام"
+        app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toTopOf="@+id/guideline_signup_btn_bottom"
-        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintDimensionRatio="h,3.8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_min="50dp"
+        app:layout_constraintHeight_max="93dp"
+        app:layout_constraintHeight_min="73dp"
+        app:layout_constraintHeight_percent="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline_signup_btn_top"
         app:layout_constraintWidth_max="260dp"

@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.AppCompatButton xmlns:android="http://schemas.android.com/apk/res/android"
+<ir.asandiag.neumorphism.widgetMode.NeumorphCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/CardView.Home.CarPartItem"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:layout_margin="-5dp"
-    android:drawableEnd="@drawable/ic_motor_small"
-    android:drawablePadding="10dp"
-    android:fontFamily="@font/iransans_medium"
-    android:lineSpacingExtra="9sp"
-    android:paddingStart="14dp"
-    android:paddingEnd="14dp"
-    android:text="زیمنس"
-    android:textAlignment="textStart"
-    android:textColor="#202020"
-    android:textSize="16sp">
-    <!--TODO change icon-->
-</androidx.appcompat.widget.AppCompatButton>
+    android:layout_height="70dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_item_car_part_detail_title"
+        style="@style/TextView.Home.DialogItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="زیمنس"
+        app:drawableEndCompat="@drawable/ic_motor_small" />
+</ir.asandiag.neumorphism.widgetMode.NeumorphCardView>

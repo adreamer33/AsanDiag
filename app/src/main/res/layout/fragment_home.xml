@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:background="@color/bgColor"
     tools:context=".view.main.FragmentHome">
 
     <androidx.constraintlayout.widget.Guideline
@@ -22,11 +21,25 @@
         app:layout_constraintGuide_percent="0.0444" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_home_margin_left1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0344" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_home_margin_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.956" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_home_margin_right1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.976" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_home_dashboard_bottom"
@@ -74,23 +87,24 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_home_margin_left"
         app:layout_constraintTop_toTopOf="@+id/guideline_home_margin_top" />
 
-    <androidx.appcompat.widget.AppCompatImageButton
+    <ir.asandiag.neumorphism.widgetMode.NeumorphImageButton
         android:id="@+id/imgbtn_home_search"
-        android:layout_width="0dp"
+        style="@style/ImageButton.Home"
+        android:layout_width="70dp"
         android:layout_height="0dp"
-        android:padding="13.5dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_home_dashboard_bottom"
         app:layout_constraintDimensionRatio="h,1"
         app:layout_constraintEnd_toStartOf="@+id/guideline_home_margin_right"
         app:layout_constraintTop_toTopOf="@+id/guideline_home_dashboard_top"
         app:srcCompat="@drawable/ic_search" />
 
-    <androidx.appcompat.widget.AppCompatImageButton
+    <ir.asandiag.neumorphism.widgetMode.NeumorphImageButton
         android:id="@+id/imgbtn_home_sort"
-        android:layout_width="0dp"
+        style="@style/ImageButton.Home"
+        android:layout_width="70dp"
         android:layout_height="0dp"
         android:layout_marginEnd="1dp"
-        android:padding="14dp"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@+id/guideline_home_dashboard_bottom"
         app:layout_constraintDimensionRatio="h,1"
         app:layout_constraintStart_toEndOf="@+id/guideline_home_dashboard_bottom"
@@ -98,106 +112,100 @@
         app:layout_constraintTop_toTopOf="@+id/guideline_home_dashboard_top"
         app:srcCompat="@drawable/ic_sort" />
 
-    <FrameLayout
+    <ir.asandiag.neumorphism.widgetMode.NeumorphCardView
         android:id="@+id/cv_home_dashboard"
+        style="@style/CardView.Home.Dashboard"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="70dp"
         android:layout_marginStart="11dp"
         android:layout_marginEnd="11dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_home_dashboard_bottom"
-        app:layout_constraintEnd_toStartOf="@+id/imgbtn_home_search"
+        app:layout_constrainedHeight="true"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@+id/imgbtn_home_sort"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="3"
-        app:layout_constraintStart_toEndOf="@+id/imgbtn_home_sort"
-        app:layout_constraintTop_toTopOf="@+id/imgbtn_home_sort">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgbtn_home_sort"
+        app:layout_constraintWidth_max="330dp"
+        app:layout_constraintWidth_min="210dp"
+        app:layout_constraintWidth_percent="0.60">
 
-    </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/img_home_dashboard_wifi"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cv_home_dashboard"
-        app:layout_constraintDimensionRatio="h,1"
-        app:layout_constraintEnd_toStartOf="@id/img_home_dashboard_sat"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="@id/cv_home_dashboard"
-        app:layout_constraintTop_toTopOf="@+id/cv_home_dashboard"
-        app:srcCompat="@drawable/ic_wifi_signal_small" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_home_dashboard_wifi"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="15dp"
+                app:srcCompat="@drawable/ic_wifi_signal_small" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/img_home_dashboard_sat"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cv_home_dashboard"
-        app:layout_constraintDimensionRatio="h,1"
-        app:layout_constraintEnd_toStartOf="@+id/img_home_dashboard_speedometer"
-        app:layout_constraintStart_toEndOf="@+id/img_home_dashboard_wifi"
-        app:layout_constraintTop_toTopOf="@+id/cv_home_dashboard"
-        app:srcCompat="@drawable/ic_sat" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_home_dashboard_sat"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="13dp"
+                android:layout_marginBottom="15dp"
+                app:srcCompat="@drawable/ic_sat" />
 
-    <ImageView
-        android:id="@+id/img_home_dashboard_speedometer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cv_home_dashboard"
-        app:layout_constraintDimensionRatio="h,1"
-        app:layout_constraintEnd_toStartOf="@+id/img_home_dashboard_bluetooth"
-        app:layout_constraintStart_toEndOf="@id/img_home_dashboard_sat"
-        app:layout_constraintTop_toTopOf="@+id/cv_home_dashboard"
-        app:srcCompat="@drawable/ic_speedometer_small" />
+            <ImageView
+                android:id="@+id/img_home_dashboard_speedometer"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="15dp"
+                app:srcCompat="@drawable/ic_speedometer_small" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/img_home_dashboard_bluetooth"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cv_home_dashboard"
-        app:layout_constraintDimensionRatio="h,1"
-        app:layout_constraintEnd_toEndOf="@+id/cv_home_dashboard"
-        app:layout_constraintStart_toEndOf="@+id/img_home_dashboard_speedometer"
-        app:layout_constraintTop_toTopOf="@+id/cv_home_dashboard"
-        app:srcCompat="@drawable/ic_bluetooth_small" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_home_dashboard_bluetooth"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="15dp"
+                app:srcCompat="@drawable/ic_bluetooth_small" />
 
-    <androidx.appcompat.widget.AppCompatButton
+        </LinearLayout>
+    </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>
+
+
+    <ir.asandiag.neumorphism.widgetMode.NeumorphButton
         android:id="@+id/btn_home_search_obd"
+        style="@style/Button.Home.OBD"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="18dp"
-        android:fontFamily="@font/iransans_medium"
-        android:lineSpacingExtra="9sp"
+        app:layout_constraintHeight_percent="0.1"
+        android:layout_marginTop="8dp"
         android:text="جستجوی خودکار دستورات استاندارد  (obd2)"
-        android:textAlignment="center"
-        android:textColor="#202020"
-        android:textSize="16sp"
-        app:layout_constraintDimensionRatio="w,0.15"
+        app:layout_constrainedHeight="true"
+        app:layout_constrainedWidth="true"
         app:layout_constraintEnd_toStartOf="@+id/guideline_home_margin_right"
-        app:layout_constraintHeight_min="49dp"
+        app:layout_constraintHeight_max="80dp"
+        app:layout_constraintHeight_min="70dp"
         app:layout_constraintStart_toStartOf="@+id/guideline_home_margin_left"
-        app:layout_constraintTop_toTopOf="@+id/guideline_home_dashboard_bottom" />
+        app:layout_constraintTop_toTopOf="@+id/guideline_home_dashboard_bottom"
+        app:layout_constraintWidth_max="360dp"
+        app:layout_constraintWidth_min="350dp" />
 
 
     <FrameLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guideline_home_margin_right"
-        app:layout_constraintStart_toStartOf="@id/guideline_home_margin_left"
+        app:layout_constraintEnd_toEndOf="@id/guideline_home_margin_right1"
+        app:layout_constraintStart_toStartOf="@id/guideline_home_margin_left1"
         app:layout_constraintTop_toBottomOf="@+id/btn_home_search_obd">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -205,7 +213,6 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:background="@android:color/transparent"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             tools:listitem="@layout/item_company"
             tools:spanCount="2" />

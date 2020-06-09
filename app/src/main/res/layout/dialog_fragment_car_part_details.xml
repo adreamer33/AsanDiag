@@ -5,23 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="bottom|center"
-    android:background="@drawable/bg_car_parts_fragment"
+    android:background="@drawable/bg_dialog_fragment_sort"
     android:layoutDirection="ltr"
     app:layout_behavior="androidx.design.widget.BottomSheetBehaviour"
     tools:context="ir.asandiag.obd.view.main.DialogFragmentCarPartDetails"
-    tools:layout_height="270dp">
+    tools:layout_height="290dp">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_car_part_details_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/iransans_medium"
-        android:gravity="center_horizontal"
-        android:lineSpacingExtra="9sp"
+        style="@style/TextView.Home.CarPartsDialog.Title"
         android:text="موتور"
-        android:textColor="#5c5d6d"
-        android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline_car_detail_sep"
         app:layout_constraintEnd_toStartOf="@+id/guideline_car_detail_right"
         app:layout_constraintHorizontal_bias="1.0"
@@ -45,7 +40,7 @@
 
     <View
         android:layout_width="0dp"
-        android:layout_height="0.5dp"
+        android:layout_height="0.7dp"
         android:background="#5c5d6d"
         app:layout_constraintBottom_toBottomOf="@id/guideline_car_detail_sep"
         app:layout_constraintEnd_toEndOf="parent"

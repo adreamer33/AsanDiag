@@ -21,13 +21,9 @@ import java.util.List;
 
 import ir.asandiag.obd.R;
 import ir.asandiag.obd.adapter.CarPartConfigAdapter;
+import ir.asandiag.obd.adapter.EqualSpacingItemDecoration;
 import ir.asandiag.obd.model.CarPartConfigItem;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DialogFragmentCarPartConfigs#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class DialogFragmentCarPartConfigs extends BottomSheetDialogFragment implements CarPartConfigAdapter.OnCarPartConfigItemClickListener {
     private NavController navController;
     private List<CarPartConfigItem> carPartConfigItems = new ArrayList<>();
@@ -80,6 +76,7 @@ public class DialogFragmentCarPartConfigs extends BottomSheetDialogFragment impl
         final RecyclerView recyclerView = view.findViewById(R.id.rv_dialog_fragment_car_part_configs);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new CarPartConfigAdapter(new CarPartConfigAdapter.ItemDiffCallBack(), this));
+        recyclerView.addItemDecoration(new EqualSpacingItemDecoration(-10));
         ((CarPartConfigAdapter) recyclerView.getAdapter()).submitList(carPartConfigItems);
         navController = NavHostFragment.findNavController(this);
     }

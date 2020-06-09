@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
+import ir.asandiag.neumorphism.widgetMode.NeumorphCardView;
 import ir.asandiag.obd.R;
 import ir.asandiag.obd.viewmodel.main.FragmentHomeViewModel;
 
@@ -27,7 +28,7 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
     private NavController navController;
     private FragmentHomeViewModel model;
     private DrawerLayout drawer;
-    private AppCompatButton btnLogOut;
+    private NeumorphCardView btnLogOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
 
         model = new ViewModelProvider(this).get(FragmentHomeViewModel.class);
         drawer = findViewById(R.id.drawer_layout_main);
-        btnLogOut = findViewById(R.id.btn_drawer_logout);
+        btnLogOut = findViewById(R.id.cv_drawer_logout);
         
 
 

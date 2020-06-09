@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ir.asandiag.obd.R;
+import ir.asandiag.obd.adapter.EqualSpacingItemDecoration;
 import ir.asandiag.obd.adapter.MoreItemAdapter;
 import ir.asandiag.obd.model.MoreItem;
 
@@ -61,6 +62,7 @@ public class DialogFragmentSensorsMore extends BottomSheetDialogFragment impleme
         final RecyclerView recyclerView = view.findViewById(R.id.rv_dialog_fragment_more_items);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new MoreItemAdapter(new MoreItemAdapter.ItemDiffCallBack(), this));
+        recyclerView.addItemDecoration(new EqualSpacingItemDecoration(-10));
         ((MoreItemAdapter) recyclerView.getAdapter()).submitList(itemList);
         navController = NavHostFragment.findNavController(this);
     }

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
@@ -36,7 +37,7 @@ public class CarPartConfigAdapter extends ListAdapter<CarPartConfigItem, CarPart
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_car_part_detail, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_car_part_config, parent, false);
         ViewCompat.setLayoutDirection(v, ViewCompat.LAYOUT_DIRECTION_LTR);
 
         return new ViewHolder(v);
@@ -48,7 +49,8 @@ public class CarPartConfigAdapter extends ListAdapter<CarPartConfigItem, CarPart
         if (carPartConfigItem != null) {
             holder.carPartConfigItem = carPartConfigItem;
             holder.position = position;
-            ((AppCompatButton) holder.itemView).setText(carPartConfigItem.getName());
+            AppCompatTextView content = holder.itemView.findViewById(R.id.tv_item_car_part_config_title);
+            content.setText(carPartConfigItem.getName());
             holder.itemView.setOnClickListener(v -> {
                 if (onCarPartConfigItemClickListener != null) {
                     onCarPartConfigItemClickListener.onCarPartConfigItemClick(holder.carPartConfigItem, position);
@@ -87,7 +89,7 @@ public class CarPartConfigAdapter extends ListAdapter<CarPartConfigItem, CarPart
                     img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_info_circle);
             }
             img.setBounds(0, 0, (int) dp2px(holder.itemView.getContext(), 20), (int) dp2px(holder.itemView.getContext(), 20));
-            ((AppCompatButton) holder.itemView).setCompoundDrawables(null, null, img, null);
+            content.setCompoundDrawables(null, null, img, null);
 
         }
 

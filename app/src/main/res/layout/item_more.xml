@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.AppCompatButton xmlns:android="http://schemas.android.com/apk/res/android"
+<ir.asandiag.neumorphism.widgetMode.NeumorphCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/CardView.Home.SortItem"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:layout_margin="-5dp"
-    android:fontFamily="@font/iransans_medium"
-    android:lineSpacingExtra="9sp"
-    android:paddingStart="14dp"
-    android:paddingEnd="14dp"
-    android:text="موارد نمایش داده شده"
-    android:textAlignment="viewEnd"
-    android:textColor="#202020"
-    android:textSize="16sp">
-</androidx.appcompat.widget.AppCompatButton>
+    android:layout_height="70dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_item_check_sensor_more_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/iransans_medium"
+        android:gravity="center|end"
+        android:lineSpacingExtra="9sp"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:text="موارد نمایش داده شده"
+        android:textAlignment="viewEnd"
+        android:textColor="#202020"
+        android:textSize="16sp" />
+</ir.asandiag.neumorphism.widgetMode.NeumorphCardView>
