@@ -86,17 +86,25 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
         if (model != null) {
             switch (model.state.getValue()) {
                 case 0:
-                    if (drawer.isDrawerOpen(GravityCompat.START)) {
-                        drawer.closeDrawer(GravityCompat.START);
+                    if (navController.getCurrentDestination().getLabel().equals("homeFragment")) {
+                        if (drawer.isDrawerOpen(GravityCompat.START)) {
+                            drawer.closeDrawer(GravityCompat.START);
+                        } else {
+                            super.onBackPressed();
+                        }
                     } else {
-                        super.onBackPressed();
+                        navController.navigateUp();
                     }
                     break;
                 case 1:
-                    if (drawer.isDrawerOpen(GravityCompat.START)) {
-                        drawer.closeDrawer(GravityCompat.START);
+                    if (navController.getCurrentDestination().getLabel().equals("homeFragment")) {
+                        if (drawer.isDrawerOpen(GravityCompat.START)) {
+                            drawer.closeDrawer(GravityCompat.START);
+                        } else {
+                            model.state.setValue(0);
+                        }
                     } else {
-                        model.state.setValue(0);
+                        navController.navigateUp();
                     }
                     break;
                 default:
