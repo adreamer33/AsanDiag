@@ -643,5 +643,19 @@
         <item name="sb_shadow_color">#33000000</item>
     </style>
 
+    <style name="PIV.Intro" parent="">
+        <item name="piv_animationType">drop</item>
+        <item name="piv_padding">12dp</item>
+        <item name="piv_orientation">horizontal</item>
+        <item name="piv_radius">9dp</item>
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:paddingEnd">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="piv_rtl_mode">off</item>
+        <item name="piv_selectedColor">#0063f7</item>
+        <item name="piv_unselectedColor">#F7F8FA</item>
+    </style>
+
 
 </resources>

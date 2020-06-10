@@ -1,3 +1,4 @@
+include ':pageindicatorview'
 include ':switchbutton'
 include ':neumorphism'
 include ':app'

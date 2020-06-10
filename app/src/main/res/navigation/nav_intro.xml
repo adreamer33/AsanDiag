@@ -22,8 +22,8 @@
     <fragment
         android:id="@+id/fragment_intro2"
         android:name="ir.asandiag.obd.view.intro.FragmentIntro2"
-        android:label="fragment_intro2"
-        tools:layout="@layout/fragment_intro2" >
+        android:label="intro2"
+        tools:layout="@layout/fragment_intro2">
         <action
             android:id="@+id/action_fragment_intro2_to_fragment_intro3"
             app:destination="@id/fragment_intro3"
@@ -36,8 +36,8 @@
     <fragment
         android:id="@+id/fragment_intro3"
         android:name="ir.asandiag.obd.view.intro.FragmentIntro3"
-        android:label="fragment_intro3"
-        tools:layout="@layout/fragment_intro3" >
+        android:label="intro3"
+        tools:layout="@layout/fragment_intro3">
         <action
             android:id="@+id/action_fragment_intro3_to_activity_sign_up"
             app:destination="@id/activity_sign_up"
