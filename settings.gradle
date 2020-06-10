@@ -1,3 +1,4 @@
+include ':switchbutton'
 include ':neumorphism'
 include ':app'
 rootProject.name = "AsanDiag"

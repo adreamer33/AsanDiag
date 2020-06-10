@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import ir.asandiag.obd.R;
 import ir.asandiag.obd.model.ShowedItem;
+import ir.asandiag.switchbutton.SwitchButton;
 
 public class ShowedItemsAdapter extends ListAdapter<ShowedItem, ShowedItemsAdapter.ViewHolder> {
 
@@ -61,7 +62,7 @@ public class ShowedItemsAdapter extends ListAdapter<ShowedItem, ShowedItemsAdapt
                 }
             });
 
-            ((SwitchCompat) holder.itemView.findViewById(R.id.switch_item_showed_state)).setChecked(item.isEnabled());
+            ((SwitchButton) holder.itemView.findViewById(R.id.switch_item_showed_state)).setChecked(item.isEnabled());
         }
 
 

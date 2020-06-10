@@ -37,16 +37,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_item_showed_title" />
 
-        <androidx.appcompat.widget.SwitchCompat
+        <ir.asandiag.switchbutton.SwitchButton
             android:id="@+id/switch_item_showed_state"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="44dp"
+            android:layout_height="25dp"
             android:layout_marginStart="18dp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_item_showed_title"
             app:layout_constraintEnd_toStartOf="@+id/tv_item_showed_title"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_item_showed_title" />
+            app:layout_constraintTop_toTopOf="@+id/tv_item_showed_title"
+            style="@style/SwitchButton.ShowedItems" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>
