@@ -90,7 +90,7 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
         rvItems.setLayoutManager(gridLayoutManager);
         rvItems.setNestedScrollingEnabled(false);
         // For example 10 pixels
-        int spaceInPixels = 20;
+        int spaceInPixels = 10;
         rvItems.setHasFixedSize(true);
         rvItems.addItemDecoration(new EqualSpacingItemDecoration(-spaceInPixels));
         initRecyclerView();

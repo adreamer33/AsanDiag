@@ -113,6 +113,11 @@
         <item name="neumorph_cornerSize">4dp</item>
     </style>
 
+    <style name="ShapeAppearance.Home.CompanyItem" parent="">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">4dp</item>
+    </style>
+
     <style name="ShapeAppearance.Home.CarPartItem" parent="">
         <item name="neumorph_cornerFamily">rounded</item>
         <item name="neumorph_cornerSize">4dp</item>
@@ -373,7 +378,7 @@
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
         <item name="neumorph_shadowColorDark">#ADCFCFCF</item>
-        <item name="neumorph_shadowColorLight">#4D0063F7</item>
+        <item name="neumorph_shadowColorLight">#610063f7</item>
         <item name="neumorph_shadowElevation">3dp</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Signup</item>
         <item name="neumorph_shapeType">flat</item>
@@ -545,6 +550,28 @@
         <item name="neumorph_shapeType">flat</item>
         <item name="neumorph_backgroundColor">#e9eaed</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.SortItem</item>
+        <item name="layout_constrainedWidth">true</item>
+        <item name="layout_constraintWidth_max">320dp</item>
+    </style>
+
+    <style name="CardView.Home.CompanyItem" parent="">
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
+        <item name="android:minHeight">72dip</item>
+        <item name="android:minWidth">112dip</item>
+        <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="neumorph_shadowElevation">5dp</item>
+        <item name="neumorph_shadowColorLight">#D8FFFFFF</item>
+        <item name="neumorph_shadowColorDark">#23000000</item>
+        <item name="neumorph_shapeType">flat</item>
+        <item name="neumorph_backgroundColor">#F4F5F8</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.CompanyItem</item>
         <item name="layout_constrainedWidth">true</item>
         <item name="layout_constraintWidth_max">320dp</item>
     </style>
