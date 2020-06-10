@@ -1,12 +1,10 @@
 package ir.asandiag.obd.view.intro;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
-
-import android.graphics.pdf.PdfDocument;
-import android.os.Bundle;
-import android.util.Log;
 
 import ir.asandiag.obd.R;
 import ir.asandiag.pageindicatorview.PageIndicatorView;
