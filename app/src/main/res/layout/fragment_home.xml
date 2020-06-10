@@ -195,7 +195,7 @@
         app:layout_constraintHeight_min="70dp"
         app:layout_constraintStart_toStartOf="@+id/guideline_home_margin_left"
         app:layout_constraintTop_toTopOf="@+id/guideline_home_dashboard_bottom"
-        app:layout_constraintWidth_max="360dp"
+        app:layout_constraintWidth_max="380dp"
         app:layout_constraintWidth_min="350dp" />
 
 
