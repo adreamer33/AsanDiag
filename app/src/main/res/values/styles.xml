@@ -364,7 +364,7 @@
         <item name="android:textSize">18sp</item>
 
         <item name="android:gravity">center_vertical|center_horizontal</item>
-        <item name="android:padding">@dimen/design_default_shadow_padding</item>
+        <item name="android:padding">10dp</item>
         <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
         <item name="android:minHeight">72dip</item>
         <item name="android:minWidth">112dip</item>
@@ -373,7 +373,7 @@
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
         <item name="neumorph_shadowColorDark">#ADCFCFCF</item>
-        <item name="neumorph_shadowColorLight">#610063f7</item>
+        <item name="neumorph_shadowColorLight">#4D0063F7</item>
         <item name="neumorph_shadowElevation">3dp</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Signup</item>
         <item name="neumorph_shapeType">flat</item>

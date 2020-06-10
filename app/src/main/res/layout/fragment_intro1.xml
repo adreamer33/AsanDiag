@@ -64,7 +64,7 @@
         app:layout_constraintWidth_max="290dp"
         app:layout_constraintWidth_percent="0.69" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/btn_intro1_login"
         style="@style/TextView.Intro.Login"
         android:layout_width="wrap_content"

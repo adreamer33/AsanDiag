@@ -13,11 +13,6 @@ import android.view.ViewGroup;
 
 import ir.asandiag.obd.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentSignup#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class FragmentSignup extends Fragment {
 
     private NavController navController;

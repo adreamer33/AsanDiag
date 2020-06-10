@@ -12,11 +12,6 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import ir.asandiag.obd.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentLogin#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class FragmentLogin extends Fragment {
 
     private NavController navController;
