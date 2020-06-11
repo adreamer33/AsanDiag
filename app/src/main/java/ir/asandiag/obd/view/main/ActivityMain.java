@@ -38,7 +38,6 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
         model = new ViewModelProvider(this).get(FragmentHomeViewModel.class);
         drawer = findViewById(R.id.drawer_layout_main);
         btnLogOut = findViewById(R.id.cv_drawer_logout);
-        
 
 
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_main_host_fragment);
@@ -90,7 +89,16 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
                         if (drawer.isDrawerOpen(GravityCompat.START)) {
                             drawer.closeDrawer(GravityCompat.START);
                         } else {
-                            super.onBackPressed();
+                            switch (model.motionState.getValue()) {
+                                case R.id.items_search:
+                                    FragmentHome.hideSearch(R.id.items_search, true);
+                                    break;
+                                case R.id.items_search_no_obd:
+                                    FragmentHome.hideSearch(R.id.items_search_no_obd, false);
+                                    break;
+                                default:
+                                    super.onBackPressed();
+                            }
                         }
                     } else {
                         navController.navigateUp();
@@ -101,7 +109,16 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
                         if (drawer.isDrawerOpen(GravityCompat.START)) {
                             drawer.closeDrawer(GravityCompat.START);
                         } else {
-                            model.state.setValue(0);
+                            switch (model.motionState.getValue()) {
+                                case R.id.items_search:
+                                    FragmentHome.hideSearch(R.id.items_search, true);
+                                    break;
+                                case R.id.items_search_no_obd:
+                                    FragmentHome.hideSearch(R.id.items_search_no_obd, false);
+                                    break;
+                                default:
+                                    model.state.setValue(0);
+                            }
                         }
                     } else {
                         navController.navigateUp();
@@ -126,6 +143,7 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
             drawer.openDrawer(GravityCompat.START);
         }
     }
+
     public void closeDrawer() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);

@@ -328,6 +328,23 @@
 
     </style>
 
+    <style name="EditText.Home.Search" parent="EditText">
+        <item name="fontFamily">@font/iransans_normal</item>
+        <item name="hintTextColor">#78202020</item>
+        <item name="android:textColor">#202020</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">end|center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:maxLength">20</item>
+        <item name="android:inputType">text</item>
+        <item name="singleLine">true</item>
+        <item name="android:lines">1</item>
+        <item name="android:textAlignment">viewEnd</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+
+    </style>
+
 
     <!--  Button  -->
 
@@ -415,9 +432,8 @@
         <item name="android:lineSpacingExtra">11sp</item>
         <item name="fontFamily">@font/iransans_normal</item>
 
-        <item name="android:gravity">center_vertical|center_horizontal</item>
-        <item name="android:padding">@dimen/design_default_shadow_padding</item>
-        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
         <item name="android:minHeight">72dip</item>
         <item name="android:minWidth">112dip</item>
 
@@ -436,19 +452,6 @@
     <!--  ImageButton  -->
     <style name="ImageButton" parent="Widget.Neumorph.ImageButton" />
 
-    <style name="ImageButton.Home" parent="ImageButton">
-        <item name="android:padding">10dp</item>
-        <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
-        <item name="android:focusable">true</item>
-        <item name="android:clickable">true</item>
-        <item name="android:scaleType">center</item>
-        <item name="neumorph_shadowElevation">6dp</item>
-        <item name="neumorph_shadowColorLight">#f5f6f9</item>
-        <item name="neumorph_shadowColorDark">#e1e2e6</item>
-        <item name="neumorph_shapeType">flat</item>
-        <item name="neumorph_backgroundColor">#80E1E2E6</item>
-        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.ImageButton</item>
-    </style>
 
     <style name="ImageButton.CheckSensorsMore" parent="ImageButton">
         <item name="android:padding">10dp</item>
@@ -459,6 +462,20 @@
         <item name="neumorph_shadowElevation">6dp</item>
         <item name="neumorph_shadowColorLight">#f5f6f9</item>
         <item name="neumorph_shadowColorDark">#26131313</item>
+        <item name="neumorph_shapeType">flat</item>
+        <item name="neumorph_backgroundColor">#80E1E2E6</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.ImageButton</item>
+    </style>
+
+    <style name="ImageButton.Home" parent="">
+        <item name="android:padding">10dp</item>
+        <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:scaleType">center</item>
+        <item name="neumorph_shadowElevation">8dp</item>
+        <item name="neumorph_shadowColorLight">#f5f6f9</item>
+        <item name="neumorph_shadowColorDark">#e1e2e6</item>
         <item name="neumorph_shapeType">flat</item>
         <item name="neumorph_backgroundColor">#80E1E2E6</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.ImageButton</item>
@@ -618,6 +635,19 @@
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.CarPartItem</item>
         <item name="layout_constrainedWidth">true</item>
         <item name="layout_constraintWidth_max">320dp</item>
+    </style>
+
+    <style name="CardView.Home.Search" parent="CardView">
+        <item name="android:padding">10dp</item>
+        <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="neumorph_shadowElevation">8dp</item>
+        <item name="neumorph_shadowColorLight">#f5f6f9</item>
+        <item name="neumorph_shadowColorDark">#e1e2e6</item>
+        <item name="neumorph_shapeType">flat</item>
+        <item name="neumorph_backgroundColor">#80E1E2E6</item>
+        <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.ImageButton</item>
     </style>
 
 

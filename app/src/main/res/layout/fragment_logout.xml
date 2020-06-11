@@ -154,7 +154,7 @@
         app:layout_constraintHeight_max="90dp"
         android:text="خروج از حساب کاربری"
         app:layout_constraintBottom_toTopOf="@+id/guideline_logout_btn_bottom"
-        app:layout_constraintDimensionRatio="w,1:3.8"
+        app:layout_constraintDimensionRatio="w,3.8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_min="50dp"
         app:layout_constraintStart_toStartOf="parent"

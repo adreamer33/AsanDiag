@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel;
 
 public class FragmentHomeViewModel extends AndroidViewModel {
     public MutableLiveData<Integer> state = new MutableLiveData<>(0);
+    public MutableLiveData<Integer> motionState = new MutableLiveData<>(0);
 
     public FragmentHomeViewModel(@NonNull Application application) {
         super(application);

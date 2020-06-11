@@ -313,7 +313,11 @@ public class NeumorphShapeDrawable extends Drawable {
         if (dirty) {
             calculateOutlinePath(getBoundsAsRectF(), outlinePath);
             if (shadow != null) {
-                shadow.updateShadowBitmap(getBoundsInternal());
+                try {
+                    shadow.updateShadowBitmap(getBoundsInternal());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
             dirty = false;
         }
