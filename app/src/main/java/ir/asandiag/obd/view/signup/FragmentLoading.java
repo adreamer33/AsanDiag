@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -12,16 +13,15 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import ir.asandiag.obd.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentLoading#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class FragmentLoading extends Fragment {
     private NavController navController;
+    private AppCompatImageView imgLoading;
+    private int durationMillis=700;
 
     public FragmentLoading() {
         // Required empty public constructor
@@ -47,7 +47,7 @@ public class FragmentLoading extends Fragment {
         new Handler().postDelayed(() -> {
             navController.navigate(FragmentLoadingDirections.actionFragmentLoadingToActivityMain());
             requireActivity().finish();
-        }, 700);
+        }, durationMillis);
     }
 
     @Override
@@ -59,6 +59,11 @@ public class FragmentLoading extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = NavHostFragment.findNavController(this);
+
+        imgLoading = view.findViewById(R.id.img_loading);
+        Animation anim = AnimationUtils.loadAnimation(requireActivity(), R.anim.rotate);
+        anim.setDuration(durationMillis);
+        imgLoading.startAnimation(anim);
     }
 
     @Override
