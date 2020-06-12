@@ -23,6 +23,7 @@
         </activity>
         <activity
             android:name=".view.main.ActivityMain"
+            android:configChanges="uiMode"
             android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

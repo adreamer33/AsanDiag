@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  ActivityMain  -->
+    <attr name="startColorBgMain" format="color" />
+    <attr name="endColorBgMain" format="color" />
+
+    <attr name="bgColorIntro" format="color" />
+    <attr name="bgColorSignup" format="color" />
+    <attr name="bgColorDialog" format="color" />
+    <attr name="bgColorItemSensorMinMax" format="color" />
+
+
+
+    <attr name="fillColorIconUser" format="color" />
+    <attr name="fillColorDialogIcons" format="color" />
+    <attr name="fillColorDialogSortIcons" format="color" />
+
+    <attr name="textColorDialogTitle" format="color" />
+    <attr name="textColorDialogItem" format="color" />
+    <attr name="textColorCarCompanyItem" format="color" />
+    <attr name="textColorDrawerItem" format="color" />
+    <attr name="textColorDrawerTitle" format="color" />
+    <attr name="textColorDrawerAppVersion" format="color" />
+    <attr name="textColorTextViewIntroLogin" format="color" />
+    <attr name="textColorTextViewIntro" format="color" />
+    <attr name="textColorTextViewSingupLogin" format="color" />
+    <attr name="textColorTextViewSingupRegister" format="color" />
+    <attr name="textColorTextViewSingupLoading" format="color" />
+
+    <!--    EditTextSignupRegister    -->
+    <attr name="textColorEditTextSigupRegister" format="color" />
+    <attr name="hintTextColorEditTextSigupRegister" format="color" />
+
+
+    <!--    EditTextHomeSearch    -->
+    <attr name="textColorEditTextHomeSearch" format="color" />
+    <attr name="hintTextColorEditTextHomeSearch" format="color" />
+
+    <!--    ButtonIntroNext    -->
+    <attr name="textColorButtonIntroNext" format="color" />
+    <attr name="shadowColorDarkButtonIntroNext" format="color" />
+    <attr name="shadowColorLightButtonIntroNext" format="color" />
+    <attr name="bgColorButtonIntroNext" format="color" />
+
+    <!--    ButtonSignupLogin    -->
+    <attr name="textColorButtonSignupLogin" format="color" />
+    <attr name="shadowColorDarkButtonSignupLogin" format="color" />
+    <attr name="shadowColorLightButtonSignupLogin" format="color" />
+    <attr name="bgColorButtonSignupLogin" format="color" />
+
+    <!--    ButtonHomeOBD    -->
+    <attr name="textColorButtonHomeOBD" format="color" />
+    <attr name="shadowColorDarkButtonHomeOBD" format="color" />
+    <attr name="shadowColorLightButtonHomeOBD" format="color" />
+    <attr name="bgColorButtonHomeOBD" format="color" />
+
+    <!--    ButtonLogout    -->
+    <attr name="textColorButtonLogout" format="color" />
+    <attr name="shadowColorDarkButtonLogout" format="color" />
+    <attr name="shadowColorLightButtonLogout" format="color" />
+    <attr name="bgColorButtonLogout" format="color" />
+
+    <!--    ImageButtonCheckSensorsMore    -->
+    <attr name="shadowColorDarkImageButtonCheckSensorsMore" format="color" />
+    <attr name="shadowColorLightImageButtonCheckSensorsMore" format="color" />
+    <attr name="bgColorImageButtonCheckSensorsMore" format="color" />
+
+    <!--    ImageButtonHome    -->
+    <attr name="shadowColorDarkImageButtonHome" format="color" />
+    <attr name="shadowColorLightImageButtonHome" format="color" />
+    <attr name="bgColorImageButtonHome" format="color" />
+
+    <!--    CircleViewIntroIcon    -->
+    <attr name="shadowColorDarkCircleViewIntroIcon" format="color" />
+    <attr name="shadowColorLightCircleViewIntroIcon" format="color" />
+    <attr name="bgColorCircleViewIntroIcon" format="color" />
+    <attr name="borderColorCircleViewIntroIcon" format="color" />
+
+    <!--  PageIndicatorView  -->
+    <attr name="selectedColorPIV" format="color"/>
+    <attr name="unselectedColorPIV" format="color"/>
+
+
+
+    <!--  Switch  -->
+    <attr name="colorSwitchChecked" format="color" />
+    <attr name="colorSwitchUnchecked" format="color" />
+    <attr name="colorSwitchButton" format="color" />
+    <attr name="colorSwitchBackground" format="color" />
+    <attr name="colorSwitchShadow" format="color" />
+
+    <!--  SortItem  -->
+    <attr name="shadowColorLightSortItem" format="color" />
+    <attr name="shadowColorDarkSortItem" format="color" />
+    <attr name="bgColorSortItem" format="color" />
+
+    <!--  CompanyItem  -->
+    <attr name="shadowColorLightCompanyItem" format="color" />
+    <attr name="shadowColorDarkCompanyItem" format="color" />
+    <attr name="bgColorCompanyItem" format="color" />
+
+    <!--  CheckSensorItem  -->
+    <attr name="shadowColorLightCheckSensorItem" format="color" />
+    <attr name="shadowColorDarkCheckSensorItem" format="color" />
+    <attr name="bgColorCheckSensorItem" format="color" />
+
+    <!--  SearchImageButton  -->
+    <attr name="shadowColorLightSearchImageButton" format="color" />
+    <attr name="shadowColorDarkSearchImageButton" format="color" />
+    <attr name="bgColorSearchImageButton" format="color" />
+
+    <!--  CarPartCardView  -->
+    <attr name="shadowColorLightCarPartCardView" format="color" />
+    <attr name="shadowColorDarkCarPartCardView" format="color" />
+    <attr name="bgColorCarPartCardView" format="color" />
+
+    <!--  DrawerButtonCardView  -->
+    <attr name="shadowColorLightDrawerButtonCardView" format="color" />
+    <attr name="shadowColorDarkDrawerButtonCardView" format="color" />
+    <attr name="bgColorDrawerButtonCardView" format="color" />
+
+    <!--  DashboardCardView  -->
+    <attr name="shadowColorLightDashboardCardView" format="color" />
+    <attr name="shadowColorDarkDashboardCardView" format="color" />
+    <attr name="bgColorDashboardCardView" format="color" />
+
+    <!--  RegisterCardView  -->
+    <attr name="shadowColorLightRegisterCardView" format="color" />
+    <attr name="shadowColorDarkRegisterCardView" format="color" />
+    <attr name="bgColorRegisterCardView" format="color" />
+
+
+    <attr name="bgColorMain" format="color" />
+    <attr name="fillColorIconMain" format="color" />
+</resources>

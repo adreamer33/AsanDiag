@@ -4,11 +4,9 @@
     <color name="colorPrimaryDark">#BFBDBD</color>
     <color name="colorAccent">#e2e3e7</color>\
     <color name="bgColor">#ebebeb</color>
-    <color name="bgCarDetail">#F1F1F1</color>
 
     <color name="iconFillColorIntro">#3074ff</color>
     <color name="btnNextTextColorIntro">#3e7afa</color>
-    <color name="tvTextColorIntro">#7d8490</color>
     <color name="btnLoginBackgroundSignup">#0063f7</color>
     <color name="btnLoginTextColorSignup">#fff</color>
     <color name="bgDrawerLayoutColor">#F1F1F1</color>
