@@ -30,6 +30,8 @@ public class FragmentCheckSensors extends BottomSheetDialogFragment implements S
     private List<SensorItem> sensorItems = new ArrayList<>();
     private AppCompatImageButton imgBtnBack;
     private AppCompatImageButton imgBtnMore;
+    private AppCompatImageButton fab;
+    private boolean paused = true;
 
     public FragmentCheckSensors() {
         // Required empty public constructor
@@ -72,7 +74,16 @@ public class FragmentCheckSensors extends BottomSheetDialogFragment implements S
         final RecyclerView recyclerView = view.findViewById(R.id.rv_check_sensors_items);
         imgBtnBack = view.findViewById(R.id.imgBtn_check_sensors_back);
         imgBtnMore = view.findViewById(R.id.imgBtn_check_sensors_more);
+        fab = view.findViewById(R.id.fab_check_sensors_pause);
 
+        fab.setOnClickListener(v -> {
+            if (paused) {
+                fab.setImageResource(R.drawable.ic_play);
+            } else {
+                fab.setImageResource(R.drawable.ic_pause);
+            }
+            paused = !paused;
+        });
         imgBtnMore.setOnClickListener(v -> {
             if (navController != null) {
                 navController.navigate(FragmentCheckSensorsDirections.actionFragmentCheckSensorsToDialogFragmentSensorsMore());

@@ -4,10 +4,20 @@
     <attr name="startColorBgMain" format="color" />
     <attr name="endColorBgMain" format="color" />
 
+    <attr name="startColorBgIntro" format="color" />
+    <attr name="endColorBgIntro" format="color" />
+
+    <attr name="startColorBgSignup" format="color" />
+    <attr name="endColorBgSignup" format="color" />
+
+    <attr name="startColorBgDialog" format="color" />
+    <attr name="endColorBgDialog" format="color" />
+
     <attr name="bgColorIntro" format="color" />
     <attr name="bgColorSignup" format="color" />
     <attr name="bgColorDialog" format="color" />
     <attr name="bgColorItemSensorMinMax" format="color" />
+    <attr name="bgDrawerLayoutColor" format="color" />
 
 
 
@@ -26,6 +36,8 @@
     <attr name="textColorTextViewSingupLogin" format="color" />
     <attr name="textColorTextViewSingupRegister" format="color" />
     <attr name="textColorTextViewSingupLoading" format="color" />
+    <attr name="textColorTextViewCheckSensorItem" format="color" />
+    <attr name="textColorTextViewCheckSensorItemDesc" format="color" />
 
     <!--    EditTextSignupRegister    -->
     <attr name="textColorEditTextSigupRegister" format="color" />
@@ -128,8 +140,14 @@
     <attr name="shadowColorLightRegisterCardView" format="color" />
     <attr name="shadowColorDarkRegisterCardView" format="color" />
     <attr name="bgColorRegisterCardView" format="color" />
+    <attr name="borderColorRegisterCardView" format="color" />
 
 
     <attr name="bgColorMain" format="color" />
     <attr name="fillColorIconMain" format="color" />
+    <attr name="fillColorSortItemIcon" format="color" />
+    <attr name="fillColorDialogItemIcon" format="color" />
+
+    <attr name="fillColorFabIcon" format="color" />
+    <attr name="bgColorFabIcon" format="color" />
 </resources>

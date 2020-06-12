@@ -20,9 +20,10 @@ import com.google.android.material.navigation.NavigationView;
 
 import ir.asandiag.neumorphism.widgetMode.NeumorphCardView;
 import ir.asandiag.obd.R;
+import ir.asandiag.obd.view.MyActivity;
 import ir.asandiag.obd.viewmodel.main.FragmentHomeViewModel;
 
-public class ActivityMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ActivityMain extends MyActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private NavController navController;
     private FragmentHomeViewModel model;
@@ -33,11 +34,6 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.DarkTheme);
-        } else {
-            setTheme(R.style.LightTheme);
-        }
         setContentView(R.layout.activity_main);
 
         model = new ViewModelProvider(this).get(FragmentHomeViewModel.class);
@@ -165,20 +161,5 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    @Override
-    public void onConfigurationChanged(@NonNull Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        int currentNightMode = newConfig.uiMode & Configuration.UI_MODE_NIGHT_MASK;
-        switch (currentNightMode) {
-            case Configuration.UI_MODE_NIGHT_NO:
-                // Night mode is not active, we're using the light theme
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                break;
-            case Configuration.UI_MODE_NIGHT_YES:
-                // Night mode is active, we're using dark theme
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                break;
-        }
-        ActivityMain.this.recreate();
-    }
+
 }

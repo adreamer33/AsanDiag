@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TextViewCompatTint">
+        <attr name="drawableTintCompat" format="reference|color" />
+        <attr name="drawableTintModeCompat" format="reference" />
+    </declare-styleable>
+</resources>

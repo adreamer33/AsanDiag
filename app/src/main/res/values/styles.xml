@@ -16,31 +16,50 @@
     </style>
 
     <style name="LightTheme" parent="AppTheme">
-        <item name="startColorBgMain">#F0F1F6</item>
-        <item name="endColorBgMain">#EAEBF0</item>
+        <item name="startColorBgMain">#F7F8FA</item>
+        <item name="endColorBgMain">#E7E8ED</item>
 
 
-        <item name="bgColorIntro">#F7F8FA</item>
-        <item name="bgColorSignup">#E7E8ED</item>
+        <item name="startColorBgIntro">#F7F8FA</item>
+        <item name="endColorBgIntro">#E7E8ED</item>
+
+        <item name="startColorBgSignup">#F7F8FA</item>
+        <item name="endColorBgSignup">#E7E8ED</item>
+
+        <item name="startColorBgDialog">#F4F5F8</item>
+        <item name="endColorBgDialog">#E2E3E7</item>
+
+
         <item name="bgColorDialog">#F1F1F1</item>
         <item name="bgColorItemSensorMinMax">#ffffff</item>
+        <item name="bgDrawerLayoutColor">#f1f1f1</item>
 
         <item name="fillColorIconUser">#3074ff</item>
         <item name="fillColorDialogIcons">#FF000000</item>
         <item name="fillColorDialogSortIcons">#2b2c44</item>
         <item name="fillColorIconMain">#555770</item>
+        <item name="fillColorSortItemIcon">#2b2c44</item>
+
+        <item name="fillColorFabIcon">#555770</item>
+        <item name="bgColorFabIcon">#f5f6f9</item>
 
         <item name="textColorDialogTitle">#5c5d6d</item>
         <item name="textColorDialogItem">#202020</item>
+
         <item name="textColorCarCompanyItem">#202020</item>
+
         <item name="textColorDrawerItem">#202020</item>
         <item name="textColorDrawerTitle">#0063f7</item>
         <item name="textColorDrawerAppVersion">#A4202020</item>
+
         <item name="textColorTextViewIntroLogin">#8f90a6</item>
         <item name="textColorTextViewIntro">#7d8490</item>
+
         <item name="textColorTextViewSingupLogin">#373960</item>
         <item name="textColorTextViewSingupRegister">#555770</item>
         <item name="textColorTextViewSingupLoading">#555770</item>
+        <item name="textColorTextViewCheckSensorItem">#202020</item>
+        <item name="textColorTextViewCheckSensorItemDesc">#4d131313</item>
 
         <!--    EditTextSignupRegister    -->
         <item name="textColorEditTextSigupRegister">#555770</item>
@@ -82,8 +101,8 @@
 
         <!--    ImageButtonHome    -->
         <item name="shadowColorLightImageButtonHome">#f5f6f9</item>
-        <item name="shadowColorDarkImageButtonHome">#e1e2e6</item>
-        <item name="bgColorImageButtonHome">#80E1E2E6</item>
+        <item name="shadowColorDarkImageButtonHome">#1e131313</item>
+        <item name="bgColorImageButtonHome">#E1E2E6</item>
 
 
         <!--    CircleViewIntroIcon    -->
@@ -111,8 +130,8 @@
 
         <!--    CompanyItem    -->
         <item name="shadowColorLightCompanyItem">#D8FFFFFF</item>
-        <item name="shadowColorDarkCompanyItem">#23000000</item>
-        <item name="bgColorCompanyItem">#F4F5F8</item>
+        <item name="shadowColorDarkCompanyItem">#1E131313</item>
+        <item name="bgColorCompanyItem">#EBEBEB</item>
 
         <!--    CheckSensorItem    -->
         <item name="shadowColorLightCheckSensorItem">#4DFFFFFF</item>
@@ -144,14 +163,162 @@
         <item name="shadowColorLightRegisterCardView">#ECEEFA</item>
         <item name="shadowColorDarkRegisterCardView">#4D000000</item>
         <item name="bgColorRegisterCardView">#4FE7E8ED</item>
+        <item name="borderColorRegisterCardView">#72E7E8ED</item>
 
 
         <item name="bgColorMain">#ffffff</item>
     </style>
 
-    <style name="DarkTheme" parent="LightTheme">
-<!--        <item name="startColorBgMain">#64B5F6</item>-->
-<!--        <item name="endColorBgMain">#9575CD</item>-->
+    <style name="DarkTheme" parent="AppTheme">
+        <item name="startColorBgMain">#353A40</item>
+        <item name="endColorBgMain">#16171B</item>
+
+
+        <item name="startColorBgIntro">#34393F</item>
+        <item name="endColorBgIntro">#17181C</item>
+
+        <item name="startColorBgSignup">#34393F</item>
+        <item name="endColorBgSignup">#17181C</item>
+
+        <item name="startColorBgDialog">#1a1c1f</item>
+        <item name="endColorBgDialog">#1f2328</item>
+
+
+        <item name="bgColorDialog">#23252A</item>
+        <item name="bgColorItemSensorMinMax">#2A3037</item>
+        <item name="bgDrawerLayoutColor">#23252a</item>
+
+        <item name="fillColorIconUser">#3074FF</item>
+        <item name="fillColorDialogIcons">#EFEFEF</item>
+        <item name="fillColorDialogSortIcons">#EBEBF0</item>
+        <item name="fillColorIconMain">#ebebf0</item>
+        <item name="fillColorSortItemIcon">#ebebf0</item>
+
+        <item name="fillColorFabIcon">#fafafc</item>
+        <item name="bgColorFabIcon">#121416</item>
+
+        <item name="textColorDialogTitle">#FAFAFC</item>
+        <item name="textColorDialogItem">#EBEBF0</item>
+
+        <item name="textColorCarCompanyItem">#FAFAFC</item>
+
+        <item name="textColorDrawerItem">#FAFAFC</item>
+        <item name="textColorDrawerTitle">#0063F7</item>
+        <item name="textColorDrawerAppVersion">#A4202020</item>
+
+        <item name="textColorTextViewIntroLogin">#8F90A6</item>
+        <item name="textColorTextViewIntro">#7d8490</item>
+
+        <item name="textColorTextViewSingupLogin">#FFFFFF</item>
+        <item name="textColorTextViewSingupRegister">#F8F8F8</item>
+        <item name="textColorTextViewSingupLoading">#F8F8F8</item>
+        <item name="textColorTextViewCheckSensorItem">#fafafc</item>
+        <item name="textColorTextViewCheckSensorItemDesc">#4dfafafc</item>
+
+        <!--    EditTextSignupRegister    -->
+        <item name="textColorEditTextSigupRegister">#fafafc</item>
+        <item name="hintTextColorEditTextSigupRegister">#87979797</item>
+
+
+        <!--    EditTextHomeSearch    -->
+        <item name="textColorEditTextHomeSearch">#E5E5E5</item>
+        <item name="hintTextColorEditTextHomeSearch">#D1D1D1</item>
+
+        <!--    ButtonIntroNext    -->
+        <item name="textColorButtonIntroNext">#3E7AFA</item>
+        <item name="shadowColorLightButtonIntroNext">#02FFFFFF</item>
+        <item name="shadowColorDarkButtonIntroNext">#111111</item>
+
+        <!--    ButtonSignupLogin    -->
+        <item name="textColorButtonSignupLogin">#ffffff</item>
+        <item name="shadowColorLightButtonSignupLogin">#26AACCFE</item>
+        <item name="shadowColorDarkButtonSignupLogin">#000000</item>
+        <item name="bgColorButtonSignupLogin">#0063F7</item>
+
+        <!--    ButtonHomeOBD    -->
+        <item name="textColorButtonHomeOBD">#FFFFFF</item>
+        <item name="shadowColorLightButtonHomeOBD">#0DFFFFFF</item>
+        <item name="shadowColorDarkButtonHomeOBD">#4D000000</item>
+        <item name="bgColorButtonHomeOBD">#1f2328</item>
+
+        <!--    ButtonLogout    -->
+        <item name="textColorButtonLogout">#fafafc</item>
+        <item name="shadowColorLightButtonLogout">#0eFFFFFF</item>
+        <item name="shadowColorDarkButtonLogout">#000000</item>
+        <item name="bgColorButtonLogout">#22252A</item>
+
+
+        <!--    ImageButtonCheckSensorsMore    -->
+        <item name="shadowColorLightImageButtonCheckSensorsMore">#0fFFFFFF</item>
+        <item name="shadowColorDarkImageButtonCheckSensorsMore">#000000</item>
+        <item name="bgColorImageButtonCheckSensorsMore">#17181C</item>
+
+        <!--    ImageButtonHome    -->
+        <item name="shadowColorLightImageButtonHome">#1AFFFFFF</item>
+        <item name="shadowColorDarkImageButtonHome">#4D000000</item>
+        <item name="bgColorImageButtonHome">#25292e</item>
+
+
+        <!--    CircleViewIntroIcon    -->
+        <item name="shadowColorLightCircleViewIntroIcon">#404347</item>
+        <item name="shadowColorDarkCircleViewIntroIcon">#161719</item>
+        <item name="bgColorCircleViewIntroIcon">#2A2E33</item>
+        <item name="borderColorCircleViewIntroIcon">#707070</item>
+
+        <!--    PageIndicatorView    -->
+        <item name="selectedColorPIV">#0063f7</item>
+        <item name="unselectedColorPIV">#CC1A1B20</item>
+
+
+        <!-- Switch -->
+        <item name="colorSwitchChecked">#3568D4</item>
+        <item name="colorSwitchUnchecked">#1C2024</item>
+        <item name="colorSwitchButton">#FFFFFF</item>
+        <item name="colorSwitchBackground">#66FFFFFF</item>
+        <item name="colorSwitchShadow">#33000000</item>
+
+        <!--    SortItem    -->
+        <item name="shadowColorLightSortItem">#0eFFFFFF</item>
+        <item name="shadowColorDarkSortItem">#000000</item>
+        <item name="bgColorSortItem">#1F2328</item>
+
+        <!--    CompanyItem    -->
+        <item name="shadowColorLightCompanyItem">#0dFFFFFF</item>
+        <item name="shadowColorDarkCompanyItem">#4d000000</item>
+        <item name="bgColorCompanyItem">#1f2328</item>
+
+        <!--    CheckSensorItem    -->
+        <item name="shadowColorLightCheckSensorItem">#0eFFFFFF</item>
+        <item name="shadowColorDarkCheckSensorItem">#000000</item>
+        <item name="bgColorCheckSensorItem">#1F2328</item>
+
+
+        <!--    SearchImageButton    -->
+        <item name="shadowColorLightSearchImageButton">#1AFFFFFF</item>
+        <item name="shadowColorDarkSearchImageButton">#4D000000</item>
+        <item name="bgColorSearchImageButton">#25292e</item>
+
+        <!--    CarPartCardView    -->
+        <item name="shadowColorLightCarPartCardView">#0eFFFFFF</item>
+        <item name="shadowColorDarkCarPartCardView">#4d000000</item>
+        <item name="bgColorCarPartCardView">#1a1c1f</item>
+
+        <!--    DrawerButtonCardView    -->
+        <item name="shadowColorLightDrawerButtonCardView">#0eFFFFFF</item>
+        <item name="shadowColorDarkDrawerButtonCardView">#000000</item>
+        <item name="bgColorDrawerButtonCardView">#1E2227</item>
+
+        <!--    DashboardCardView    -->
+        <item name="shadowColorLightDashboardCardView">#1AFFFFFF</item>
+        <item name="shadowColorDarkDashboardCardView">#6B000000</item>
+        <!--        <item name="bgColorDashboardCardView"></item>-->
+
+        <!--    RegisterCardView    -->
+        <item name="shadowColorLightRegisterCardView">#1AECEEFA</item>
+        <item name="shadowColorDarkRegisterCardView">#4D000000</item>
+        <item name="bgColorRegisterCardView">#4f23262A</item>
+        <item name="borderColorRegisterCardView">#7223252a</item>
+
     </style>
 
 
@@ -280,6 +447,24 @@
 
     </style>
 
+
+    <style name="TextView.Home.CheckSensorItem" parent="">
+        <item name="android:fontFamily">@font/iransans_medium</item>
+        <item name="android:gravity">end</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+        <item name="android:textColor">?attr/textColorTextViewCheckSensorItem</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
+    <style name="TextView.Home.CheckSensorItem.Description" parent="">
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:gravity">end</item>
+        <item name="android:lineSpacingExtra">3sp</item>
+        <item name="android:textColor">?attr/textColorTextViewCheckSensorItemDesc</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
     <style name="TextView.Intro.Title" parent="TextView.Intro">
         <item name="android:textColor">?attr/textColorTextViewIntro</item>
         <item name="android:textSize">22sp</item>
@@ -326,6 +511,14 @@
         <item name="android:lineSpacingExtra">11sp</item>
         <item name="android:textColor">?attr/textColorTextViewSingupLoading</item>
         <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextView.Home.Title" parent="TextView.Home.">
+        <item name="android:fontFamily">@font/iransans_medium</item>
+        <item name="android:gravity">end</item>
+        <item name="android:lineSpacingExtra">11sp</item>
+        <item name="android:textColor">?attr/fillColorIconMain</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
 
@@ -454,8 +647,8 @@
 
     <style name="EditText.Signup.Register" parent="EditText.Signup">
         <item name="fontFamily">@font/iransans_normal</item>
-        <item name="hintTextColor">?attr/textColorEditTextSigupRegister</item>
-        <item name="android:textColor">?attr/hintTextColorEditTextSigupRegister</item>
+        <item name="android:textColorHint">?attr/hintTextColorEditTextSigupRegister</item>
+        <item name="android:textColor">?attr/textColorEditTextSigupRegister</item>
         <item name="android:textSize">16sp</item>
         <item name="android:padding">15dp</item>
         <item name="android:gravity">end</item>
@@ -469,7 +662,7 @@
 
     <style name="EditText.Home.Search" parent="EditText">
         <item name="fontFamily">@font/iransans_normal</item>
-        <item name="hintTextColor">?attr/hintTextColorEditTextHomeSearch</item>
+        <item name="android:textColorHint">?attr/hintTextColorEditTextHomeSearch</item>
         <item name="android:textColor">?attr/textColorEditTextHomeSearch</item>
         <item name="android:textSize">16sp</item>
         <item name="android:padding">5dp</item>
@@ -599,8 +792,10 @@
         <item name="android:clickable">true</item>
         <item name="android:scaleType">center</item>
         <item name="neumorph_shadowElevation">6dp</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightImageButtonCheckSensorsMore</item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkImageButtonCheckSensorsMore</item>
+        <item name="neumorph_shadowColorLight">?attr/shadowColorLightImageButtonCheckSensorsMore
+        </item>
+        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkImageButtonCheckSensorsMore
+        </item>
         <item name="neumorph_shapeType">flat</item>
         <item name="neumorph_backgroundColor">?attr/bgColorImageButtonCheckSensorsMore</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.ImageButton</item>
@@ -646,12 +841,12 @@
 
     <style name="CardView.Signup.Register" parent="">
         <item name="android:padding">@dimen/design_default_shadow_padding</item>
-        <item name="neumorph_backgroundColor">?attr/shadowColorLightRegisterCardView</item>
+        <item name="neumorph_backgroundColor">?attr/bgColorRegisterCardView</item>
         <item name="neumorph_shadowColorDark">?attr/shadowColorDarkRegisterCardView</item>
-        <item name="neumorph_shadowColorLight">?attr/bgColorRegisterCardView</item>
+        <item name="neumorph_shadowColorLight">?attr/shadowColorLightRegisterCardView</item>
         <item name="neumorph_shadowElevation">5dp</item>
         <item name="neumorph_shapeType">pressed</item>
-        <item name="neumorph_strokeColor">#72E7E8ED</item>
+        <item name="neumorph_strokeColor">?attr/borderColorRegisterCardView</item>
         <item name="neumorph_strokeWidth">1dp</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Signup.Register</item>
     </style>
@@ -792,39 +987,39 @@
 
 
     <!--    RoundRectView-->
-<!--    <style name="RoundRectView" parent="" />-->
+    <!--    <style name="RoundRectView" parent="" />-->
 
-<!--    <style name="RoundRectView.Home" parent="RoundRectView" />-->
+    <!--    <style name="RoundRectView.Home" parent="RoundRectView" />-->
 
-<!--    <style name="RoundRectView.Home.ItemCompany" parent="RoundRectView.Home">-->
-<!--        <item name="shape_roundRect_shadow_position_x">5dp</item>-->
-<!--        <item name="shape_roundRect_shadow_position_y">4dp</item>-->
-<!--        <item name="shape_roundRect_shadow_type">drop_shadow</item>-->
-<!--        <item name="shape_roundRect_dark_color">#23000000</item>-->
-<!--        <item name="shape_roundRect_light_color">#D8FFFFFF</item>-->
-<!--        <item name="shape_roundRect_topLeftRadius">4dp</item>-->
-<!--        <item name="shape_roundRect_topRightRadius">4dp</item>-->
-<!--        <item name="shape_roundRect_bottomRightRadius">4dp</item>-->
-<!--        <item name="shape_roundRect_bottomLeftRadius">4dp</item>-->
-<!--        <item name="shape_roundRect_borderWidth">0dp</item>-->
-<!--        <item name="shape_roundRect_backgroundColor">#F4F5F8</item>-->
-<!--        <item name="shape_roundRect_radius">4dp</item>-->
-<!--    </style>-->
+    <!--    <style name="RoundRectView.Home.ItemCompany" parent="RoundRectView.Home">-->
+    <!--        <item name="shape_roundRect_shadow_position_x">5dp</item>-->
+    <!--        <item name="shape_roundRect_shadow_position_y">4dp</item>-->
+    <!--        <item name="shape_roundRect_shadow_type">drop_shadow</item>-->
+    <!--        <item name="shape_roundRect_dark_color">#23000000</item>-->
+    <!--        <item name="shape_roundRect_light_color">#D8FFFFFF</item>-->
+    <!--        <item name="shape_roundRect_topLeftRadius">4dp</item>-->
+    <!--        <item name="shape_roundRect_topRightRadius">4dp</item>-->
+    <!--        <item name="shape_roundRect_bottomRightRadius">4dp</item>-->
+    <!--        <item name="shape_roundRect_bottomLeftRadius">4dp</item>-->
+    <!--        <item name="shape_roundRect_borderWidth">0dp</item>-->
+    <!--        <item name="shape_roundRect_backgroundColor">#F4F5F8</item>-->
+    <!--        <item name="shape_roundRect_radius">4dp</item>-->
+    <!--    </style>-->
 
-<!--    <style name="RoundRectView.Home.ItemCar" parent="RoundRectView.Home">-->
-<!--        <item name="shape_roundRect_shadow_position_x">5dp</item>-->
-<!--        <item name="shape_roundRect_shadow_position_y">4dp</item>-->
-<!--        <item name="shape_roundRect_shadow_type">drop_shadow</item>-->
-<!--        <item name="shape_roundRect_dark_color">#23000000</item>-->
-<!--        <item name="shape_roundRect_light_color">#D8FFFFFF</item>-->
-<!--        <item name="shape_roundRect_topLeftRadius">4dp</item>-->
-<!--        <item name="shape_roundRect_topRightRadius">4dp</item>-->
-<!--        <item name="shape_roundRect_bottomRightRadius">4dp</item>-->
-<!--        <item name="shape_roundRect_bottomLeftRadius">4dp</item>-->
-<!--        <item name="shape_roundRect_borderWidth">0dp</item>-->
-<!--        <item name="shape_roundRect_backgroundColor">#F4F5F8</item>-->
-<!--        <item name="shape_roundRect_radius">4dp</item>-->
-<!--    </style>-->
+    <!--    <style name="RoundRectView.Home.ItemCar" parent="RoundRectView.Home">-->
+    <!--        <item name="shape_roundRect_shadow_position_x">5dp</item>-->
+    <!--        <item name="shape_roundRect_shadow_position_y">4dp</item>-->
+    <!--        <item name="shape_roundRect_shadow_type">drop_shadow</item>-->
+    <!--        <item name="shape_roundRect_dark_color">#23000000</item>-->
+    <!--        <item name="shape_roundRect_light_color">#D8FFFFFF</item>-->
+    <!--        <item name="shape_roundRect_topLeftRadius">4dp</item>-->
+    <!--        <item name="shape_roundRect_topRightRadius">4dp</item>-->
+    <!--        <item name="shape_roundRect_bottomRightRadius">4dp</item>-->
+    <!--        <item name="shape_roundRect_bottomLeftRadius">4dp</item>-->
+    <!--        <item name="shape_roundRect_borderWidth">0dp</item>-->
+    <!--        <item name="shape_roundRect_backgroundColor">#F4F5F8</item>-->
+    <!--        <item name="shape_roundRect_radius">4dp</item>-->
+    <!--    </style>-->
 
 
     <!--  Others  -->

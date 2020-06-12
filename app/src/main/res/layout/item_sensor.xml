@@ -2,10 +2,10 @@
 <ir.asandiag.neumorphism.widgetMode.NeumorphCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CardView.CheckSensors.Item"
     android:layout_width="match_parent"
     android:layout_height="120dp"
     android:layout_gravity="center"
-    style="@style/CardView.CheckSensors.Item"
     tools:background="@drawable/bg_activity_main">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,14 +15,10 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_item_sensor_title"
+            style="@style/TextView.Home.CheckSensorItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/iransans_medium"
-            android:gravity="end"
-            android:lineSpacingExtra="9sp"
             android:text="زاویه دریچه گاز"
-            android:textColor="#202020"
-            android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline_item_sensor_title_right"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/fl_item_sensor_current"
@@ -65,14 +61,10 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_item_sensor_desc"
+            style="@style/TextView.Home.CheckSensorItem.Description"
             android:layout_width="94dp"
             android:layout_height="18dp"
-            android:fontFamily="@font/lato"
-            android:gravity="end"
-            android:lineSpacingExtra="3sp"
             android:text="(Range 0-100)"
-            android:textColor="#4d131313"
-            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline_item_sensor_title_right"
             app:layout_constraintHorizontal_bias="1.0"

@@ -3,13 +3,7 @@
     <color name="colorPrimary">#f1f1f1</color>
     <color name="colorPrimaryDark">#BFBDBD</color>
     <color name="colorAccent">#e2e3e7</color>\
-    <color name="bgColor">#ebebeb</color>
 
     <color name="iconFillColorIntro">#3074ff</color>
-    <color name="btnNextTextColorIntro">#3e7afa</color>
-    <color name="btnLoginBackgroundSignup">#0063f7</color>
-    <color name="btnLoginTextColorSignup">#fff</color>
-    <color name="bgDrawerLayoutColor">#F1F1F1</color>
     <color name="fillColorViewSeperator">#5c5d6d</color>
-    <color name="fillColorArrowBackFragmentCheckSensors">#555770</color>
 </resources>

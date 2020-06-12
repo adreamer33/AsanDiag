@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="?attr/bgColorIntro" />
+    <gradient
+        android:angle="45"
+        android:useLevel="false"
+        android:endColor="?attr/endColorBgIntro"
+        android:startColor="?attr/startColorBgIntro"
+        android:type="linear" />
 </shape>

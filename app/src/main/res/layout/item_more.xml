@@ -6,15 +6,9 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_item_check_sensor_more_title"
+        style="@style/TextView.Home.DialogItem"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fontFamily="@font/iransans_medium"
-        android:gravity="center|end"
         android:lineSpacingExtra="9sp"
-        android:paddingStart="14dp"
-        android:paddingEnd="14dp"
-        android:text="موارد نمایش داده شده"
-        android:textAlignment="viewEnd"
-        android:textColor="#202020"
-        android:textSize="16sp" />
+        android:text="موارد نمایش داده شده" />
 </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>

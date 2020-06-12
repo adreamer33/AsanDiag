@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import ir.asandiag.obd.R;
+import ir.asandiag.obd.view.MyActivity;
 
-public class ActivitySignUp extends AppCompatActivity {
+public class ActivitySignUp extends MyActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

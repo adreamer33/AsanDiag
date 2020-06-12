@@ -7,9 +7,10 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import ir.asandiag.obd.R;
+import ir.asandiag.obd.view.MyActivity;
 import ir.asandiag.pageindicatorview.PageIndicatorView;
 
-public class ActivityIntro extends AppCompatActivity {
+public class ActivityIntro extends MyActivity {
     private PageIndicatorView pageIndicatorView;
     private NavController navController;
 

@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="70dp">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <ir.asandiag.compat.TextViewCompatTint
         android:id="@+id/tv_item_car_part_config_title"
         style="@style/TextView.Home.DialogItem"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="بررسی سنسورها"
-        app:drawableEndCompat="@drawable/ic_sensor" />
+        app:drawableEndCompat="@drawable/ic_sensor"
+        app:drawableTintCompat="?attr/fillColorDialogIcons" />
 </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>
