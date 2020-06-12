@@ -518,7 +518,7 @@
     </style>
 
     <style name="CardView.Home.Dashboard" parent="CardView">
-        <item name="android:padding">@dimen/design_default_shadow_padding</item>
+        <item name="android:padding">10dp</item>
         <item name="neumorph_shadowElevation">0.5dp</item>
         <item name="neumorph_shadowColorLight">#FFFFFF</item>
         <item name="neumorph_shadowColorDark">#51000000</item>

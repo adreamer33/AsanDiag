@@ -56,12 +56,12 @@
             android:visibility="visible"
             motion:layout_constrainedHeight="true"
             motion:layout_constrainedWidth="true"
-            motion:layout_constraintEnd_toEndOf="@+id/guideline_home_margin_right"
+            motion:layout_constraintEnd_toEndOf="@+id/guideline_home_margin_dashboard_right"
             motion:layout_constraintHeight_max="80dp"
             motion:layout_constraintHeight_min="70dp"
-            motion:layout_constraintStart_toStartOf="@+id/guideline_home_margin_left"
+            motion:layout_constraintStart_toStartOf="@+id/guideline_home_margin_dashboard_left"
             motion:layout_constraintTop_toTopOf="@+id/guideline_home_dashboard_bottom"
-            motion:layout_constraintWidth_max="380dp"
+            motion:layout_constraintWidth_max="450dp"
             motion:layout_constraintWidth_min="350dp" />
         <Constraint
             android:id="@+id/frameLayout"
@@ -73,17 +73,6 @@
             motion:layout_constraintEnd_toEndOf="@id/guideline_home_margin_right1"
             motion:layout_constraintStart_toStartOf="@id/guideline_home_margin_left1"
             motion:layout_constraintTop_toBottomOf="@+id/btn_home_search_obd" />
-        <Constraint
-            android:id="@+id/cv_home_dashboard"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            motion:layout_constrainedWidth="true"
-            motion:layout_constraintBottom_toBottomOf="@+id/imgbtn_home_sort"
-            motion:layout_constraintEnd_toEndOf="@id/guideline_home_margin_dashboard_right"
-            motion:layout_constraintStart_toStartOf="@id/guideline_home_margin_dashboard_left"
-            motion:layout_constraintTop_toTopOf="@+id/imgbtn_home_sort"
-            motion:layout_constraintWidth_max="330dp"
-            motion:layout_constraintWidth_min="210dp" />
     </ConstraintSet>
 
 
@@ -120,22 +109,18 @@
             android:id="@id/cv_home_search"
             android:layout_width="0dp"
             android:layout_height="70dp"
-            motion:layout_constraintDimensionRatio="h,1:5.1"
+            motion:layout_constraintEnd_toEndOf="@id/guideline_home_margin_right"
             motion:layout_constraintHorizontal_bias="1"
-            motion:layout_constraintStart_toStartOf="@+id/guideline_home_margin_left" />
+            motion:layout_constraintStart_toStartOf="@id/guideline_home_margin_left" />
         <Constraint
             android:id="@+id/cv_home_dashboard"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:alpha="0"
-            motion:layout_constrainedHeight="true"
-            motion:layout_constrainedWidth="true"
-            motion:layout_constraintBottom_toBottomOf="@+id/imgbtn_home_sort"
+            motion:layout_constraintBottom_toBottomOf="@+id/cv_home_search"
             motion:layout_constraintEnd_toEndOf="@id/guideline_home_margin_dashboard_right"
             motion:layout_constraintStart_toStartOf="@id/guideline_home_margin_dashboard_left"
-            motion:layout_constraintTop_toTopOf="@+id/imgbtn_home_sort"
-            motion:layout_constraintWidth_max="330dp"
-            motion:layout_constraintWidth_min="210dp" />
+            motion:layout_constraintTop_toTopOf="@+id/cv_home_search" />
         <Constraint
             android:id="@+id/imgbtn_home_sort"
             android:layout_width="70dp"
@@ -167,13 +152,10 @@
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:alpha="0"
-            motion:layout_constrainedWidth="true"
-            motion:layout_constraintBottom_toBottomOf="@+id/imgbtn_home_sort"
+            motion:layout_constraintBottom_toBottomOf="@+id/cv_home_search"
             motion:layout_constraintEnd_toEndOf="@id/guideline_home_margin_dashboard_right"
             motion:layout_constraintStart_toStartOf="@id/guideline_home_margin_dashboard_left"
-            motion:layout_constraintTop_toTopOf="@+id/imgbtn_home_sort"
-            motion:layout_constraintWidth_max="330dp"
-            motion:layout_constraintWidth_min="210dp" />
+            motion:layout_constraintTop_toTopOf="@+id/cv_home_search" />
         <Constraint
             android:id="@+id/btn_home_search_obd"
             android:layout_width="0dp"
@@ -194,7 +176,7 @@
             android:id="@id/cv_home_search"
             android:layout_width="0dp"
             android:layout_height="70dp"
-            motion:layout_constraintDimensionRatio="h,1:5.1"
+            motion:layout_constraintEnd_toEndOf="@+id/guideline_home_margin_right"
             motion:layout_constraintHorizontal_bias="1"
             motion:layout_constraintStart_toStartOf="@+id/guideline_home_margin_left" />
     </ConstraintSet>

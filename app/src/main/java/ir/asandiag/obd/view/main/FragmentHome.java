@@ -164,7 +164,7 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
             @Override
             public void afterTextChanged(Editable s) {
                 if (s.length() > 0) {
-                    imgSearch.setImageResource(R.drawable.ic_arrow_back);
+                    imgSearch.setImageResource(R.drawable.ic_arrow_right_24);
                 } else {
                     imgSearch.setImageResource(R.drawable.ic_search);
                 }
@@ -269,7 +269,7 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 24; i++) {
             CompanyItem companyItem = new CompanyItem(i, "کیا موتور", "اپتیما، اسپورتیج و ..");
             companyItems.add(companyItem);
 
