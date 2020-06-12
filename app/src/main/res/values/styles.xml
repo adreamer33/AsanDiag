@@ -439,11 +439,11 @@
 
     </style>
 
-    <style name="TextView.Signup" parent="TextView">
+    <style name="TextView.Signup" parent="Widget.AppCompat.TextView">
 
     </style>
 
-    <style name="TextView.Home." parent="TextView">
+    <style name="TextView.Home." parent="Widget.AppCompat.TextView">
 
     </style>
 
@@ -451,7 +451,6 @@
     <style name="TextView.Home.CheckSensorItem" parent="">
         <item name="android:fontFamily">@font/iransans_medium</item>
         <item name="android:gravity">end</item>
-        <item name="android:lineSpacingExtra">9sp</item>
         <item name="android:textColor">?attr/textColorTextViewCheckSensorItem</item>
         <item name="android:textSize">16sp</item>
     </style>
@@ -460,7 +459,6 @@
     <style name="TextView.Home.CheckSensorItem.Description" parent="">
         <item name="android:fontFamily">@font/lato</item>
         <item name="android:gravity">end</item>
-        <item name="android:lineSpacingExtra">3sp</item>
         <item name="android:textColor">?attr/textColorTextViewCheckSensorItemDesc</item>
         <item name="android:textSize">14sp</item>
     </style>
@@ -473,7 +471,6 @@
 
     <style name="TextView.Intro.Description" parent="TextView.Intro">
         <item name="android:ems">8</item>
-        <item name="android:lineSpacingExtra">10sp</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">17sp</item>
         <item name="android:textColor">?attr/textColorTextViewIntro</item>
@@ -491,7 +488,6 @@
     <style name="TextView.Signup.Login" parent="TextView.Signup">
         <item name="fontFamily">@font/iransans_bold</item>
         <item name="android:gravity">center</item>
-        <item name="android:lineSpacingExtra">16sp</item>
         <item name="android:textSize">28sp</item>
         <item name="android:textColor">?attr/textColorTextViewSingupLogin</item>
     </style>
@@ -500,7 +496,6 @@
         <item name="fontFamily">@font/iransans_normal</item>
         <item name="android:gravity">center</item>
         <item name="lineHeight">29sp</item>
-        <item name="android:lineSpacingExtra">11sp</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">?attr/textColorTextViewSingupRegister</item>
     </style>
@@ -508,7 +503,6 @@
     <style name="TextView.Signup.Loading">
         <item name="android:fontFamily">@font/iransans_light</item>
         <item name="android:gravity">end</item>
-        <item name="android:lineSpacingExtra">11sp</item>
         <item name="android:textColor">?attr/textColorTextViewSingupLoading</item>
         <item name="android:textSize">18sp</item>
     </style>
@@ -516,7 +510,6 @@
     <style name="TextView.Home.Title" parent="TextView.Home.">
         <item name="android:fontFamily">@font/iransans_medium</item>
         <item name="android:gravity">end</item>
-        <item name="android:lineSpacingExtra">11sp</item>
         <item name="android:textColor">?attr/fillColorIconMain</item>
         <item name="android:textSize">20sp</item>
     </style>
@@ -532,13 +525,11 @@
     <style name="TextView.Home.ItemCompany.Title" parent="TextView.Home.ItemCompany">
         <item name="android:textSize">16sp</item>
         <item name="android:maxLength">15</item>
-        <item name="android:lineSpacingExtra">9sp</item>
     </style>
 
     <style name="TextView.Home.ItemCompany.Desc" parent="TextView.Home.ItemCompany">
         <item name="android:textSize">13sp</item>
         <item name="android:maxLength">25</item>
-        <item name="android:lineSpacingExtra">7sp</item>
     </style>
 
     <style name="TextView.Home.ItemCar" parent="TextView.Home.">
@@ -551,7 +542,6 @@
     <style name="TextView.Home.ItemCar.Title" parent="TextView.Home.ItemCar">
         <item name="android:textSize">16sp</item>
         <item name="android:maxLength">20</item>
-        <item name="android:lineSpacingExtra">9sp</item>
     </style>
 
 
@@ -563,16 +553,14 @@
         <item name="android:textSize">16sp</item>
         <item name="android:gravity">center|end</item>
         <item name="android:fontFamily">@font/iransans_normal</item>
-        <item name="android:lineSpacingExtra">9sp</item>
         <item name="android:drawablePadding">22.5dp</item>
-        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingStart">24dp</item>
         <item name="android:paddingEnd">24dp</item>
     </style>
 
     <style name="TextView.Home.Drawer.Title" parent="TextView.Home.">
         <item name="android:fontFamily">@font/iransans_bold</item>
         <item name="android:gravity">end</item>
-        <item name="android:lineSpacingExtra">14sp</item>
         <item name="android:textColor">?attr/textColorDrawerTitle</item>
         <item name="android:textSize">24sp</item>
     </style>
@@ -580,17 +568,14 @@
     <style name="TextView.Home.Drawer.AppVersion">
         <item name="android:fontFamily">@font/lato</item>
         <item name="android:gravity">end</item>
-        <item name="android:lineSpacingExtra">3sp</item>
         <item name="android:textColor">?attr/textColorDrawerAppVersion</item>
         <item name="android:textSize">13sp</item>
     </style>
 
-    <!--    <style name="TextView.Home.SortDialog" parent="TextView.Home."></style>-->
 
     <style name="TextView.Home.SortDialog.Title" parent="">
         <item name="android:fontFamily">@font/iransans_bold</item>
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:lineSpacingExtra">9sp</item>
         <item name="android:textColor">?attr/textColorDialogTitle</item>
         <item name="android:textSize">16sp</item>
     </style>
@@ -598,7 +583,6 @@
     <style name="TextView.Home.CarPartsDialog.Title" parent="">
         <item name="android:fontFamily">@font/iransans_bold</item>
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:lineSpacingExtra">9sp</item>
         <item name="android:textColor">?attr/textColorDialogTitle</item>
         <item name="android:textSize">16sp</item>
     </style>
@@ -608,7 +592,6 @@
         <item name="android:drawablePadding">10dp</item>
         <item name="android:fontFamily">@font/iransans_normal</item>
         <item name="android:gravity">center|end</item>
-        <item name="android:lineSpacingExtra">9sp</item>
         <item name="android:paddingStart">14dp</item>
         <item name="android:paddingEnd">14dp</item>
         <item name="android:textAlignment">viewEnd</item>
@@ -618,7 +601,6 @@
 
     <style name="TextView.CheckSensors.Title" parent="">
         <item name="android:fontFamily">@font/iransans_medium</item>
-        <item name="android:lineSpacingExtra">11sp</item>
         <item name="android:textAlignment">textStart</item>
         <item name="android:textColor">?attr/textColorDialogTitle</item>
         <item name="android:textSize">20sp</item>
@@ -627,7 +609,6 @@
     <style name="TextView.ShowedItems.Title" parent="">
         <item name="android:fontFamily">@font/iransans_normal</item>
         <item name="android:gravity">end</item>
-        <item name="android:lineSpacingExtra">9sp</item>
         <item name="android:textColor">?attr/textColorDialogItem</item>
         <item name="android:textSize">16sp</item>
     </style>
@@ -635,7 +616,6 @@
     <style name="TextView.ShowedItems.Desc" parent="">
         <item name="android:fontFamily">@font/iransans_normal</item>
         <item name="android:gravity">end</item>
-        <item name="android:lineSpacingExtra">8sp</item>
         <item name="android:textColor">?attr/textColorDialogItem</item>
         <item name="android:textSize">14sp</item>
     </style>
@@ -650,14 +630,14 @@
         <item name="android:textColorHint">?attr/hintTextColorEditTextSigupRegister</item>
         <item name="android:textColor">?attr/textColorEditTextSigupRegister</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:padding">15dp</item>
-        <item name="android:gravity">end</item>
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:paddingEnd">15dp</item>
+        <item name="android:gravity">end|center</item>
+        <item name="android:layout_gravity">center</item>
         <item name="android:maxLines">1</item>
         <item name="singleLine">true</item>
         <item name="android:lines">1</item>
         <item name="android:textAlignment">viewEnd</item>
-        <item name="android:lineSpacingExtra">9sp</item>
-
     </style>
 
     <style name="EditText.Home.Search" parent="EditText">
@@ -673,8 +653,6 @@
         <item name="singleLine">true</item>
         <item name="android:lines">1</item>
         <item name="android:textAlignment">viewEnd</item>
-        <item name="android:lineSpacingExtra">9sp</item>
-
     </style>
 
 
@@ -754,14 +732,12 @@
         <item name="android:textColor">?attr/textColorButtonHomeOBD</item>
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/iransans_medium</item>
-        <item name="android:lineSpacingExtra">9sp</item>
     </style>
 
 
     <style name="Button.Logout" parent="">
         <item name="android:textColor">?attr/textColorButtonLogout</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:lineSpacingExtra">11sp</item>
         <item name="fontFamily">@font/iransans_normal</item>
 
         <item name="android:gravity">center</item>
@@ -955,7 +931,6 @@
         <item name="android:paddingEnd">10dp</item>
         <item name="android:paddingTop">10dp</item>
         <item name="android:paddingBottom">10dp</item>
-        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
         <item name="android:minHeight">72dip</item>
         <item name="android:minWidth">112dip</item>
         <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>

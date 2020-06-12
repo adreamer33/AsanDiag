@@ -90,6 +90,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/TextView.Home.Drawer.Item"
             android:layout_width="match_parent"
+            android:id="@+id/tv_drawer_account"
             android:layout_height="match_parent"
             android:text="حساب کاربری"
             app:drawableEndCompat="@drawable/ic_menu_user" />

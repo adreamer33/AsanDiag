@@ -4,6 +4,6 @@
     <corners
         android:bottomLeftRadius="8dp"
         android:topLeftRadius="8dp" />
-    <solid android:color="?attr/bgDrawerLayoutColor" />
+    <solid android:color="#f1f1f1" />
 
 </shape>

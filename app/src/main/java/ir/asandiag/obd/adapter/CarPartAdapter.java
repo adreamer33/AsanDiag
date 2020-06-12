@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.DiffUtil;
@@ -59,17 +59,17 @@ public class CarPartAdapter extends ListAdapter<CarPartItem, CarPartAdapter.View
             Drawable img = null;
             switch (holder.carPartItem.getId()) {
                 case 0:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_motor_small);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(), R.drawable.ic_motor_small);
                     break;
                 case 1:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_antitheft);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(), R.drawable.ic_antitheft);
                     break;
                 case 2:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_gearshift);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(), R.drawable.ic_gearshift);
                     break;
             }
             if (img != null) {
-                img.setBounds(0, 0, (int) dp2px(holder.itemView.getContext(),20), (int) dp2px(holder.itemView.getContext(),20));
+                img.setBounds(0, 0, (int) dp2px(holder.itemView.getContext(), 20), (int) dp2px(holder.itemView.getContext(), 20));
             }
             content.setCompoundDrawables(null, null, img, null);
 
@@ -77,10 +77,12 @@ public class CarPartAdapter extends ListAdapter<CarPartItem, CarPartAdapter.View
 
 
     }
-    public float dp2px(Context context,float dp) {
+
+    public float dp2px(Context context, float dp) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return dp * scale + 0.5f;
     }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         private CarPartItem carPartItem;
         private int position = 0;

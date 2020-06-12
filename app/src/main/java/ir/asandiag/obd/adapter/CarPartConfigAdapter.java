@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.view.ViewCompat;
@@ -59,34 +60,34 @@ public class CarPartConfigAdapter extends ListAdapter<CarPartConfigItem, CarPart
             Drawable img = null;
             switch (holder.carPartConfigItem.getId()) {
                 case 0:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_sensor);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_sensor);
                     break;
                 case 1:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_fuel);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_fuel);
                     break;
                 case 2:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_info_circle);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_info_circle);
                     break;
                 case 3:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_search_small);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_search_small);
                     break;
                 case 4:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_param_check);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_param_check);
                     break;
                 case 5:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_voltmeter);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_voltmeter);
                     break;
                 case 6:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_reset);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_reset);
                     break;
                 case 7:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_info_circle);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_info_circle);
                     break;
                 case 8:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_special_ops);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_special_ops);
                     break;
                 default:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_info_circle);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_info_circle);
             }
             img.setBounds(0, 0, (int) dp2px(holder.itemView.getContext(), 20), (int) dp2px(holder.itemView.getContext(), 20));
             content.setCompoundDrawables(null, null, img, null);

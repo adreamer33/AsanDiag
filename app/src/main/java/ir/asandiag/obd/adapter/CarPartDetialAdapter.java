@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.view.ViewCompat;
@@ -59,13 +60,13 @@ public class CarPartDetialAdapter extends ListAdapter<CarPartDetailsItem, CarPar
             Drawable img = null;
             switch (holder.carPartDetailsItem.getType()) {
                 case 0:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_motor_small);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_motor_small);
                     break;
                 case 1:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_antitheft);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_antitheft);
                     break;
                 case 2:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_gearshift);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_gearshift);
                     break;
             }
             if (img != null) {

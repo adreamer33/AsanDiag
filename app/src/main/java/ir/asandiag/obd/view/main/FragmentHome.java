@@ -191,7 +191,7 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
 
         imgBtnMenu.setOnClickListener(v -> {
             try {
-                ((ActivityMain) v.getContext()).openDrawer();
+                ((ActivityMain) requireActivity()).openDrawer();
             } catch (Exception e) {
                 e.printStackTrace();
             }

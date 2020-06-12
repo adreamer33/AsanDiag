@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.DiffUtil;
@@ -58,13 +59,13 @@ public class SortAdapter extends ListAdapter<SortItem, SortAdapter.ViewHolder> {
             Drawable img = null;
             switch (holder.sortItem.getId()) {
                 case 0:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_sort_alpha_down);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(), R.drawable.ic_sort_alpha_down);
                     break;
                 case 1:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_sort_amount_down);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_sort_amount_down);
                     break;
                 case 2:
-                    img = holder.itemView.getContext().getResources().getDrawable(R.drawable.ic_sort_ecu);
+                    img = AppCompatResources.getDrawable(holder.itemView.getContext(),R.drawable.ic_sort_ecu);
                     break;
             }
             if (img != null) {

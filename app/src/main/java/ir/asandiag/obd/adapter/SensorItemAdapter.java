@@ -46,7 +46,7 @@ public class SensorItemAdapter extends ListAdapter<SensorItem, SensorItemAdapter
         if (carPartItem != null) {
             holder.sensorItem = carPartItem;
             holder.position = position;
-            ((AppCompatTextView) holder.itemView.findViewById(R.id.tv_item_sensor_title)).setText(carPartItem.getName());
+//            ((AppCompatTextView) holder.itemView.findViewById(R.id.tv_item_sensor_title)).setText(carPartItem.getName());
             holder.itemView.setOnClickListener(v -> {
                 if (onSensorItemClickListener != null) {
                     onSensorItemClickListener.onSensorItemClicked(holder.sensorItem, position);
