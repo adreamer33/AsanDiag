@@ -4,12 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -105,6 +103,12 @@ public class FragmentCheckSensors extends BottomSheetDialogFragment implements S
 
     @Override
     public void onSensorItemClicked(SensorItem sensorItem, int pos) {
-        Toast.makeText(getContext(), sensorItem.getName(), Toast.LENGTH_SHORT).show();
+        if (navController != null) {
+            if (pos % 2 == 0) {
+                navController.navigate(FragmentCheckSensorsDirections.actionFragmentCheckSensorsToFragmentSpeedView());
+            } else {
+                navController.navigate(FragmentCheckSensorsDirections.actionFragmentCheckSensorsToFragmentChart());
+            }
+        }
     }
 }

@@ -76,6 +76,22 @@
             android:id="@+id/action_fragmentCheckSensors_to_dialogFragmentSensorsMore"
             app:destination="@id/dialogFragmentSensorsMore"
             app:popUpTo="@id/fragmentCheckSensors" />
+        <action
+            android:id="@+id/action_fragmentCheckSensors_to_fragmentSpeedView"
+            app:destination="@id/fragmentSpeedView"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/fragmentCheckSensors" />
+        <action
+            android:id="@+id/action_fragmentCheckSensors_to_fragmentChart"
+            app:destination="@id/fragmentChart"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/fragmentCheckSensors" />
     </fragment>
     <dialog
         android:id="@+id/dialogFragmentSensorsMore"
@@ -97,4 +113,14 @@
         android:name="ir.asandiag.obd.view.main.FragmentLogout"
         android:label="fragment_logout"
         tools:layout="@layout/fragment_logout" />
+    <fragment
+        android:id="@+id/fragmentSpeedView"
+        android:name="ir.asandiag.obd.view.main.FragmentSpeedView"
+        android:label="fragment_speed_view"
+        tools:layout="@layout/fragment_speed_view" />
+    <fragment
+        android:id="@+id/fragmentChart"
+        android:name="ir.asandiag.obd.view.main.FragmentChart"
+        android:label="fragment_chart"
+        tools:layout="@layout/fragment_chart" />
 </navigation>
