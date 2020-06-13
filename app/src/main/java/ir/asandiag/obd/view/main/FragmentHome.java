@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -93,7 +94,14 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
 
         navController = NavHostFragment.findNavController(this);
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        DisplayMetrics displayMetrics = requireContext().getResources().getDisplayMetrics();
+        float dpHeight = displayMetrics.heightPixels / displayMetrics.density;
+        float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
+        int spanCount = (int) (dpWidth / 190);
+        if (spanCount > 4) {
+            spanCount = 4;
+        }
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), spanCount);
         rvItems.setLayoutManager(gridLayoutManager);
         rvItems.setNestedScrollingEnabled(false);
         // For example 10 pixels
