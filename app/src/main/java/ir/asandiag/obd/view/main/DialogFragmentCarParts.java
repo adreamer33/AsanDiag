@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,8 +24,9 @@ import ir.asandiag.obd.model.CarPartItem;
 
 public class DialogFragmentCarParts extends BottomSheetDialogFragment implements CarPartAdapter.OnCarPartClickListener {
     private NavController navController;
-    private List<CarPartItem> carPartItemList = new ArrayList<>();
+    private final List<CarPartItem> carPartItemList = new ArrayList<>();
 
+    @NonNull
     public static DialogFragmentCarParts newInstance(int itemCount) {
         final DialogFragmentCarParts fragment = new DialogFragmentCarParts();
         final Bundle args = new Bundle();
@@ -41,7 +41,7 @@ public class DialogFragmentCarParts extends BottomSheetDialogFragment implements
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.dialog_fragment_car_parts, container, false);
     }
 

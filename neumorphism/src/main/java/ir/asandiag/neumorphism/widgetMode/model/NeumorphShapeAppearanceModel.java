@@ -7,6 +7,7 @@ import android.util.TypedValue;
 
 import androidx.annotation.AttrRes;
 import androidx.annotation.Dimension;
+import androidx.annotation.NonNull;
 import androidx.annotation.StyleRes;
 
 import ir.asandiag.neumorphism.R;
@@ -17,8 +18,7 @@ public class NeumorphShapeAppearanceModel {
     private float cornerSize = 0f;
 
 
-
-    public NeumorphShapeAppearanceModel(Builder builder) {
+    public NeumorphShapeAppearanceModel(@NonNull Builder builder) {
         cornerFamily = builder.cornerFamily;
         cornerSize = builder.cornerSize;
     }
@@ -38,16 +38,19 @@ public class NeumorphShapeAppearanceModel {
         return cornerSize;
     }
 
+    @NonNull
     public static Builder builder() {
         return new Builder();
     }
 
-    public static Builder builder(Context context, AttributeSet attrs,
+    @NonNull
+    public static Builder builder(@NonNull Context context, AttributeSet attrs,
                                   @AttrRes int defStyleAttr, @StyleRes int defStyleRes) {
         return builder(context, attrs, defStyleAttr, defStyleRes, 0f);
     }
 
-    public static Builder builder(Context context, AttributeSet attrs,
+    @NonNull
+    public static Builder builder(@NonNull Context context, AttributeSet attrs,
                                   @AttrRes int defStyleAttr, @StyleRes int defStyleRes, float defaultCornerSize) {
         final TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.NeumorphShape, defStyleAttr, defStyleRes
@@ -57,7 +60,8 @@ public class NeumorphShapeAppearanceModel {
         return builder(context, shapeAppearanceResId, defaultCornerSize);
     }
 
-    private static Builder builder(Context context, @StyleRes int shapeAppearanceResId, float defaultCornerSize) {
+    @NonNull
+    private static Builder builder(@NonNull Context context, @StyleRes int shapeAppearanceResId, float defaultCornerSize) {
         final TypedArray a = context.obtainStyledAttributes(shapeAppearanceResId, R.styleable.NeumorphShapeAppearance);
 
 
@@ -76,7 +80,7 @@ public class NeumorphShapeAppearanceModel {
         }
     }
 
-    private static float getCornerSize(TypedArray a, int index, float defaultValue) {
+    private static float getCornerSize(@NonNull TypedArray a, int index, float defaultValue) {
         TypedValue value;
         value = a.peekValue(index);
         if (value.type == TypedValue.TYPE_DIMENSION) {
@@ -93,20 +97,24 @@ public class NeumorphShapeAppearanceModel {
         int cornerFamily = CornerFamily.ROUNDED;
         float cornerSize = 0f;
 
+        @NonNull
         public Builder setAllCorners(@CornerFamily int cornerFamily, @Dimension float cornerSize) {
             return setAllCorners(cornerFamily).setAllCornerSizes(cornerSize);
         }
 
+        @NonNull
         public Builder setAllCorners(@CornerFamily int cornerFamily) {
             this.cornerFamily = cornerFamily;
             return this;
         }
 
+        @NonNull
         public Builder setAllCornerSizes(float cornerSize) {
             this.cornerSize = cornerSize;
             return this;
         }
 
+        @NonNull
         public NeumorphShapeAppearanceModel build() {
             return new NeumorphShapeAppearanceModel(this);
         }

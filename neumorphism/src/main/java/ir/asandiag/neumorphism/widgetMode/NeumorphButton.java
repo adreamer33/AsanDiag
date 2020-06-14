@@ -4,13 +4,13 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 
 import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 
@@ -28,7 +28,9 @@ public class NeumorphButton extends AppCompatButton {
     private boolean isInitialized = false;
     private NeumorphShapeDrawable shapeDrawable;
 
+    @androidx.annotation.Nullable
     private ColorStateList fillColor;
+    @androidx.annotation.Nullable
     private ColorStateList strokeColor;
     private float strokeWidth;
     private int shapeType;
@@ -36,22 +38,22 @@ public class NeumorphButton extends AppCompatButton {
     private int shadowColorLight;
     private int shadowColorDark;
 
-    public NeumorphButton(Context context) {
+    public NeumorphButton(@NonNull Context context) {
         super(context);
         init(null, 0, 0);
     }
 
-    public NeumorphButton(Context context, AttributeSet attrs) {
+    public NeumorphButton(@NonNull Context context, AttributeSet attrs) {
         super(context, attrs);
         init(attrs, 0, 0);
     }
 
-    public NeumorphButton(Context context, AttributeSet attrs, int defStyle) {
+    public NeumorphButton(@NonNull Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(attrs, defStyle, 0);
     }
 
-    public NeumorphButton(Context context, AttributeSet attrs, int defStyle, int defStyleRes) {
+    public NeumorphButton(@NonNull Context context, AttributeSet attrs, int defStyle, int defStyleRes) {
         super(context, attrs, defStyle);
         init(attrs, defStyle, defStyleRes);
     }

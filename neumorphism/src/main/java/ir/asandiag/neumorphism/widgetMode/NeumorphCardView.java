@@ -11,6 +11,7 @@ import android.util.Log;
 import android.widget.FrameLayout;
 
 import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
 import org.jetbrains.annotations.NotNull;
@@ -27,7 +28,9 @@ public class NeumorphCardView extends FrameLayout {
     private boolean isInitialized = false;
     private NeumorphShapeDrawable shapeDrawable;
 
+    @androidx.annotation.Nullable
     private ColorStateList fillColor;
+    @androidx.annotation.Nullable
     private ColorStateList strokeColor;
     private float strokeWidth;
     private int shapeType;
@@ -35,22 +38,22 @@ public class NeumorphCardView extends FrameLayout {
     private int shadowColorLight;
     private int shadowColorDark;
 
-    public NeumorphCardView(Context context) {
+    public NeumorphCardView(@NonNull Context context) {
         super(context);
         init(null, 0, 0);
     }
 
-    public NeumorphCardView(Context context, AttributeSet attrs) {
+    public NeumorphCardView(@NonNull Context context, AttributeSet attrs) {
         super(context, attrs);
         init(attrs, 0, 0);
     }
 
-    public NeumorphCardView(Context context, AttributeSet attrs, int defStyle) {
+    public NeumorphCardView(@NonNull Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(attrs, defStyle, 0);
     }
 
-    public NeumorphCardView(Context context, AttributeSet attrs, int defStyle, int defStyleRes) {
+    public NeumorphCardView(@NonNull Context context, AttributeSet attrs, int defStyle, int defStyleRes) {
         super(context, attrs, defStyle);
         init(attrs, defStyle, defStyleRes);
     }

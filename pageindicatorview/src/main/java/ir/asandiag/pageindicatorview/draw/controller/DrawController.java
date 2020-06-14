@@ -15,9 +15,13 @@ import ir.asandiag.pageindicatorview.utils.CoordinatesUtils;
 
 public class DrawController {
 
+    @NonNull
+    private final Drawer drawer;
+    @NonNull
+    private final Indicator indicator;
+    @Nullable
     private Value value;
-    private Drawer drawer;
-    private Indicator indicator;
+    @Nullable
     private ClickListener listener;
 
     public interface ClickListener {

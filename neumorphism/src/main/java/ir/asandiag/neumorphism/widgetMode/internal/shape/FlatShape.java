@@ -9,13 +9,18 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import ir.asandiag.neumorphism.widgetMode.NeumorphShapeDrawable;
 import ir.asandiag.neumorphism.widgetMode.internal.util.CanvasCompact;
 import ir.asandiag.neumorphism.widgetMode.model.CornerFamily;
 import ir.asandiag.neumorphism.widgetMode.model.NeumorphShapeAppearanceModel;
 
 public class FlatShape implements Shape {
+    @Nullable
     private Bitmap lightShadowBitmap;
+    @Nullable
     private Bitmap darkShadowBitmap;
     private final GradientDrawable lightShadowDrawable = new GradientDrawable();
     private final GradientDrawable darkShadowDrawable = new GradientDrawable();
@@ -32,7 +37,7 @@ public class FlatShape implements Shape {
     }
 
     @Override
-    public void draw(Canvas canvas, Path outlinePath) {
+    public void draw(@NonNull Canvas canvas, @NonNull Path outlinePath) {
         int checkpoint = canvas.save();
         CanvasCompact.clipOutPath(canvas, outlinePath);
 
@@ -62,7 +67,7 @@ public class FlatShape implements Shape {
     }
 
     @Override
-    public void updateShadowBitmap(Rect bounds) {
+    public void updateShadowBitmap(@NonNull Rect bounds) {
         lightShadowDrawable.setColor(drawableState.shadowColorLight);
         setCornerShape(lightShadowDrawable, drawableState.shapeAppearanceModel);
 
@@ -80,7 +85,8 @@ public class FlatShape implements Shape {
         this.darkShadowBitmap = toBlurredBitmap(darkShadowDrawable, w, h);
     }
 
-    public Bitmap toBlurredBitmap(Drawable drawable, int w, int h) {
+    @Nullable
+    public Bitmap toBlurredBitmap(@NonNull Drawable drawable, int w, int h) {
         float shadowElevation = drawableState.shadowElevation;
         int width = Math.round((float) w + shadowElevation * (float) 2);
         int height = Math.round((float) h + shadowElevation * (float) 2);
@@ -105,7 +111,7 @@ public class FlatShape implements Shape {
         return bitmap1;
     }
 
-    public void setCornerShape(GradientDrawable gradientDrawable, NeumorphShapeAppearanceModel shapeAppearanceModel) {
+    public void setCornerShape(@NonNull GradientDrawable gradientDrawable, @NonNull NeumorphShapeAppearanceModel shapeAppearanceModel) {
         switch (shapeAppearanceModel.getCornerFamily()) {
             case CornerFamily.OVAL:
                 gradientDrawable.setShape(GradientDrawable.OVAL);
@@ -114,14 +120,15 @@ public class FlatShape implements Shape {
                 gradientDrawable.setShape(GradientDrawable.RECTANGLE);
                 float it = shapeAppearanceModel.getCornerSize();
 //                float it = 14;
-                float array[] = new float[]{it, it, it, it, it, it, it, it};
+                float[] array = new float[]{it, it, it, it, it, it, it, it};
                 gradientDrawable.setCornerRadii(array);
                 break;
         }
     }
 
 
-    public Bitmap blurred(Bitmap bitmap) {
+    @Nullable
+    public Bitmap blurred(@NonNull Bitmap bitmap) {
         if (drawableState.inEditMode) {
             return bitmap;
         }

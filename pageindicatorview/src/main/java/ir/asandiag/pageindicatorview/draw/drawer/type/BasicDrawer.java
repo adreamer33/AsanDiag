@@ -11,7 +11,8 @@ import ir.asandiag.pageindicatorview.draw.data.Indicator;
 
 public class BasicDrawer extends BaseDrawer {
 
-    private Paint strokePaint;
+    @NonNull
+    private final Paint strokePaint;
 
     public BasicDrawer(@NonNull Paint paint, @NonNull Indicator indicator) {
         super(paint, indicator);

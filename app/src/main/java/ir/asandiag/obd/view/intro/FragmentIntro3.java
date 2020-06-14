@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -26,6 +27,7 @@ public class FragmentIntro3 extends Fragment {
         // Required empty public constructor
     }
 
+    @NonNull
     public static FragmentIntro3 newInstance(String param1, String param2) {
         FragmentIntro3 fragment = new FragmentIntro3();
         Bundle args = new Bundle();
@@ -41,7 +43,7 @@ public class FragmentIntro3 extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_intro3, container, false);
         btn_intro3_login = view.findViewById(R.id.btn_intro3_login);

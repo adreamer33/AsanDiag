@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,7 +24,7 @@ import ir.asandiag.obd.model.CarPartDetailsItem;
 
 public class DialogFragmentCarPartDetails extends BottomSheetDialogFragment implements CarPartDetialAdapter.OnCarPartDetailClickListener {
     private NavController navController;
-    private List<CarPartDetailsItem> carPartDetailsList = new ArrayList<>();
+    private final List<CarPartDetailsItem> carPartDetailsList = new ArrayList<>();
 
 
     public DialogFragmentCarPartDetails() {
@@ -37,6 +36,7 @@ public class DialogFragmentCarPartDetails extends BottomSheetDialogFragment impl
         return R.style.BottomSheetDialogTheme;
     }
 
+    @NonNull
     public static DialogFragmentCarPartDetails newInstance(String param1, String param2) {
         DialogFragmentCarPartDetails fragment = new DialogFragmentCarPartDetails();
         Bundle args = new Bundle();
@@ -56,7 +56,7 @@ public class DialogFragmentCarPartDetails extends BottomSheetDialogFragment impl
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.dialog_fragment_car_part_details, container, false);
     }

@@ -9,7 +9,8 @@ import ir.asandiag.pageindicatorview.draw.data.Indicator;
 
 public class AnimationManager {
 
-    private AnimationController animationController;
+    @NonNull
+    private final AnimationController animationController;
 
     public AnimationManager(@NonNull Indicator indicator, @NonNull ValueController.UpdateListener listener) {
         this.animationController = new AnimationController(indicator, listener);

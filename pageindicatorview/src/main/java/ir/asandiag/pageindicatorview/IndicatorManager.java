@@ -1,5 +1,6 @@
 package ir.asandiag.pageindicatorview;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import ir.asandiag.pageindicatorview.animation.AnimationManager;
@@ -11,9 +12,12 @@ import ir.asandiag.pageindicatorview.draw.data.Indicator;
 
 public class IndicatorManager implements ValueController.UpdateListener {
 
-    private DrawManager drawManager;
-    private AnimationManager animationManager;
-    private Listener listener;
+    @NonNull
+    private final DrawManager drawManager;
+    @NonNull
+    private final AnimationManager animationManager;
+    @Nullable
+    private final Listener listener;
 
     interface Listener {
         void onIndicatorUpdated();
@@ -25,14 +29,17 @@ public class IndicatorManager implements ValueController.UpdateListener {
         this.animationManager = new AnimationManager(drawManager.indicator(), this);
     }
 
+    @NonNull
     public AnimationManager animate() {
         return animationManager;
     }
 
+    @NonNull
     public Indicator indicator() {
         return drawManager.indicator();
     }
 
+    @NonNull
     public DrawManager drawer() {
         return drawManager;
     }

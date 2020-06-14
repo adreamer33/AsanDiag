@@ -4,11 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -26,13 +24,14 @@ import ir.asandiag.obd.model.CarPartConfigItem;
 
 public class DialogFragmentCarPartConfigs extends BottomSheetDialogFragment implements CarPartConfigAdapter.OnCarPartConfigItemClickListener {
     private NavController navController;
-    private List<CarPartConfigItem> carPartConfigItems = new ArrayList<>();
+    private final List<CarPartConfigItem> carPartConfigItems = new ArrayList<>();
 
 
     public DialogFragmentCarPartConfigs() {
         // Required empty public constructor
     }
 
+    @NonNull
     public static DialogFragmentCarPartConfigs newInstance(String param1, String param2) {
         DialogFragmentCarPartConfigs fragment = new DialogFragmentCarPartConfigs();
         Bundle args = new Bundle();
@@ -66,7 +65,7 @@ public class DialogFragmentCarPartConfigs extends BottomSheetDialogFragment impl
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.dialog_fragment_car_part_configs, container, false);
     }
@@ -87,7 +86,7 @@ public class DialogFragmentCarPartConfigs extends BottomSheetDialogFragment impl
     }
 
     @Override
-    public void onCarPartConfigItemClick(CarPartConfigItem carPartConfigItem, int pos) {
+    public void onCarPartConfigItemClick(@NonNull CarPartConfigItem carPartConfigItem, int pos) {
         if (carPartConfigItem.getId() == 0 && navController != null) {
             navController.navigate(DialogFragmentCarPartConfigsDirections.actionDialogFragmentCarPartConfigsToFragmentCheckSensors());
         }

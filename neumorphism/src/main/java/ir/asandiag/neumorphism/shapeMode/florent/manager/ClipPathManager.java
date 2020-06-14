@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class ClipPathManager implements ClipManager {
@@ -11,6 +12,7 @@ public class ClipPathManager implements ClipManager {
     protected final Path path = new Path();
     private final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
+    @Nullable
     private ClipPathCreator createClipPath = null;
 
     public ClipPathManager() {
@@ -21,6 +23,7 @@ public class ClipPathManager implements ClipManager {
 
     }
 
+    @NonNull
     public Paint getPaint() {
         return paint;
     }
@@ -42,6 +45,7 @@ public class ClipPathManager implements ClipManager {
         this.createClipPath = createClipPath;
     }
 
+    @NonNull
     @Override
     public Path createMask(int width, int height) {
         return path;
@@ -63,6 +67,7 @@ public class ClipPathManager implements ClipManager {
     }
 
     public interface ClipPathCreator {
+        @NonNull
         Path createClipPath(int width, int height);
 
         boolean requiresBitmap();

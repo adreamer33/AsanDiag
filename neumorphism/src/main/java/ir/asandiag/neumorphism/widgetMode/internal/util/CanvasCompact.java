@@ -5,8 +5,10 @@ import android.graphics.Path;
 import android.graphics.Region;
 import android.os.Build;
 
+import androidx.annotation.NonNull;
+
 public class CanvasCompact {
-    public static boolean clipOutPath(Canvas canvas, Path path) {
+    public static boolean clipOutPath(@NonNull Canvas canvas, @NonNull Path path) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             return canvas.clipOutPath(path);
         } else {

@@ -77,7 +77,7 @@ public class SortAdapter extends ListAdapter<SortItem, SortAdapter.ViewHolder> {
 
     }
 
-    public float dp2px(Context context, float dp) {
+    public float dp2px(@NonNull Context context, float dp) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return dp * scale + 0.5f;
     }

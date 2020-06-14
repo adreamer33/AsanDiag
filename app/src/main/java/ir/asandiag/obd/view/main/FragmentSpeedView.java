@@ -26,6 +26,7 @@ public class FragmentSpeedView extends Fragment {
         // Required empty public constructor
     }
 
+    @NonNull
     public static FragmentSpeedView newInstance(String param1, String param2) {
         FragmentSpeedView fragment = new FragmentSpeedView();
         Bundle args = new Bundle();
@@ -41,7 +42,7 @@ public class FragmentSpeedView extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_speed_view, container, false);
     }

@@ -24,7 +24,7 @@ import ir.asandiag.obd.model.ShowedItem;
 
 public class DialogFragmentShowedItems extends BottomSheetDialogFragment implements ShowedItemsAdapter.OnShowedItemClickListener {
     private NavController navController;
-    private List<ShowedItem> itemList = new ArrayList<>();
+    private final List<ShowedItem> itemList = new ArrayList<>();
 
     @Override
     public int getTheme() {
@@ -35,6 +35,7 @@ public class DialogFragmentShowedItems extends BottomSheetDialogFragment impleme
         // Required empty public constructor
     }
 
+    @NonNull
     public static DialogFragmentShowedItems newInstance(String param1, String param2) {
         DialogFragmentShowedItems fragment = new DialogFragmentShowedItems();
         Bundle args = new Bundle();
@@ -56,7 +57,7 @@ public class DialogFragmentShowedItems extends BottomSheetDialogFragment impleme
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.dialog_fragment_showed_items, container, false);
     }

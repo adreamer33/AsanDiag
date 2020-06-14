@@ -40,6 +40,7 @@ public class FragmentChart extends Fragment implements OnChartValueSelectedListe
         // Required empty public constructor
     }
 
+    @NonNull
     public static FragmentChart newInstance(String param1, String param2) {
         FragmentChart fragment = new FragmentChart();
         Bundle args = new Bundle();
@@ -57,7 +58,7 @@ public class FragmentChart extends Fragment implements OnChartValueSelectedListe
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_chart, container, false);
     }
@@ -168,6 +169,7 @@ public class FragmentChart extends Fragment implements OnChartValueSelectedListe
         }
     }
 
+    @NonNull
     private LineDataSet createSet() {
 
         LineDataSet set = new LineDataSet(null, "Dynamic Data");

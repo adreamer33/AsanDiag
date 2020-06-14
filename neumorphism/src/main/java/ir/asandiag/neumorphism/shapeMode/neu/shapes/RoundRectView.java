@@ -14,7 +14,6 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-
 import ir.asandiag.neumorphism.R;
 import ir.asandiag.neumorphism.shapeMode.florent.manager.ClipPathManager;
 import ir.asandiag.neumorphism.shapeMode.neu.NeumorphismShape;
@@ -34,7 +33,7 @@ public class RoundRectView extends NeumorphismShape {
     private int borderColor = Color.WHITE;
 
     private float borderWidthPx = 0f;
-    private float adjust_factor = 1.2f;
+    private final float adjust_factor = 1.2f;
 
     public RoundRectView(@NonNull Context context) {
         super(context);
@@ -51,7 +50,7 @@ public class RoundRectView extends NeumorphismShape {
         init(context, attrs);
     }
 
-    private void init(Context context, AttributeSet attrs) {
+    private void init(@NonNull Context context, @Nullable AttributeSet attrs) {
         Log.i("saj", "init: ");
         if (attrs != null) {
             final TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.RoundRectView);
@@ -80,6 +79,7 @@ public class RoundRectView extends NeumorphismShape {
         final float abs_radius = Math.abs(shadow_radius) * adjust_factor;
 
         super.setClipPathCreator(new ClipPathManager.ClipPathCreator() {
+            @NonNull
             @Override
             public Path createClipPath(int width, int height) {
                 if (borderWidthPx <= 0) {
@@ -143,7 +143,7 @@ public class RoundRectView extends NeumorphismShape {
     }
 
     @Override
-    protected void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(@NonNull Canvas canvas) {
         super.dispatchDraw(canvas);
 
         if (borderWidthPx > 0) {
@@ -153,11 +153,13 @@ public class RoundRectView extends NeumorphismShape {
         }
     }
 
-    private Path generatePath(RectF rect, float topLeftRadius, float topRightRadius, float bottomRightRadius, float bottomLeftRadius) {
+    @NonNull
+    private Path generatePath(@NonNull RectF rect, float topLeftRadius, float topRightRadius, float bottomRightRadius, float bottomLeftRadius) {
         return generatePath(false, rect, topLeftRadius, topRightRadius, bottomRightRadius, bottomLeftRadius);
     }
 
-    private Path generatePath(boolean useBezier, RectF rect, float topLeftRadius, float topRightRadius, float bottomRightRadius, float bottomLeftRadius) {
+    @NonNull
+    private Path generatePath(boolean useBezier, @NonNull RectF rect, float topLeftRadius, float topRightRadius, float bottomRightRadius, float bottomLeftRadius) {
         final Path path = new Path();
 
         final float left = rect.left;

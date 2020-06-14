@@ -38,9 +38,9 @@ public class NeumorphShapeDrawable extends Drawable {
     private Paint fillPaint;
     private Paint strokePaint;
 
-    private RectF rectF = new RectF();
+    private final RectF rectF = new RectF();
 
-    private Path outlinePath = new Path();
+    private final Path outlinePath = new Path();
     private Shape shadow;
 
     public NeumorphShapeDrawable(@NonNull Context context) {
@@ -49,7 +49,7 @@ public class NeumorphShapeDrawable extends Drawable {
     }
 
 
-    public NeumorphShapeDrawable(NeumorphShapeDrawableState drawableState) {
+    public NeumorphShapeDrawable(@NonNull NeumorphShapeDrawableState drawableState) {
         this.drawableState = drawableState;
         this.shadow = shadowOf(drawableState.shapeType, drawableState);
         initPaints();
@@ -60,7 +60,7 @@ public class NeumorphShapeDrawable extends Drawable {
         this(new NeumorphShapeDrawableState(shapeAppearanceModel, blurProvider));
     }
 
-    public NeumorphShapeDrawable(Context context, AttributeSet attrs, int defStyle, int defStyleRes) {
+    public NeumorphShapeDrawable(@NonNull Context context, AttributeSet attrs, int defStyle, int defStyleRes) {
         this(NeumorphShapeAppearanceModel.builder(context, attrs, defStyle, defStyleRes).build(),
                 new BlurProvider(context));
     }
@@ -75,6 +75,7 @@ public class NeumorphShapeDrawable extends Drawable {
         strokePaint.setColor(Color.TRANSPARENT);
     }
 
+    @NonNull
     private Shape shadowOf(@ShapeType int shapeType, NeumorphShapeDrawableState drawableState) {
         switch (shapeType) {
             case ShapeType.FLAT:
@@ -178,6 +179,7 @@ public class NeumorphShapeDrawable extends Drawable {
 
     }
 
+    @NonNull
     private Rect getBoundsInternal() {
         Rect padding = drawableState.padding;
         if (padding != null) {
@@ -191,6 +193,7 @@ public class NeumorphShapeDrawable extends Drawable {
         }
     }
 
+    @NonNull
     private RectF getBoundsAsRectF() {
         rectF.set(getBoundsInternal());
         return rectF;
@@ -343,21 +346,22 @@ public class NeumorphShapeDrawable extends Drawable {
         strokePaint.setAlpha(prevStrokeAlpha);
     }
 
-    private void drawFillShape(Canvas canvas) {
+    private void drawFillShape(@NonNull Canvas canvas) {
         canvas.drawPath(outlinePath, fillPaint);
     }
 
-    private void drawStrokeShape(Canvas canvas) {
+    private void drawStrokeShape(@NonNull Canvas canvas) {
         canvas.drawPath(outlinePath, strokePaint);
     }
 
+    @NonNull
     public Path getOutlinePath() {
         return outlinePath;
     }
 
     private final RectF rectF1 = new RectF();
 
-    private void calculateOutlinePath(RectF bounds, Path path) {
+    private void calculateOutlinePath(@NonNull RectF bounds, @NonNull Path path) {
         if (drawableState == null || drawableState.padding == null) {
             return;
         }
@@ -449,7 +453,9 @@ public class NeumorphShapeDrawable extends Drawable {
         public boolean inEditMode;
 
         public Rect padding;
+        @Nullable
         public ColorStateList fillColor;
+        @Nullable
         public ColorStateList strokeColor;
         public float strokeWidth = 0f;
 
@@ -469,7 +475,7 @@ public class NeumorphShapeDrawable extends Drawable {
             this.blurProvider = blurProvider;
         }
 
-        public NeumorphShapeDrawableState(NeumorphShapeDrawableState orig) {
+        public NeumorphShapeDrawableState(@NonNull NeumorphShapeDrawableState orig) {
             shapeAppearanceModel = orig.shapeAppearanceModel;
             blurProvider = orig.blurProvider;
             inEditMode = orig.inEditMode;

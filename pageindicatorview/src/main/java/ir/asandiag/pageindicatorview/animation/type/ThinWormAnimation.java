@@ -11,19 +11,22 @@ import ir.asandiag.pageindicatorview.animation.data.type.ThinWormAnimationValue;
 
 public class ThinWormAnimation extends WormAnimation {
 
-    private ThinWormAnimationValue value;
+    @NonNull
+    private final ThinWormAnimationValue value;
 
     public ThinWormAnimation(@NonNull ValueController.UpdateListener listener) {
         super(listener);
         value = new ThinWormAnimationValue();
     }
 
+    @NonNull
     @Override
     public ThinWormAnimation duration(long duration) {
         super.duration(duration);
         return this;
     }
 
+    @NonNull
     @Override
     public WormAnimation with(int coordinateStart, int coordinateEnd, int radius, boolean isRightSide) {
         if (hasChanges(coordinateStart, coordinateEnd, radius, isRightSide)) {
@@ -69,7 +72,7 @@ public class ThinWormAnimation extends WormAnimation {
         anim.setDuration(duration);
         anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
+            public void onAnimationUpdate(@NonNull ValueAnimator animation) {
                 onAnimateUpdated(animation);
             }
         });
@@ -85,6 +88,7 @@ public class ThinWormAnimation extends WormAnimation {
         }
     }
 
+    @NonNull
     @Override
     public ThinWormAnimation progress(float progress) {
         if (animator != null) {

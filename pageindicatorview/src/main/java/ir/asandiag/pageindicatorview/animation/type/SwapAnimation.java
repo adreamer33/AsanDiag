@@ -20,7 +20,8 @@ public class SwapAnimation extends BaseAnimation<ValueAnimator> {
     private int coordinateStart = COORDINATE_NONE;
     private int coordinateEnd = COORDINATE_NONE;
 
-    private SwapAnimationValue value;
+    @NonNull
+    private final SwapAnimationValue value;
 
     public SwapAnimation(@NonNull ValueController.UpdateListener listener) {
         super(listener);
@@ -35,7 +36,7 @@ public class SwapAnimation extends BaseAnimation<ValueAnimator> {
         animator.setInterpolator(new AccelerateDecelerateInterpolator());
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
+            public void onAnimationUpdate(@NonNull ValueAnimator animation) {
                 onAnimateUpdated(animation);
             }
         });
@@ -43,6 +44,7 @@ public class SwapAnimation extends BaseAnimation<ValueAnimator> {
         return animator;
     }
 
+    @NonNull
     @Override
     public SwapAnimation progress(float progress) {
         if (animator != null) {

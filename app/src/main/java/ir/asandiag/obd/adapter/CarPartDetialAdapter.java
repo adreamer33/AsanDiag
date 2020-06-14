@@ -69,7 +69,7 @@ public class CarPartDetialAdapter extends ListAdapter<CarPartDetailsItem, CarPar
                     break;
             }
             if (img != null) {
-                img.setBounds(0, 0, (int) dp2px(holder.itemView.getContext(),20), (int) dp2px(holder.itemView.getContext(),20));
+                img.setBounds(0, 0, (int) dp2px(holder.itemView.getContext(), 20), (int) dp2px(holder.itemView.getContext(), 20));
             }
             content.setCompoundDrawables(null, null, img, null);
 
@@ -77,7 +77,8 @@ public class CarPartDetialAdapter extends ListAdapter<CarPartDetailsItem, CarPar
 
 
     }
-    public float dp2px(Context context,float dp) {
+
+    public float dp2px(@NonNull Context context, float dp) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return dp * scale + 0.5f;
     }

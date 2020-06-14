@@ -25,12 +25,13 @@ import ir.asandiag.obd.model.MoreItem;
 public class DialogFragmentSensorsMore extends BottomSheetDialogFragment implements MoreItemAdapter.OnMoreItemClickListener {
 
     private NavController navController;
-    private List<MoreItem> itemList = new ArrayList<>();
+    private final List<MoreItem> itemList = new ArrayList<>();
 
     public DialogFragmentSensorsMore() {
         // Required empty public constructor
     }
 
+    @NonNull
     public static DialogFragmentSensorsMore newInstance(String param1, String param2) {
         DialogFragmentSensorsMore fragment = new DialogFragmentSensorsMore();
         Bundle args = new Bundle();
@@ -52,7 +53,7 @@ public class DialogFragmentSensorsMore extends BottomSheetDialogFragment impleme
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.dialog_fragment_sensors_more, container, false);
     }
@@ -73,7 +74,7 @@ public class DialogFragmentSensorsMore extends BottomSheetDialogFragment impleme
     }
 
     @Override
-    public void onMoreItemClicked(MoreItem item, int pos) {
+    public void onMoreItemClicked(@NonNull MoreItem item, int pos) {
         if (item.getId() == 2 && navController != null) {
             navController.navigate(DialogFragmentSensorsMoreDirections.actionDialogFragmentSensorsMoreToDialogFragmentShowedItems());
         }

@@ -16,7 +16,8 @@ public class SlideAnimation extends BaseAnimation<ValueAnimator> {
     private static final String ANIMATION_COORDINATE = "ANIMATION_COORDINATE";
     private static final int COORDINATE_NONE = -1;
 
-    private SlideAnimationValue value;
+    @NonNull
+    private final SlideAnimationValue value;
     private int coordinateStart = COORDINATE_NONE;
     private int coordinateEnd = COORDINATE_NONE;
 
@@ -33,7 +34,7 @@ public class SlideAnimation extends BaseAnimation<ValueAnimator> {
         animator.setInterpolator(new AccelerateDecelerateInterpolator());
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
+            public void onAnimationUpdate(@NonNull ValueAnimator animation) {
                 onAnimateUpdated(animation);
             }
         });
@@ -41,6 +42,7 @@ public class SlideAnimation extends BaseAnimation<ValueAnimator> {
         return animator;
     }
 
+    @NonNull
     @Override
     public SlideAnimation progress(float progress) {
         if (animator != null) {

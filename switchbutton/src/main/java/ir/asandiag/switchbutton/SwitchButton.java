@@ -17,6 +17,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Checkable;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 public class SwitchButton extends View implements Checkable {
     private static final int DEFAULT_WIDTH = dp2pxInt(58);
     private static final int DEFAULT_HEIGHT = dp2pxInt(36);
@@ -28,33 +31,256 @@ public class SwitchButton extends View implements Checkable {
     private final int ANIMATE_STATE_PENDING_SETTLE = 4;
     private final int ANIMATE_STATE_SWITCH = 5;
 
-    public SwitchButton(Context context) {
-        super(context);
-        init(context, null);
-    }
+    private final RectF rect = new RectF();
+    private final Runnable postPendingDrag = new Runnable() {
+        @Override
+        public void run() {
+            if (!isInAnimating()) {
+                pendingDragState();
+            }
+        }
+    };
+    private final ValueAnimator.AnimatorUpdateListener animatorUpdateListener
+            = new ValueAnimator.AnimatorUpdateListener() {
+        @Override
+        public void onAnimationUpdate(@NonNull ValueAnimator animation) {
+            float value = (Float) animation.getAnimatedValue();
+            switch (animateState) {
+                case ANIMATE_STATE_PENDING_SETTLE: {
+                }
+                case ANIMATE_STATE_PENDING_RESET: {
+                }
+                case ANIMATE_STATE_PENDING_DRAG: {
+                    viewState.checkedLineColor = (int) argbEvaluator.evaluate(
+                            value,
+                            beforeState.checkedLineColor,
+                            afterState.checkedLineColor
+                    );
 
-    public SwitchButton(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context, attrs);
-    }
+                    viewState.radius = beforeState.radius
+                            + (afterState.radius - beforeState.radius) * value;
 
-    public SwitchButton(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        init(context, attrs);
-    }
+                    if (animateState != ANIMATE_STATE_PENDING_DRAG) {
+                        viewState.buttonX = beforeState.buttonX
+                                + (afterState.buttonX - beforeState.buttonX) * value;
+                    }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public SwitchButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init(context, attrs);
-    }
+                    viewState.checkStateColor = (int) argbEvaluator.evaluate(
+                            value,
+                            beforeState.checkStateColor,
+                            afterState.checkStateColor
+                    );
+
+                    break;
+                }
+                case ANIMATE_STATE_SWITCH: {
+                    viewState.buttonX = beforeState.buttonX
+                            + (afterState.buttonX - beforeState.buttonX) * value;
+
+                    float fraction = (viewState.buttonX - buttonMinX) / (buttonMaxX - buttonMinX);
+
+                    viewState.checkStateColor = (int) argbEvaluator.evaluate(
+                            fraction,
+                            uncheckColor,
+                            checkedColor
+                    );
+
+                    viewState.radius = fraction * viewRadius;
+                    viewState.checkedLineColor = (int) argbEvaluator.evaluate(
+                            fraction,
+                            Color.TRANSPARENT,
+                            checkLineColor
+                    );
+                    break;
+                }
+                default:
+                case ANIMATE_STATE_DRAGING: {
+                }
+                case ANIMATE_STATE_NONE: {
+                    break;
+                }
+            }
+            postInvalidate();
+        }
+    };
+    private final Animator.AnimatorListener animatorListener
+            = new Animator.AnimatorListener() {
+        @Override
+        public void onAnimationStart(Animator animation) {
+        }
+
+        @Override
+        public void onAnimationEnd(Animator animation) {
+            switch (animateState) {
+                case ANIMATE_STATE_DRAGING: {
+                    break;
+                }
+                case ANIMATE_STATE_PENDING_DRAG: {
+                    animateState = ANIMATE_STATE_DRAGING;
+                    viewState.checkedLineColor = Color.TRANSPARENT;
+                    viewState.radius = viewRadius;
+
+                    postInvalidate();
+                    break;
+                }
+                case ANIMATE_STATE_PENDING_RESET: {
+                    animateState = ANIMATE_STATE_NONE;
+                    postInvalidate();
+                    break;
+                }
+                case ANIMATE_STATE_PENDING_SETTLE: {
+                    animateState = ANIMATE_STATE_NONE;
+                    postInvalidate();
+                    broadcastEvent();
+                    break;
+                }
+                case ANIMATE_STATE_SWITCH: {
+                    isChecked = !isChecked;
+                    animateState = ANIMATE_STATE_NONE;
+                    postInvalidate();
+                    broadcastEvent();
+                    break;
+                }
+                default:
+                case ANIMATE_STATE_NONE: {
+                    break;
+                }
+            }
+        }
+
+        @Override
+        public void onAnimationCancel(Animator animation) {
+        }
+
+        @Override
+        public void onAnimationRepeat(Animator animation) {
+        }
+    };
 
     @Override
     public final void setPadding(int left, int top, int right, int bottom) {
         super.setPadding(0, 0, 0, 0);
     }
 
-    private void init(Context context, AttributeSet attrs) {
+    public SwitchButton(@NonNull Context context) {
+        super(context);
+        init(context, null);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        final int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        final int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+
+        if (widthMode == MeasureSpec.UNSPECIFIED
+                || widthMode == MeasureSpec.AT_MOST) {
+            widthMeasureSpec = MeasureSpec.makeMeasureSpec(DEFAULT_WIDTH, MeasureSpec.EXACTLY);
+        }
+        if (heightMode == MeasureSpec.UNSPECIFIED
+                || heightMode == MeasureSpec.AT_MOST) {
+            heightMeasureSpec = MeasureSpec.makeMeasureSpec(DEFAULT_HEIGHT, MeasureSpec.EXACTLY);
+        }
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+
+
+        float viewPadding = Math.max(shadowRadius + shadowOffset, borderWidth);
+
+        height = h - viewPadding - viewPadding;
+        width = w - viewPadding - viewPadding;
+
+        viewRadius = height * .5f;
+        buttonRadius = viewRadius - borderWidth;
+
+        left = viewPadding;
+        top = viewPadding;
+        right = w - viewPadding;
+        bottom = h - viewPadding;
+
+        centerX = (left + right) * .5f;
+        centerY = (top + bottom) * .5f;
+
+        buttonMinX = left + viewRadius;
+        buttonMaxX = right - viewRadius;
+
+        if (isChecked()) {
+            setCheckedViewState(viewState);
+        } else {
+            setUncheckViewState(viewState);
+        }
+
+        isUiInited = true;
+
+        postInvalidate();
+
+    }
+
+    public SwitchButton(@NonNull Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init(context, attrs);
+    }
+
+    public SwitchButton(@NonNull Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(context, attrs);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public SwitchButton(@NonNull Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        init(context, attrs);
+    }
+
+    private static int optInt(@Nullable TypedArray typedArray,
+                              int index,
+                              int def) {
+        if (typedArray == null) {
+            return def;
+        }
+        return typedArray.getInt(index, def);
+    }
+
+    private static float optPixelSize(@Nullable TypedArray typedArray,
+                                      int index,
+                                      float def) {
+        if (typedArray == null) {
+            return def;
+        }
+        return typedArray.getDimension(index, def);
+    }
+
+    private static int optPixelSize(@Nullable TypedArray typedArray,
+                                    int index,
+                                    int def) {
+        if (typedArray == null) {
+            return def;
+        }
+        return typedArray.getDimensionPixelOffset(index, def);
+    }
+
+    private static int optColor(@Nullable TypedArray typedArray,
+                                int index,
+                                int def) {
+        if (typedArray == null) {
+            return def;
+        }
+        return typedArray.getColor(index, def);
+    }
+
+    private static boolean optBoolean(@Nullable TypedArray typedArray,
+                                      int index,
+                                      boolean def) {
+        if (typedArray == null) {
+            return def;
+        }
+        return typedArray.getBoolean(index, def);
+    }
+
+    private void init(@NonNull Context context, @Nullable AttributeSet attrs) {
 
         TypedArray typedArray = null;
         if (attrs != null) {
@@ -183,266 +409,15 @@ public class SwitchButton extends View implements Checkable {
         }
     }
 
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        final int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-        final int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-
-        if (widthMode == MeasureSpec.UNSPECIFIED
-                || widthMode == MeasureSpec.AT_MOST) {
-            widthMeasureSpec = MeasureSpec.makeMeasureSpec(DEFAULT_WIDTH, MeasureSpec.EXACTLY);
-        }
-        if (heightMode == MeasureSpec.UNSPECIFIED
-                || heightMode == MeasureSpec.AT_MOST) {
-            heightMeasureSpec = MeasureSpec.makeMeasureSpec(DEFAULT_HEIGHT, MeasureSpec.EXACTLY);
-        }
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-    }
-
-    @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w, h, oldw, oldh);
-
-
-        float viewPadding = Math.max(shadowRadius + shadowOffset, borderWidth);
-
-        height = h - viewPadding - viewPadding;
-        width = w - viewPadding - viewPadding;
-
-        viewRadius = height * .5f;
-        buttonRadius = viewRadius - borderWidth;
-
-        left = viewPadding;
-        top = viewPadding;
-        right = w - viewPadding;
-        bottom = h - viewPadding;
-
-        centerX = (left + right) * .5f;
-        centerY = (top + bottom) * .5f;
-
-        buttonMinX = left + viewRadius;
-        buttonMaxX = right - viewRadius;
-
-        if (isChecked()) {
-            setCheckedViewState(viewState);
-        } else {
-            setUncheckViewState(viewState);
-        }
-
-        isUiInited = true;
-
-        postInvalidate();
-
-    }
-
     /**
      * @param viewState
      */
-    private void setUncheckViewState(ViewState viewState) {
+    private void setUncheckViewState(@NonNull ViewState viewState) {
         viewState.radius = 0;
         viewState.checkStateColor = uncheckColor;
         viewState.checkedLineColor = Color.TRANSPARENT;
         viewState.buttonX = buttonMinX;
         buttonPaint.setColor(uncheckButtonColor);
-    }
-
-    /**
-     * @param viewState
-     */
-    private void setCheckedViewState(ViewState viewState) {
-        viewState.radius = viewRadius;
-        viewState.checkStateColor = checkedColor;
-        viewState.checkedLineColor = checkLineColor;
-        viewState.buttonX = buttonMaxX;
-        buttonPaint.setColor(checkedButtonColor);
-    }
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-
-        paint.setStrokeWidth(borderWidth);
-        paint.setStyle(Paint.Style.FILL);
-
-        paint.setColor(background);
-        drawRoundRect(canvas,
-                left, top, right, bottom,
-                viewRadius, paint);
-
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(uncheckColor);
-        drawRoundRect(canvas,
-                left, top, right, bottom,
-                viewRadius, paint);
-
-
-        if (showIndicator) {
-            drawUncheckIndicator(canvas);
-        }
-
-
-        float des = viewState.radius * .5f;//[0-backgroundRadius*0.5f]
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(viewState.checkStateColor);
-        paint.setStrokeWidth(borderWidth + des * 2f);
-        drawRoundRect(canvas,
-                left + des, top + des, right - des, bottom - des,
-                viewRadius, paint);
-
-
-        paint.setStyle(Paint.Style.FILL);
-        paint.setStrokeWidth(1);
-        drawArc(canvas,
-                left, top,
-                left + 2 * viewRadius, top + 2 * viewRadius,
-                90, 180, paint);
-        canvas.drawRect(
-                left + viewRadius, top,
-                viewState.buttonX, top + 2 * viewRadius,
-                paint);
-
-
-        if (showIndicator) {
-            drawCheckedIndicator(canvas);
-        }
-
-
-        drawButton(canvas, viewState.buttonX, centerY);
-    }
-
-
-    /**
-     * @param canvas
-     */
-    protected void drawCheckedIndicator(Canvas canvas) {
-        drawCheckedIndicator(canvas,
-                viewState.checkedLineColor,
-                checkLineWidth,
-                left + viewRadius - checkedLineOffsetX, centerY - checkLineLength,
-                left + viewRadius - checkedLineOffsetY, centerY + checkLineLength,
-                paint);
-    }
-
-
-    /**
-     * @param canvas
-     * @param color
-     * @param lineWidth
-     * @param sx
-     * @param sy
-     * @param ex
-     * @param ey
-     * @param paint
-     */
-    protected void drawCheckedIndicator(Canvas canvas,
-                                        int color,
-                                        float lineWidth,
-                                        float sx, float sy, float ex, float ey,
-                                        Paint paint) {
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(color);
-        paint.setStrokeWidth(lineWidth);
-        canvas.drawLine(
-                sx, sy, ex, ey,
-                paint);
-    }
-
-    /**
-     * @param canvas
-     */
-    private void drawUncheckIndicator(Canvas canvas) {
-        drawUncheckIndicator(canvas,
-                uncheckCircleColor,
-                uncheckCircleWidth,
-                right - uncheckCircleOffsetX, centerY,
-                uncheckCircleRadius,
-                paint);
-    }
-
-
-    /**
-     * @param canvas
-     * @param color
-     * @param lineWidth
-     * @param centerX
-     * @param centerY
-     * @param radius
-     * @param paint
-     */
-    protected void drawUncheckIndicator(Canvas canvas,
-                                        int color,
-                                        float lineWidth,
-                                        float centerX, float centerY,
-                                        float radius,
-                                        Paint paint) {
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(color);
-        paint.setStrokeWidth(lineWidth);
-        canvas.drawCircle(centerX, centerY, radius, paint);
-    }
-
-    /**
-     * @param canvas
-     * @param left
-     * @param top
-     * @param right
-     * @param bottom
-     * @param startAngle
-     * @param sweepAngle
-     * @param paint
-     */
-    private void drawArc(Canvas canvas,
-                         float left, float top,
-                         float right, float bottom,
-                         float startAngle, float sweepAngle,
-                         Paint paint) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            canvas.drawArc(left, top, right, bottom,
-                    startAngle, sweepAngle, true, paint);
-        } else {
-            rect.set(left, top, right, bottom);
-            canvas.drawArc(rect,
-                    startAngle, sweepAngle, true, paint);
-        }
-    }
-
-    /**
-     * @param canvas
-     * @param left
-     * @param top
-     * @param right
-     * @param bottom
-     * @param backgroundRadius
-     * @param paint
-     */
-    private void drawRoundRect(Canvas canvas,
-                               float left, float top,
-                               float right, float bottom,
-                               float backgroundRadius,
-                               Paint paint) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            canvas.drawRoundRect(left, top, right, bottom,
-                    backgroundRadius, backgroundRadius, paint);
-        } else {
-            rect.set(left, top, right, bottom);
-            canvas.drawRoundRect(rect,
-                    backgroundRadius, backgroundRadius, paint);
-        }
-    }
-
-
-    /**
-     * @param canvas
-     * @param x      px
-     * @param y      px
-     */
-    private void drawButton(Canvas canvas, float x, float y) {
-        canvas.drawCircle(x, y, buttonRadius, buttonPaint);
-
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(1);
-        paint.setColor(0XffDDDDDD);
-        canvas.drawCircle(x, y, buttonRadius, paint);
     }
 
     @Override
@@ -527,85 +502,15 @@ public class SwitchButton extends View implements Checkable {
         isEventBroadcast = false;
     }
 
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        if (!isEnabled()) {
-            return false;
-        }
-        int actionMasked = event.getActionMasked();
-
-        switch (actionMasked) {
-            case MotionEvent.ACTION_DOWN: {
-                isTouchingDown = true;
-                touchDownTime = System.currentTimeMillis();
-                removeCallbacks(postPendingDrag);
-                postDelayed(postPendingDrag, 100);
-                break;
-            }
-            case MotionEvent.ACTION_MOVE: {
-                float eventX = event.getX();
-                if (isPendingDragState()) {
-                    float fraction = eventX / getWidth();
-                    fraction = Math.max(0f, Math.min(1f, fraction));
-
-                    viewState.buttonX = buttonMinX
-                            + (buttonMaxX - buttonMinX)
-                            * fraction;
-
-                } else if (isDragState()) {
-
-                    float fraction = eventX / getWidth();
-                    fraction = Math.max(0f, Math.min(1f, fraction));
-
-                    viewState.buttonX = buttonMinX
-                            + (buttonMaxX - buttonMinX)
-                            * fraction;
-
-                    viewState.checkStateColor = (int) argbEvaluator.evaluate(
-                            fraction,
-                            uncheckColor,
-                            checkedColor
-                    );
-                    postInvalidate();
-
-                }
-                break;
-            }
-            case MotionEvent.ACTION_UP: {
-                isTouchingDown = false;
-                removeCallbacks(postPendingDrag);
-
-                if (System.currentTimeMillis() - touchDownTime <= 300) {
-                    toggle();
-                } else if (isDragState()) {
-                    float eventX = event.getX();
-                    float fraction = eventX / getWidth();
-                    fraction = Math.max(0f, Math.min(1f, fraction));
-                    boolean newCheck = fraction > .5f;
-                    if (newCheck == isChecked()) {
-                        pendingCancelDragState();
-                    } else {
-                        isChecked = newCheck;
-                        pendingSettleState();
-                    }
-                } else if (isPendingDragState()) {
-                    pendingCancelDragState();
-                }
-                break;
-            }
-            case MotionEvent.ACTION_CANCEL: {
-                isTouchingDown = false;
-
-                removeCallbacks(postPendingDrag);
-
-                if (isPendingDragState() || isDragState()) {
-                    pendingCancelDragState();
-                }
-                break;
-            }
-        }
-        return true;
+    /**
+     * @param viewState
+     */
+    private void setCheckedViewState(@NonNull ViewState viewState) {
+        viewState.radius = viewRadius;
+        viewState.checkStateColor = checkedColor;
+        viewState.checkedLineColor = checkLineColor;
+        viewState.buttonX = buttonMaxX;
+        buttonPaint.setColor(checkedButtonColor);
     }
 
 
@@ -759,50 +664,125 @@ public class SwitchButton extends View implements Checkable {
         return (int) dp2px(dp);
     }
 
-    private static int optInt(TypedArray typedArray,
-                              int index,
-                              int def) {
-        if (typedArray == null) {
-            return def;
+    @Override
+    protected void onDraw(@NonNull Canvas canvas) {
+        super.onDraw(canvas);
+
+        paint.setStrokeWidth(borderWidth);
+        paint.setStyle(Paint.Style.FILL);
+
+        paint.setColor(background);
+        drawRoundRect(canvas,
+                left, top, right, bottom,
+                viewRadius, paint);
+
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(uncheckColor);
+        drawRoundRect(canvas,
+                left, top, right, bottom,
+                viewRadius, paint);
+
+
+        if (showIndicator) {
+            drawUncheckIndicator(canvas);
         }
-        return typedArray.getInt(index, def);
+
+
+        float des = viewState.radius * .5f;//[0-backgroundRadius*0.5f]
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(viewState.checkStateColor);
+        paint.setStrokeWidth(borderWidth + des * 2f);
+        drawRoundRect(canvas,
+                left + des, top + des, right - des, bottom - des,
+                viewRadius, paint);
+
+
+        paint.setStyle(Paint.Style.FILL);
+        paint.setStrokeWidth(1);
+        drawArc(canvas,
+                left, top,
+                left + 2 * viewRadius, top + 2 * viewRadius,
+                90, 180, paint);
+        canvas.drawRect(
+                left + viewRadius, top,
+                viewState.buttonX, top + 2 * viewRadius,
+                paint);
+
+
+        if (showIndicator) {
+            drawCheckedIndicator(canvas);
+        }
+
+
+        drawButton(canvas, viewState.buttonX, centerY);
     }
 
-
-    private static float optPixelSize(TypedArray typedArray,
-                                      int index,
-                                      float def) {
-        if (typedArray == null) {
-            return def;
-        }
-        return typedArray.getDimension(index, def);
+    /**
+     * @param canvas
+     */
+    protected void drawCheckedIndicator(@NonNull Canvas canvas) {
+        drawCheckedIndicator(canvas,
+                viewState.checkedLineColor,
+                checkLineWidth,
+                left + viewRadius - checkedLineOffsetX, centerY - checkLineLength,
+                left + viewRadius - checkedLineOffsetY, centerY + checkLineLength,
+                paint);
     }
 
-    private static int optPixelSize(TypedArray typedArray,
-                                    int index,
-                                    int def) {
-        if (typedArray == null) {
-            return def;
-        }
-        return typedArray.getDimensionPixelOffset(index, def);
+    /**
+     * @param canvas
+     * @param color
+     * @param lineWidth
+     * @param sx
+     * @param sy
+     * @param ex
+     * @param ey
+     * @param paint
+     */
+    protected void drawCheckedIndicator(@NonNull Canvas canvas,
+                                        int color,
+                                        float lineWidth,
+                                        float sx, float sy, float ex, float ey,
+                                        @NonNull Paint paint) {
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(color);
+        paint.setStrokeWidth(lineWidth);
+        canvas.drawLine(
+                sx, sy, ex, ey,
+                paint);
     }
 
-    private static int optColor(TypedArray typedArray,
-                                int index,
-                                int def) {
-        if (typedArray == null) {
-            return def;
-        }
-        return typedArray.getColor(index, def);
+    /**
+     * @param canvas
+     */
+    private void drawUncheckIndicator(@NonNull Canvas canvas) {
+        drawUncheckIndicator(canvas,
+                uncheckCircleColor,
+                uncheckCircleWidth,
+                right - uncheckCircleOffsetX, centerY,
+                uncheckCircleRadius,
+                paint);
     }
 
-    private static boolean optBoolean(TypedArray typedArray,
-                                      int index,
-                                      boolean def) {
-        if (typedArray == null) {
-            return def;
-        }
-        return typedArray.getBoolean(index, def);
+    /**
+     * @param canvas
+     * @param color
+     * @param lineWidth
+     * @param centerX
+     * @param centerY
+     * @param radius
+     * @param paint
+     */
+    protected void drawUncheckIndicator(@NonNull Canvas canvas,
+                                        int color,
+                                        float lineWidth,
+                                        float centerX, float centerY,
+                                        float radius,
+                                        @NonNull Paint paint) {
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(color);
+        paint.setStrokeWidth(lineWidth);
+        canvas.drawCircle(centerX, centerY, radius, paint);
     }
     /*******************************************************/
 
@@ -935,7 +915,31 @@ public class SwitchButton extends View implements Checkable {
     private ViewState beforeState;
     private ViewState afterState;
 
-    private RectF rect = new RectF();
+    /**
+     * @param canvas
+     * @param left
+     * @param top
+     * @param right
+     * @param bottom
+     * @param startAngle
+     * @param sweepAngle
+     * @param paint
+     */
+    private void drawArc(@NonNull Canvas canvas,
+                         float left, float top,
+                         float right, float bottom,
+                         float startAngle, float sweepAngle,
+                         @NonNull Paint paint) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            canvas.drawArc(left, top, right, bottom,
+                    startAngle, sweepAngle, true, paint);
+        } else {
+            rect.set(left, top, right, bottom);
+            canvas.drawArc(rect,
+                    startAngle, sweepAngle, true, paint);
+        }
+    }
+
     /**
      *
      */
@@ -985,135 +989,127 @@ public class SwitchButton extends View implements Checkable {
      */
     private long touchDownTime;
 
-    private Runnable postPendingDrag = new Runnable() {
-        @Override
-        public void run() {
-            if (!isInAnimating()) {
-                pendingDragState();
-            }
+    /**
+     * @param canvas
+     * @param left
+     * @param top
+     * @param right
+     * @param bottom
+     * @param backgroundRadius
+     * @param paint
+     */
+    private void drawRoundRect(@NonNull Canvas canvas,
+                               float left, float top,
+                               float right, float bottom,
+                               float backgroundRadius,
+                               @NonNull Paint paint) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            canvas.drawRoundRect(left, top, right, bottom,
+                    backgroundRadius, backgroundRadius, paint);
+        } else {
+            rect.set(left, top, right, bottom);
+            canvas.drawRoundRect(rect,
+                    backgroundRadius, backgroundRadius, paint);
         }
-    };
+    }
 
-    private ValueAnimator.AnimatorUpdateListener animatorUpdateListener
-            = new ValueAnimator.AnimatorUpdateListener() {
-        @Override
-        public void onAnimationUpdate(ValueAnimator animation) {
-            float value = (Float) animation.getAnimatedValue();
-            switch (animateState) {
-                case ANIMATE_STATE_PENDING_SETTLE: {
-                }
-                case ANIMATE_STATE_PENDING_RESET: {
-                }
-                case ANIMATE_STATE_PENDING_DRAG: {
-                    viewState.checkedLineColor = (int) argbEvaluator.evaluate(
-                            value,
-                            beforeState.checkedLineColor,
-                            afterState.checkedLineColor
-                    );
+    /**
+     * @param canvas
+     * @param x      px
+     * @param y      px
+     */
+    private void drawButton(@NonNull Canvas canvas, float x, float y) {
+        canvas.drawCircle(x, y, buttonRadius, buttonPaint);
 
-                    viewState.radius = beforeState.radius
-                            + (afterState.radius - beforeState.radius) * value;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(1);
+        paint.setColor(0XffDDDDDD);
+        canvas.drawCircle(x, y, buttonRadius, paint);
+    }
 
-                    if (animateState != ANIMATE_STATE_PENDING_DRAG) {
-                        viewState.buttonX = beforeState.buttonX
-                                + (afterState.buttonX - beforeState.buttonX) * value;
-                    }
+    @Override
+    public boolean onTouchEvent(@NonNull MotionEvent event) {
+        if (!isEnabled()) {
+            return false;
+        }
+        int actionMasked = event.getActionMasked();
 
-                    viewState.checkStateColor = (int) argbEvaluator.evaluate(
-                            value,
-                            beforeState.checkStateColor,
-                            afterState.checkStateColor
-                    );
+        switch (actionMasked) {
+            case MotionEvent.ACTION_DOWN: {
+                isTouchingDown = true;
+                touchDownTime = System.currentTimeMillis();
+                removeCallbacks(postPendingDrag);
+                postDelayed(postPendingDrag, 100);
+                break;
+            }
+            case MotionEvent.ACTION_MOVE: {
+                float eventX = event.getX();
+                if (isPendingDragState()) {
+                    float fraction = eventX / getWidth();
+                    fraction = Math.max(0f, Math.min(1f, fraction));
 
-                    break;
-                }
-                case ANIMATE_STATE_SWITCH: {
-                    viewState.buttonX = beforeState.buttonX
-                            + (afterState.buttonX - beforeState.buttonX) * value;
+                    viewState.buttonX = buttonMinX
+                            + (buttonMaxX - buttonMinX)
+                            * fraction;
 
-                    float fraction = (viewState.buttonX - buttonMinX) / (buttonMaxX - buttonMinX);
+                } else if (isDragState()) {
+
+                    float fraction = eventX / getWidth();
+                    fraction = Math.max(0f, Math.min(1f, fraction));
+
+                    viewState.buttonX = buttonMinX
+                            + (buttonMaxX - buttonMinX)
+                            * fraction;
 
                     viewState.checkStateColor = (int) argbEvaluator.evaluate(
                             fraction,
                             uncheckColor,
                             checkedColor
                     );
+                    postInvalidate();
 
-                    viewState.radius = fraction * viewRadius;
-                    viewState.checkedLineColor = (int) argbEvaluator.evaluate(
-                            fraction,
-                            Color.TRANSPARENT,
-                            checkLineColor
-                    );
-                    break;
                 }
-                default:
-                case ANIMATE_STATE_DRAGING: {
-                }
-                case ANIMATE_STATE_NONE: {
-                    break;
-                }
+                break;
             }
-            postInvalidate();
-        }
-    };
+            case MotionEvent.ACTION_UP: {
+                isTouchingDown = false;
+                removeCallbacks(postPendingDrag);
 
-    private Animator.AnimatorListener animatorListener
-            = new Animator.AnimatorListener() {
-        @Override
-        public void onAnimationStart(Animator animation) {
-        }
+                if (System.currentTimeMillis() - touchDownTime <= 300) {
+                    toggle();
+                } else if (isDragState()) {
+                    float eventX = event.getX();
+                    float fraction = eventX / getWidth();
+                    fraction = Math.max(0f, Math.min(1f, fraction));
+                    boolean newCheck = fraction > .5f;
+                    if (newCheck == isChecked()) {
+                        pendingCancelDragState();
+                    } else {
+                        isChecked = newCheck;
+                        pendingSettleState();
+                    }
+                } else if (isPendingDragState()) {
+                    pendingCancelDragState();
+                }
+                break;
+            }
+            case MotionEvent.ACTION_CANCEL: {
+                isTouchingDown = false;
 
-        @Override
-        public void onAnimationEnd(Animator animation) {
-            switch (animateState) {
-                case ANIMATE_STATE_DRAGING: {
-                    break;
-                }
-                case ANIMATE_STATE_PENDING_DRAG: {
-                    animateState = ANIMATE_STATE_DRAGING;
-                    viewState.checkedLineColor = Color.TRANSPARENT;
-                    viewState.radius = viewRadius;
+                removeCallbacks(postPendingDrag);
 
-                    postInvalidate();
-                    break;
+                if (isPendingDragState() || isDragState()) {
+                    pendingCancelDragState();
                 }
-                case ANIMATE_STATE_PENDING_RESET: {
-                    animateState = ANIMATE_STATE_NONE;
-                    postInvalidate();
-                    break;
-                }
-                case ANIMATE_STATE_PENDING_SETTLE: {
-                    animateState = ANIMATE_STATE_NONE;
-                    postInvalidate();
-                    broadcastEvent();
-                    break;
-                }
-                case ANIMATE_STATE_SWITCH: {
-                    isChecked = !isChecked;
-                    animateState = ANIMATE_STATE_NONE;
-                    postInvalidate();
-                    broadcastEvent();
-                    break;
-                }
-                default:
-                case ANIMATE_STATE_NONE: {
-                    break;
-                }
+                break;
             }
         }
-
-        @Override
-        public void onAnimationCancel(Animator animation) {
-        }
-
-        @Override
-        public void onAnimationRepeat(Animator animation) {
-        }
-    };
+        return true;
+    }
 
 
     /*******************************************************/
+
     /**
      * 保存动画状态
      */
@@ -1138,7 +1134,7 @@ public class SwitchButton extends View implements Checkable {
         ViewState() {
         }
 
-        private void copy(ViewState source) {
+        private void copy(@NonNull ViewState source) {
             this.buttonX = source.buttonX;
             this.checkStateColor = source.checkStateColor;
             this.checkedLineColor = source.checkedLineColor;

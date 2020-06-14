@@ -23,7 +23,8 @@ public class ScaleAnimation extends ColorAnimation {
     int radius;
     float scaleFactor;
 
-    private ScaleAnimationValue value;
+    @NonNull
+    private final ScaleAnimationValue value;
 
     public ScaleAnimation(@NonNull ValueController.UpdateListener listener) {
         super(listener);
@@ -38,7 +39,7 @@ public class ScaleAnimation extends ColorAnimation {
         animator.setInterpolator(new AccelerateDecelerateInterpolator());
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
+            public void onAnimationUpdate(@NonNull ValueAnimator animation) {
                 onAnimateUpdated(animation);
             }
         });

@@ -13,6 +13,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.content.ContextCompat;
 
@@ -31,22 +32,22 @@ public class NeumorphTextView extends AppCompatTextView {
     private Bitmap lastShadowLight;
     private Bitmap lastShadowDark;
 
-    public NeumorphTextView(Context context) {
+    public NeumorphTextView(@NonNull Context context) {
         super(context);
         init(context, null, 0);
     }
 
-    public NeumorphTextView(Context context, AttributeSet attrs) {
+    public NeumorphTextView(@NonNull Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs, 0);
     }
 
-    public NeumorphTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public NeumorphTextView(@NonNull Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs, defStyleAttr);
     }
 
-    private void init(Context context, AttributeSet attrs, int defStyleAttr) {
+    private void init(@NonNull Context context, AttributeSet attrs, int defStyleAttr) {
         shadowPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.NeumorphTextView, defStyleAttr, 0);
@@ -121,7 +122,8 @@ public class NeumorphTextView extends AppCompatTextView {
         return bitmap;
     }
 
-    private StaticLayout staticLayout(CharSequence text, TextPaint textPaint) {
+    @NonNull
+    private StaticLayout staticLayout(@NonNull CharSequence text, @NonNull TextPaint textPaint) {
         StaticLayout var10000;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             return StaticLayout.Builder.obtain(text, 0, text.length(), textPaint, Integer.MAX_VALUE).build();

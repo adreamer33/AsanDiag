@@ -18,20 +18,23 @@ import ir.asandiag.pageindicatorview.draw.data.Indicator;
 
 public class DrawManager {
 
-	private Indicator indicator;
-	private DrawController drawController;
-	private MeasureController measureController;
-	private AttributeController attributeController;
+    private Indicator indicator;
+    @NonNull
+    private final DrawController drawController;
+    @NonNull
+    private final MeasureController measureController;
+    @NonNull
+    private final AttributeController attributeController;
 
-	public DrawManager() {
-		this.indicator = new Indicator();
-		this.drawController = new DrawController(indicator);
-		this.measureController = new MeasureController();
-		this.attributeController = new AttributeController(indicator);
-	}
+    public DrawManager() {
+        this.indicator = new Indicator();
+        this.drawController = new DrawController(indicator);
+        this.measureController = new MeasureController();
+        this.attributeController = new AttributeController(indicator);
+    }
 
-	@NonNull
-	public Indicator indicator() {
+    @NonNull
+    public Indicator indicator() {
 		if (indicator == null) {
 			indicator = new Indicator();
 		}
@@ -45,21 +48,22 @@ public class DrawManager {
 
 	public void touch(@Nullable MotionEvent event) {
 		drawController.touch(event);
-	}
+    }
 
-	public void updateValue(@Nullable Value value) {
-		drawController.updateValue(value);
-	}
+    public void updateValue(@Nullable Value value) {
+        drawController.updateValue(value);
+    }
 
-	public void draw(@NonNull Canvas canvas) {
-		drawController.draw(canvas);
-	}
+    public void draw(@NonNull Canvas canvas) {
+        drawController.draw(canvas);
+    }
 
-	public Pair<Integer, Integer> measureViewSize(int widthMeasureSpec, int heightMeasureSpec) {
-		return measureController.measureViewSize(indicator, widthMeasureSpec, heightMeasureSpec);
-	}
+    @NonNull
+    public Pair<Integer, Integer> measureViewSize(int widthMeasureSpec, int heightMeasureSpec) {
+        return measureController.measureViewSize(indicator, widthMeasureSpec, heightMeasureSpec);
+    }
 
-	public void initAttributes(@NonNull Context context, @Nullable AttributeSet attrs) {
-		attributeController.init(context, attrs);
-	}
+    public void initAttributes(@NonNull Context context, @Nullable AttributeSet attrs) {
+        attributeController.init(context, attrs);
+    }
 }

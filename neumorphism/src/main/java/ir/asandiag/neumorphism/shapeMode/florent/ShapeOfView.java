@@ -36,11 +36,12 @@ public class ShapeOfView extends FrameLayout {
     private final Paint clipPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     final public Path clipPath = new Path();
 
-    protected PorterDuffXfermode pdMode = new PorterDuffXfermode(PorterDuff.Mode.DST_OUT);
+    private final ClipManager clipManager = new ClipPathManager();
 
     @Nullable
     protected Drawable drawable = null;
-    private ClipManager clipManager = new ClipPathManager();
+    @NonNull
+    protected PorterDuffXfermode pdMode = new PorterDuffXfermode(PorterDuff.Mode.DST_OUT);
     private boolean requiersShapeUpdate = true;
     private Bitmap clipBitmap;
 
@@ -79,7 +80,7 @@ public class ShapeOfView extends FrameLayout {
         background_color = color;
     }
 
-    private void init(Context context, AttributeSet attrs) {
+    private void init(@NonNull Context context, @Nullable AttributeSet attrs) {
         clipPaint.setAntiAlias(true);
 
         setDrawingCacheEnabled(true);
@@ -143,7 +144,7 @@ public class ShapeOfView extends FrameLayout {
     }
 
     @Override
-    protected void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(@NonNull Canvas canvas) {
         super.dispatchDraw(canvas);
 
         if (requiersShapeUpdate) {
@@ -218,12 +219,13 @@ public class ShapeOfView extends FrameLayout {
         postInvalidate();
     }
 
+    @NonNull
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public ViewOutlineProvider getOutlineProvider() {
         return new ViewOutlineProvider() {
             @Override
-            public void getOutline(View view, Outline outline) {
+            public void getOutline(View view, @NonNull Outline outline) {
                 if (clipManager != null && !isInEditMode()) {
                     final Path shadowConvexPath = clipManager.getShadowConvexPath();
                     if (shadowConvexPath != null) {

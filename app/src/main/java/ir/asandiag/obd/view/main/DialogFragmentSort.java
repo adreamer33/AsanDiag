@@ -8,7 +8,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -27,7 +26,7 @@ import ir.asandiag.obd.model.SortItem;
 public class DialogFragmentSort extends BottomSheetDialogFragment implements SortAdapter.OnSortItemClickListener {
 
     private NavController navController;
-    private List<SortItem> sortItems = new ArrayList<>();
+    private final List<SortItem> sortItems = new ArrayList<>();
 
     @Override
     public int getTheme() {
@@ -38,6 +37,7 @@ public class DialogFragmentSort extends BottomSheetDialogFragment implements Sor
         // Required empty public constructor
     }
 
+    @NonNull
     public static DialogFragmentSort newInstance(String param1, String param2) {
         DialogFragmentSort fragment = new DialogFragmentSort();
         Bundle args = new Bundle();
@@ -60,7 +60,7 @@ public class DialogFragmentSort extends BottomSheetDialogFragment implements Sor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.dialog_fragment_sort, container, false);
     }
@@ -77,7 +77,7 @@ public class DialogFragmentSort extends BottomSheetDialogFragment implements Sor
     }
 
     @Override
-    public void onCarPartClicked(SortItem sortItem, int pos) {
+    public void onCarPartClicked(@NonNull SortItem sortItem, int pos) {
         Toast.makeText(getContext(), sortItem.getName(), Toast.LENGTH_SHORT).show();
     }
 }

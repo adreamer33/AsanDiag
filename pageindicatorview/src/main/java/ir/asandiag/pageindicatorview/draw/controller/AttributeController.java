@@ -23,7 +23,8 @@ import ir.asandiag.pageindicatorview.utils.DensityUtils;
 
 public class AttributeController {
 
-    private Indicator indicator;
+    @NonNull
+    private final Indicator indicator;
 
     private static final int DEFAULT_IDLE_DURATION = 3000;
 
@@ -144,6 +145,7 @@ public class AttributeController {
         indicator.setStroke(stroke);
     }
 
+    @NonNull
     private AnimationType getAnimationType(int index) {
         switch (index) {
             case 0:
@@ -171,6 +173,7 @@ public class AttributeController {
         return AnimationType.NONE;
     }
 
+    @NonNull
     private RtlMode getRtlMode(int index) {
         switch (index) {
             case 0:

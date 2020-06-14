@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.graphics.drawable.DrawableCompat;
@@ -12,15 +13,15 @@ import androidx.core.graphics.drawable.DrawableCompat;
 public class TextViewCompatTint extends AppCompatTextView {
     private int tintColor;
 
-    public TextViewCompatTint(Context context) {
+    public TextViewCompatTint(@NonNull Context context) {
         this(context, null);
     }
 
-    public TextViewCompatTint(Context context, AttributeSet attrs) {
+    public TextViewCompatTint(@NonNull Context context, AttributeSet attrs) {
         this(context, attrs, android.R.attr.textViewStyle);
     }
 
-    public TextViewCompatTint(Context context, AttributeSet attrs, int defStyleAttr) {
+    public TextViewCompatTint(@NonNull Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TextViewCompatTint, defStyleAttr, 0);

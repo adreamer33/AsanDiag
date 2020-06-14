@@ -16,6 +16,7 @@ import ir.asandiag.pageindicatorview.utils.DensityUtils;
 
 
 public class DropDrawer extends BaseDrawer {
+    @NonNull
     Paint border = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     public DropDrawer(@NonNull Paint paint, @NonNull Indicator indicator) {

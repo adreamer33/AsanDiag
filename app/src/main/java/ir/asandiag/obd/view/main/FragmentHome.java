@@ -44,10 +44,10 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
     private static AppCompatImageView imgSearch;
     private static MotionLayout motionLayout;
 
-    private List<CompanyItem> companyItems = new ArrayList<>();
-    private List<CarItem> carItems = new ArrayList<>();
-    private CompanyAdapter companyAdapter = new CompanyAdapter(new CompanyAdapter.ItemDiffCallBack(), this);
-    private CarAdapter carAdapter = new CarAdapter(new CarAdapter.ItemDiffCallBack(), this);
+    private final List<CompanyItem> companyItems = new ArrayList<>();
+    private final List<CarItem> carItems = new ArrayList<>();
+    private final CompanyAdapter companyAdapter = new CompanyAdapter(new CompanyAdapter.ItemDiffCallBack(), this);
+    private final CarAdapter carAdapter = new CarAdapter(new CarAdapter.ItemDiffCallBack(), this);
 
 
     @Override
@@ -61,6 +61,7 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
     }
 
 
+    @NonNull
     public static FragmentHome newInstance() {
         return new FragmentHome();
     }
@@ -170,7 +171,7 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
+            public void afterTextChanged(@NonNull Editable s) {
                 if (s.length() > 0) {
                     imgSearch.setImageResource(R.drawable.ic_arrow_right_24);
                 } else {

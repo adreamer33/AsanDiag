@@ -20,7 +20,8 @@ public class ColorAnimation extends BaseAnimation<ValueAnimator> {
     static final String ANIMATION_COLOR_REVERSE = "ANIMATION_COLOR_REVERSE";
     static final String ANIMATION_COLOR = "ANIMATION_COLOR";
 
-    private ColorAnimationValue value;
+    @NonNull
+    private final ColorAnimationValue value;
 
     int colorStart;
     int colorEnd;
@@ -38,7 +39,7 @@ public class ColorAnimation extends BaseAnimation<ValueAnimator> {
         animator.setInterpolator(new AccelerateDecelerateInterpolator());
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
+            public void onAnimationUpdate(@NonNull ValueAnimator animation) {
                 onAnimateUpdated(animation);
             }
         });
@@ -46,6 +47,7 @@ public class ColorAnimation extends BaseAnimation<ValueAnimator> {
         return animator;
     }
 
+    @NonNull
     @Override
     public ColorAnimation progress(float progress) {
         if (animator != null) {

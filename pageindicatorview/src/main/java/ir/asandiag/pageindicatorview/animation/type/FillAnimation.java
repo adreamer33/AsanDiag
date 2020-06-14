@@ -20,7 +20,8 @@ public class FillAnimation extends ColorAnimation {
     private static final String ANIMATION_STROKE = "ANIMATION_STROKE";
 
     public static final int DEFAULT_STROKE_DP = 1;
-    private FillAnimationValue value;
+    @NonNull
+    private final FillAnimationValue value;
 
     private int radius;
     private int stroke;
@@ -38,7 +39,7 @@ public class FillAnimation extends ColorAnimation {
         animator.setInterpolator(new AccelerateDecelerateInterpolator());
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
+            public void onAnimationUpdate(@NonNull ValueAnimator animation) {
                 onAnimateUpdated(animation);
             }
         });

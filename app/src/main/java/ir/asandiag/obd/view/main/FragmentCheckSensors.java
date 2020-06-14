@@ -25,7 +25,7 @@ import ir.asandiag.obd.model.SensorItem;
 
 public class FragmentCheckSensors extends BottomSheetDialogFragment implements SensorItemAdapter.OnSensorItemClickListener {
     private NavController navController;
-    private List<SensorItem> sensorItems = new ArrayList<>();
+    private final List<SensorItem> sensorItems = new ArrayList<>();
     private AppCompatImageButton imgBtnBack;
     private AppCompatImageButton imgBtnMore;
     private AppCompatImageButton fab;
@@ -40,6 +40,7 @@ public class FragmentCheckSensors extends BottomSheetDialogFragment implements S
         return R.style.BottomSheetDialogTheme;
     }
 
+    @NonNull
     public static FragmentCheckSensors newInstance(String param1, String param2) {
         FragmentCheckSensors fragment = new FragmentCheckSensors();
         Bundle args = new Bundle();
@@ -59,7 +60,7 @@ public class FragmentCheckSensors extends BottomSheetDialogFragment implements S
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_check_sensors, container, false);
     }

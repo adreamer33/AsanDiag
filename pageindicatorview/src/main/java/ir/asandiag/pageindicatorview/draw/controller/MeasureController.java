@@ -12,6 +12,7 @@ import ir.asandiag.pageindicatorview.draw.data.Orientation;
 
 public class MeasureController {
 
+    @NonNull
     public Pair<Integer, Integer> measureViewSize(@NonNull Indicator indicator, int widthMeasureSpec, int heightMeasureSpec) {
         int widthMode = View.MeasureSpec.getMode(widthMeasureSpec);
         int widthSize = View.MeasureSpec.getSize(widthMeasureSpec);

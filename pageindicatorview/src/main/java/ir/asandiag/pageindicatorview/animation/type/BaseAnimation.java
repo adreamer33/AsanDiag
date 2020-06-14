@@ -14,6 +14,7 @@ public abstract class BaseAnimation<T extends Animator> {
     public static final int DEFAULT_ANIMATION_TIME = 350;
     protected long animationDuration = DEFAULT_ANIMATION_TIME;
 
+    @Nullable
     protected ValueController.UpdateListener listener;
     protected T animator;
 

@@ -41,8 +41,15 @@ public class PageIndicatorView extends View implements ViewPager.OnPageChangeLis
     private static final Handler HANDLER = new Handler(Looper.getMainLooper());
 
     private IndicatorManager manager;
+    private final Runnable idleRunnable = new Runnable() {
+        @Override
+        public void run() {
+            manager.indicator().setIdle(true);
+            hideWithAnimation();
+        }
+    };
+    @Nullable
     private DataSetObserver setObserver;
-    private ViewPager viewPager;
     private boolean isInteractionEnabled;
 
     public PageIndicatorView(Context context) {
@@ -110,10 +117,8 @@ public class PageIndicatorView extends View implements ViewPager.OnPageChangeLis
         setMeasuredDimension(pair.first, pair.second);
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        manager.drawer().draw(canvas);
-    }
+    @Nullable
+    private ViewPager viewPager;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -123,19 +128,8 @@ public class PageIndicatorView extends View implements ViewPager.OnPageChangeLis
     }
 
     @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        if (!manager.indicator().isFadeOnIdle()) return false;
-
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                stopIdleRunnable();
-                break;
-
-            case MotionEvent.ACTION_UP:
-                startIdleRunnable();
-                break;
-        }
-        return false;
+    protected void onDraw(@NonNull Canvas canvas) {
+        manager.drawer().draw(canvas);
     }
 
     @Override
@@ -887,11 +881,19 @@ public class PageIndicatorView extends View implements ViewPager.OnPageChangeLis
         displayWithAnimation();
     }
 
-    private Runnable idleRunnable = new Runnable() {
-        @Override
-        public void run() {
-            manager.indicator().setIdle(true);
-            hideWithAnimation();
+    @Override
+    public boolean onTouch(View v, @NonNull MotionEvent event) {
+        if (!manager.indicator().isFadeOnIdle()) return false;
+
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                stopIdleRunnable();
+                break;
+
+            case MotionEvent.ACTION_UP:
+                startIdleRunnable();
+                break;
         }
-    };
+        return false;
+    }
 }

@@ -21,7 +21,7 @@ public class PolygonView extends NeumorphismShape {
     private float borderWidthPx = 0f;
     private int side = 3;
     private float corner_radius = 55;
-    private float adjust_factor = 2.2f;
+    private final float adjust_factor = 2.2f;
     @ColorInt
     private int borderColor = Color.WHITE;
 
@@ -42,7 +42,7 @@ public class PolygonView extends NeumorphismShape {
         init(context, attrs);
     }
 
-    private void init(Context context, AttributeSet attrs) {
+    private void init(@NonNull Context context, @Nullable AttributeSet attrs) {
         if (attrs != null) {
             final TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.PolygonView);
             borderWidthPx = attributes.getDimensionPixelSize(R.styleable.PolygonView_shape_polygon_borderWidth, (int) borderWidthPx);
@@ -67,6 +67,7 @@ public class PolygonView extends NeumorphismShape {
         final float abs_radius = Math.abs(shadow_radius) * adjust_factor;
 
         super.setClipPathCreator(new ClipPathManager.ClipPathCreator() {
+            @NonNull
             @Override
             public Path createClipPath(int width, int height) {
                 final Path path;
@@ -88,7 +89,7 @@ public class PolygonView extends NeumorphismShape {
     }
 
     @Override
-    protected void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(@NonNull Canvas canvas) {
         super.dispatchDraw(canvas);
         final float abs_shadow_position_x = Math.abs(shadow_position_x);
         final float abs_shadow_position_y = Math.abs(shadow_position_y);
@@ -125,6 +126,7 @@ public class PolygonView extends NeumorphismShape {
 //        return path;
 //    }
 
+    @NonNull
     public Path createPath(int sides, float radius, float cx, float cy) {
         Log.i("sajjad", "createPath: corner" + corner_radius);
         Path path = new Path();

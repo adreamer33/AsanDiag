@@ -4,6 +4,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+
 public class PositionSavedState extends View.BaseSavedState {
 
     private int selectedPosition;
@@ -14,12 +16,17 @@ public class PositionSavedState extends View.BaseSavedState {
         super(superState);
     }
 
-    private PositionSavedState(Parcel in) {
-        super(in);
-        this.selectedPosition = in.readInt();
-        this.selectingPosition = in.readInt();
-        this.lastSelectedPosition = in.readInt();
-    }
+    public static final Creator<PositionSavedState> CREATOR = new Creator<PositionSavedState>() {
+        @NonNull
+        public PositionSavedState createFromParcel(@NonNull Parcel in) {
+            return new PositionSavedState(in);
+        }
+
+        @NonNull
+        public PositionSavedState[] newArray(int size) {
+            return new PositionSavedState[size];
+        }
+    };
 
     public int getSelectedPosition() {
         return selectedPosition;
@@ -45,21 +52,18 @@ public class PositionSavedState extends View.BaseSavedState {
         this.lastSelectedPosition = lastSelectedPosition;
     }
 
+    private PositionSavedState(@NonNull Parcel in) {
+        super(in);
+        this.selectedPosition = in.readInt();
+        this.selectingPosition = in.readInt();
+        this.lastSelectedPosition = in.readInt();
+    }
+
     @Override
-    public void writeToParcel(Parcel out, int flags) {
+    public void writeToParcel(@NonNull Parcel out, int flags) {
         super.writeToParcel(out, flags);
         out.writeInt(this.selectedPosition);
         out.writeInt(this.selectingPosition);
         out.writeInt(this.lastSelectedPosition);
     }
-
-    public static final Creator<PositionSavedState> CREATOR = new Creator<PositionSavedState>() {
-        public PositionSavedState createFromParcel(Parcel in) {
-            return new PositionSavedState(in);
-        }
-
-        public PositionSavedState[] newArray(int size) {
-            return new PositionSavedState[size];
-        }
-    };
 }

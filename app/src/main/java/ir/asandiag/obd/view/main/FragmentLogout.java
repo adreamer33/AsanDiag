@@ -23,6 +23,7 @@ public class FragmentLogout extends Fragment {
         // Required empty public constructor
     }
 
+    @NonNull
     public static FragmentLogout newInstance(String param1, String param2) {
         FragmentLogout fragment = new FragmentLogout();
         Bundle args = new Bundle();
@@ -38,7 +39,7 @@ public class FragmentLogout extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_logout, container, false);
     }

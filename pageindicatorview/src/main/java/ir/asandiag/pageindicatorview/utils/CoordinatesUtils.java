@@ -133,25 +133,26 @@ public class CoordinatesUtils {
 		int radius = indicator.getRadius();
 		int coordinate;
 
-		if (indicator.getAnimationType() == AnimationType.DROP) {
-			coordinate = radius * 3;
-		} else {
-			coordinate = radius;
-		}
+        if (indicator.getAnimationType() == AnimationType.DROP) {
+            coordinate = radius * 3;
+        } else {
+            coordinate = radius;
+        }
 
-		return coordinate;
-	}
+        return coordinate;
+    }
 
-	public static Pair<Integer, Float> getProgress(@NonNull Indicator indicator, int position, float positionOffset, boolean isRtl) {
-		int count = indicator.getCount();
-		int selectedPosition = indicator.getSelectedPosition();
+    @NonNull
+    public static Pair<Integer, Float> getProgress(@NonNull Indicator indicator, int position, float positionOffset, boolean isRtl) {
+        int count = indicator.getCount();
+        int selectedPosition = indicator.getSelectedPosition();
 
-		if (isRtl) {
-			position = (count - 1) - position;
-		}
+        if (isRtl) {
+            position = (count - 1) - position;
+        }
 
-		if (position < 0) {
-			position = 0;
+        if (position < 0) {
+            position = 0;
 
 		} else if (position > count - 1) {
 			position = count - 1;

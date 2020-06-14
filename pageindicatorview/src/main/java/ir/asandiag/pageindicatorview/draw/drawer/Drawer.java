@@ -21,16 +21,26 @@ import ir.asandiag.pageindicatorview.draw.drawer.type.WormDrawer;
 
 public class Drawer {
 
-    private BasicDrawer basicDrawer;
-    private ColorDrawer colorDrawer;
-    private ScaleDrawer scaleDrawer;
-    private WormDrawer wormDrawer;
-    private SlideDrawer slideDrawer;
-    private FillDrawer fillDrawer;
-    private ThinWormDrawer thinWormDrawer;
-    private DropDrawer dropDrawer;
-    private SwapDrawer swapDrawer;
-    private ScaleDownDrawer scaleDownDrawer;
+    @NonNull
+    private final BasicDrawer basicDrawer;
+    @NonNull
+    private final ColorDrawer colorDrawer;
+    @NonNull
+    private final ScaleDrawer scaleDrawer;
+    @NonNull
+    private final WormDrawer wormDrawer;
+    @NonNull
+    private final SlideDrawer slideDrawer;
+    @NonNull
+    private final FillDrawer fillDrawer;
+    @NonNull
+    private final ThinWormDrawer thinWormDrawer;
+    @NonNull
+    private final DropDrawer dropDrawer;
+    @NonNull
+    private final SwapDrawer swapDrawer;
+    @NonNull
+    private final ScaleDownDrawer scaleDownDrawer;
 
     private int position;
     private int coordinateX;

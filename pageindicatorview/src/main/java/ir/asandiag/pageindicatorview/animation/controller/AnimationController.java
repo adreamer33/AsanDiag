@@ -11,11 +11,14 @@ import ir.asandiag.pageindicatorview.utils.CoordinatesUtils;
 
 public class AnimationController {
 
-    private ValueController valueController;
-    private ValueController.UpdateListener listener;
+    @NonNull
+    private final ValueController valueController;
+    @NonNull
+    private final ValueController.UpdateListener listener;
 
     private BaseAnimation runningAnimation;
-    private Indicator indicator;
+    @NonNull
+    private final Indicator indicator;
 
     private float progress;
     private boolean isInteractive;

@@ -22,7 +22,8 @@ public class WormAnimation extends BaseAnimation<AnimatorSet> {
     int rectLeftEdge;
     int rectRightEdge;
 
-    private WormAnimationValue value;
+    @NonNull
+    private final WormAnimationValue value;
 
     public WormAnimation(@NonNull ValueController.UpdateListener listener) {
         super(listener);
@@ -98,14 +99,14 @@ public class WormAnimation extends BaseAnimation<AnimatorSet> {
             int toValue,
             long duration,
             final boolean isReverse,
-            final WormAnimationValue value) {
+            @NonNull final WormAnimationValue value) {
 
         ValueAnimator anim = ValueAnimator.ofInt(fromValue, toValue);
         anim.setInterpolator(new AccelerateDecelerateInterpolator());
         anim.setDuration(duration);
         anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
+            public void onAnimationUpdate(@NonNull ValueAnimator animation) {
                 onAnimateUpdated(value, animation, isReverse);
             }
         });

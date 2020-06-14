@@ -26,7 +26,7 @@ public class CircleView extends NeumorphismShape {
     private int borderColor = Color.WHITE;
 
     private final Paint borderPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private float adjust_factor = 2.2f;
+    private final float adjust_factor = 2.2f;
 
     public CircleView(@NonNull Context context) {
         super(context);
@@ -43,7 +43,7 @@ public class CircleView extends NeumorphismShape {
         init(context, attrs);
     }
 
-    private void init(Context context, AttributeSet attrs) {
+    private void init(@NonNull Context context, @Nullable AttributeSet attrs) {
         if (attrs != null) {
             final TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.CircleView);
             borderWidthPx = attributes.getDimensionPixelSize(R.styleable.CircleView_shape_circle_borderWidth, (int) borderWidthPx);
@@ -66,6 +66,7 @@ public class CircleView extends NeumorphismShape {
         final float abs_radius = Math.abs(shadow_radius) * adjust_factor;
 
         super.setClipPathCreator(new ClipPathManager.ClipPathCreator() {
+            @NonNull
             @Override
             public Path createClipPath(int width, int height) {
                 final Path path = new Path();
@@ -86,7 +87,7 @@ public class CircleView extends NeumorphismShape {
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
-    protected void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(@NonNull Canvas canvas) {
         super.dispatchDraw(canvas);
         final float abs_shadow_position_x = Math.abs(shadow_position_x);
         final float abs_shadow_position_y = Math.abs(shadow_position_y);

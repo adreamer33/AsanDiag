@@ -17,17 +17,26 @@ import ir.asandiag.pageindicatorview.animation.type.WormAnimation;
 
 public class ValueController {
 
+    @Nullable
+    private final UpdateListener updateListener;
+    @Nullable
     private ColorAnimation colorAnimation;
+    @Nullable
     private ScaleAnimation scaleAnimation;
+    @Nullable
     private WormAnimation wormAnimation;
+    @Nullable
     private SlideAnimation slideAnimation;
+    @Nullable
     private FillAnimation fillAnimation;
+    @Nullable
     private ThinWormAnimation thinWormAnimation;
+    @Nullable
     private DropAnimation dropAnimation;
+    @Nullable
     private SwapAnimation swapAnimation;
+    @Nullable
     private ScaleDownAnimation scaleDownAnimation;
-
-    private UpdateListener updateListener;
 
     public interface UpdateListener {
         void onValueUpdated(@Nullable Value value);

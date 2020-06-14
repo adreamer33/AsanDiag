@@ -12,17 +12,22 @@ import android.renderscript.RSRuntimeException;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.ref.WeakReference;
 
 public class BlurProvider {
-    private WeakReference<Context> contextRef;
+    @NonNull
+    private final WeakReference<Context> contextRef;
 
     public BlurProvider(Context context) {
         contextRef = new WeakReference(context);
     }
 
+    @Nullable
     public Bitmap blur(@NotNull Bitmap source, int radius, int sampling) {
         if (radius == -1) {
             radius = BlurFactor.DEFAULT_RADIUS;
@@ -34,7 +39,8 @@ public class BlurProvider {
         return blur(source, factor);
     }
 
-    private Bitmap blur(Bitmap source, BlurFactor factor) {
+    @Nullable
+    private Bitmap blur(@NonNull Bitmap source, @NonNull BlurFactor factor) {
         int width = factor.width / factor.sampling;
         int height = factor.height / factor.sampling;
         if (width == 0 || height == 0) {
@@ -57,7 +63,7 @@ public class BlurProvider {
             blurBitmap = stack(bitmap, factor.radius, true);
         }
 
-        if (factor.sampling == factor.DEFAULT_SAMPLING) {
+        if (factor.sampling == BlurFactor.DEFAULT_SAMPLING) {
             return blurBitmap;
         } else {
             Bitmap scaled = Bitmap.createScaledBitmap(blurBitmap, factor.width, factor.height, true);
@@ -66,6 +72,7 @@ public class BlurProvider {
         }
     }
 
+    @Nullable
     private final Bitmap rs(Bitmap bitmap, int radius) throws RSRuntimeException {
         Context var10000 = contextRef.get();
         if (var10000 != null) {
@@ -125,7 +132,8 @@ public class BlurProvider {
         }
     }
 
-    private final Bitmap stack(Bitmap sentBitmap, int radius, boolean canReuseInBitmap) {
+    @Nullable
+    private final Bitmap stack(@NonNull Bitmap sentBitmap, int radius, boolean canReuseInBitmap) {
         if (radius < 1) {
             return null;
         } else {

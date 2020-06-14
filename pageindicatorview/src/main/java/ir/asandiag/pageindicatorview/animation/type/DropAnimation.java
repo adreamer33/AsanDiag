@@ -21,7 +21,8 @@ public class DropAnimation extends BaseAnimation<AnimatorSet> {
 
     private enum AnimationType {Width, Height, Radius}
 
-    private DropAnimationValue value;
+    @NonNull
+    private final DropAnimationValue value;
 
     public DropAnimation(@NonNull ValueController.UpdateListener listener) {
         super(listener);
@@ -37,6 +38,7 @@ public class DropAnimation extends BaseAnimation<AnimatorSet> {
         return animator;
     }
 
+    @NonNull
     @Override
     public DropAnimation progress(float progress) {
         if (animator != null) {
@@ -72,12 +74,14 @@ public class DropAnimation extends BaseAnimation<AnimatorSet> {
         return this;
     }
 
+    @NonNull
     @Override
     public DropAnimation duration(long duration) {
         super.duration(duration);
         return this;
     }
 
+    @NonNull
     @SuppressWarnings("UnnecessaryLocalVariable")
     public DropAnimation with(int widthStart, int widthEnd, int heightStart, int heightEnd, int radius) {
         if (hasChanges(widthStart, widthEnd, heightStart, heightEnd, radius)) {
@@ -110,13 +114,13 @@ public class DropAnimation extends BaseAnimation<AnimatorSet> {
         return this;
     }
 
-    private ValueAnimator createValueAnimation(int fromValue, int toValue, long duration, final AnimationType type) {
+    private ValueAnimator createValueAnimation(int fromValue, int toValue, long duration, @NonNull final AnimationType type) {
         ValueAnimator anim = ValueAnimator.ofInt(fromValue, toValue);
         anim.setInterpolator(new AccelerateDecelerateInterpolator());
         anim.setDuration(duration);
         anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
+            public void onAnimationUpdate(@NonNull ValueAnimator animation) {
                 onAnimatorUpdate(animation, type);
             }
         });

@@ -24,7 +24,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 
-
 import ir.asandiag.neumorphism.shapeMode.florent.ShapeOfView;
 
 import static android.content.Context.SENSOR_SERVICE;
@@ -94,8 +93,19 @@ public class NeumorphismShape extends ShapeOfView {
 
     }
 
+    public static float pxFromDp(@NonNull final Context context, final float dp) {
+        return dp * context.getResources().getDisplayMetrics().density;
+    }
+
+
     @Override
-    protected void dispatchDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
+    }
+
+    @Override
+    protected void dispatchDraw(@NonNull Canvas canvas) {
         super.dispatchDraw(canvas);
         bigPath.addRect(-1 * getWidth(), -1 * getHeight(), getWidth(), getHeight(), Path.Direction.CW);
 
@@ -172,17 +182,6 @@ public class NeumorphismShape extends ShapeOfView {
 
     }
 
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-
-    }
-
-    public static float pxFromDp(final Context context, final float dp) {
-        return dp * context.getResources().getDisplayMetrics().density;
-    }
-
     private void dropShadowOptions(float dx, float dy, float radius) {
         shadowPaint = new Paint();
         shadowPaint.setAntiAlias(true);
@@ -223,7 +222,7 @@ public class NeumorphismShape extends ShapeOfView {
 
         SensorEventListener gyroscopeSensorListener = new SensorEventListener() {
             @Override
-            public void onSensorChanged(SensorEvent sensorEvent) {
+            public void onSensorChanged(@NonNull SensorEvent sensorEvent) {
                 float[] rotationMatrix = new float[16];
                 SensorManager.getRotationMatrixFromVector(
                         rotationMatrix, sensorEvent.values);
@@ -377,11 +376,7 @@ public class NeumorphismShape extends ShapeOfView {
             clipPath.computeBounds(rectF, false);
             Region r = new Region();
             r.setPath(clipPath, new Region((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom));
-            if (r.contains((int) x, (int) y)) {
-                return true;
-            } else {
-                return false;
-            }
+            return r.contains((int) x, (int) y);
 
         }
     }

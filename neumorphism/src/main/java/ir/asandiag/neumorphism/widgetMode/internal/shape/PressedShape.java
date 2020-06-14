@@ -6,10 +6,14 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.drawable.GradientDrawable;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import ir.asandiag.neumorphism.widgetMode.NeumorphShapeDrawable;
 import ir.asandiag.neumorphism.widgetMode.model.CornerFamily;
 
 public class PressedShape implements Shape {
+    @Nullable
     private Bitmap shadowBitmap;
     private final GradientDrawable lightShadowDrawable = new GradientDrawable();
     private final GradientDrawable darkShadowDrawable = new GradientDrawable();
@@ -25,7 +29,7 @@ public class PressedShape implements Shape {
     }
 
     @Override
-    public void draw(Canvas canvas, Path outlinePath) {
+    public void draw(@NonNull Canvas canvas, @NonNull Path outlinePath) {
         int checkpoint = canvas.save();
         canvas.clipPath(outlinePath);
 
@@ -49,7 +53,7 @@ public class PressedShape implements Shape {
     }
 
     @Override
-    public void updateShadowBitmap(Rect bounds) {
+    public void updateShadowBitmap(@NonNull Rect bounds) {
         int shadowElevation = (int) this.drawableState.shadowElevation;
         int w = bounds.width();
         int h = bounds.height();
@@ -65,7 +69,7 @@ public class PressedShape implements Shape {
             case CornerFamily.ROUNDED:
                 float cornerSize = Math.min(Math.min(w / 2f, h / 2f), drawableState.shapeAppearanceModel.getCornerSize());
                 lightShadowDrawable.setShape(GradientDrawable.RECTANGLE);
-                float array[] = new float[]{0f, 0f, 0f, 0f, cornerSize, cornerSize, 0f, 0f};
+                float[] array = new float[]{0f, 0f, 0f, 0f, cornerSize, cornerSize, 0f, 0f};
                 lightShadowDrawable.setCornerRadii(array);
                 break;
         }
@@ -79,7 +83,7 @@ public class PressedShape implements Shape {
             case CornerFamily.ROUNDED:
                 float cornerSize = Math.min(Math.min(w / 2f, h / 2f), drawableState.shapeAppearanceModel.getCornerSize());
                 darkShadowDrawable.setShape(GradientDrawable.RECTANGLE);
-                float array[] = new float[]{cornerSize, cornerSize, 0f, 0f, 0f, 0f, 0f, 0f};
+                float[] array = new float[]{cornerSize, cornerSize, 0f, 0f, 0f, 0f, 0f, 0f};
                 darkShadowDrawable.setCornerRadii(array);
                 break;
         }
@@ -91,6 +95,7 @@ public class PressedShape implements Shape {
         shadowBitmap = generateShadowBitmap(w, h);
     }
 
+    @Nullable
     private Bitmap generateShadowBitmap(int w, int h) {
         float shadowElevation = drawableState.shadowElevation;
         Bitmap bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
@@ -114,7 +119,8 @@ public class PressedShape implements Shape {
         return bitmap;
     }
 
-    public Bitmap blurred(Bitmap bitmap) {
+    @Nullable
+    public Bitmap blurred(@NonNull Bitmap bitmap) {
         if (drawableState.inEditMode) {
             return bitmap;
         }
