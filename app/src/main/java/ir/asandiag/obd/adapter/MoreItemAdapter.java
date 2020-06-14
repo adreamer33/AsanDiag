@@ -1,12 +1,10 @@
 package ir.asandiag.obd.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.DiffUtil;
@@ -61,7 +59,7 @@ public class MoreItemAdapter extends ListAdapter<MoreItem, MoreItemAdapter.ViewH
 
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private MoreItem item;
         private int position = 0;
 

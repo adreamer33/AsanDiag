@@ -67,13 +67,13 @@ public class BlurProvider {
     }
 
     private final Bitmap rs(Bitmap bitmap, int radius) throws RSRuntimeException {
-        Context var10000 = (Context) contextRef.get();
+        Context var10000 = contextRef.get();
         if (var10000 != null) {
             Context context = var10000;
-            RenderScript rs = (RenderScript) null;
-            Allocation input = (Allocation) null;
-            Allocation output = (Allocation) null;
-            ScriptIntrinsicBlur blur = (ScriptIntrinsicBlur) null;
+            RenderScript rs = null;
+            Allocation input = null;
+            Allocation output = null;
+            ScriptIntrinsicBlur blur = null;
             boolean var10 = false;
 
             try {
@@ -170,7 +170,7 @@ public class BlurProvider {
             yi = 0;
             yw = yi;
             int[][] var29 = new int[div][];
-            int[][] stack = (int[][]) var29;
+            int[][] stack = var29;
 
             int stackpointer = 0;
             int stackstart = 0;

@@ -230,7 +230,7 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
             transitionToCompanies();
             rvItems.setAdapter(companyAdapter);
             if (companyItems != null && rvItems != null && rvItems.getAdapter() != null) {
-                if (((CompanyAdapter) rvItems.getAdapter()).getItemCount() == 0) {
+                if (rvItems.getAdapter().getItemCount() == 0) {
                     ((CompanyAdapter) rvItems.getAdapter()).submitList(companyItems);
                 }
             }
@@ -238,7 +238,7 @@ public class FragmentHome extends Fragment implements CompanyAdapter.OnCompanyIt
             transitionToCars();
             rvItems.setAdapter(carAdapter);
             if (carItems != null && rvItems != null && rvItems.getAdapter() != null) {
-                if (((CarAdapter) rvItems.getAdapter()).getItemCount() == 0) {
+                if (rvItems.getAdapter().getItemCount() == 0) {
                     ((CarAdapter) rvItems.getAdapter()).submitList(carItems);
                 }
             }

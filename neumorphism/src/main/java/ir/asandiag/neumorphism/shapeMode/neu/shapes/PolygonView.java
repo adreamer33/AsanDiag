@@ -55,7 +55,7 @@ public class PolygonView extends NeumorphismShape {
             light_color = attributes.getColor(R.styleable.PolygonView_shape_polygon_light_color, light_color);
             dark_color = attributes.getColor(R.styleable.PolygonView_shape_polygon_dark_color, dark_color);
             background_color = attributes.getColor(R.styleable.PolygonView_shape_polygon_backgroundColor, background_color);
-            side = attributes.getInteger(R.styleable.PolygonView_shape_polygon_side, (int) side);
+            side = attributes.getInteger(R.styleable.PolygonView_shape_polygon_side, side);
             corner_radius = attributes.getDimensionPixelSize(R.styleable.PolygonView_shape_polygon_corner_radius, (int) corner_radius);
             //******************************
             attributes.recycle();

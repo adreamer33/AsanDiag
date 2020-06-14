@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatTextView;
-import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
@@ -51,10 +50,10 @@ public class ShowedItemsAdapter extends ListAdapter<ShowedItem, ShowedItemsAdapt
             ((AppCompatTextView) holder.itemView.findViewById(R.id.tv_item_showed_title)).setText(item.getName());
 
             if (item.getDescription().length() > 0) {
-                ((AppCompatTextView) holder.itemView.findViewById(R.id.tv_item_showed_desc)).setVisibility(View.VISIBLE);
+                holder.itemView.findViewById(R.id.tv_item_showed_desc).setVisibility(View.VISIBLE);
                 ((AppCompatTextView) holder.itemView.findViewById(R.id.tv_item_showed_desc)).setText(item.getDescription());
             } else {
-                ((AppCompatTextView) holder.itemView.findViewById(R.id.tv_item_showed_desc)).setVisibility(View.GONE);
+                holder.itemView.findViewById(R.id.tv_item_showed_desc).setVisibility(View.GONE);
             }
             holder.itemView.setOnClickListener(v -> {
                 if (onShowedItemClickListener != null) {
@@ -68,7 +67,7 @@ public class ShowedItemsAdapter extends ListAdapter<ShowedItem, ShowedItemsAdapt
 
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private ShowedItem item;
         private int position = 0;
 

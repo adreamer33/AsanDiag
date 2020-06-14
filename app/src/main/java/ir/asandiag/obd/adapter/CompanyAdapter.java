@@ -53,7 +53,7 @@ public class CompanyAdapter extends ListAdapter<CompanyItem, CompanyAdapter.View
         }
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private CompanyItem companyItem;
         private int position = 0;
 

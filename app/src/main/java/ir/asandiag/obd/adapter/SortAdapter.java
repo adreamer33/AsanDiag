@@ -82,7 +82,7 @@ public class SortAdapter extends ListAdapter<SortItem, SortAdapter.ViewHolder> {
         return dp * scale + 0.5f;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private SortItem sortItem;
         private int position = 0;
 

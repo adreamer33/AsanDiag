@@ -83,7 +83,7 @@ public class CarPartAdapter extends ListAdapter<CarPartItem, CarPartAdapter.View
         return dp * scale + 0.5f;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private CarPartItem carPartItem;
         private int position = 0;
 

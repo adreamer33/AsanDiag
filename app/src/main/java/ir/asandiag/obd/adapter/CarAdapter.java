@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import ir.asandiag.obd.R;
 import ir.asandiag.obd.model.CarItem;
-import ir.asandiag.obd.model.CompanyItem;
 
 public class CarAdapter extends ListAdapter<CarItem, CarAdapter.ViewHolder> {
 
@@ -54,7 +53,7 @@ public class CarAdapter extends ListAdapter<CarItem, CarAdapter.ViewHolder> {
         }
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private CarItem carItem;
         private int position = 0;
 

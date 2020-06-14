@@ -80,7 +80,7 @@ public class NeumorphTextView extends AppCompatTextView {
 
         // Call mutate, so that the pixel allocation by the underlying vector drawable is cleared.
         canvas.save();
-        canvas.drawBitmap(inputBitmap, 0.0F, 0.0F, (Paint) null);
+        canvas.drawBitmap(inputBitmap, 0.0F, 0.0F, null);
         canvas.restore();
 
         // Draws the shadow from original drawable

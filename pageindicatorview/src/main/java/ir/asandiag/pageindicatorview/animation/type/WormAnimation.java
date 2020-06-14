@@ -183,7 +183,7 @@ public class WormAnimation extends BaseAnimation<AnimatorSet> {
         return new RectValues(fromX, toX, reverseFromX, reverseToX);
     }
 
-    class RectValues {
+    static class RectValues {
 
         final int fromX;
         final int toX;
