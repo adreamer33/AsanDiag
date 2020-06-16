@@ -330,7 +330,11 @@ public class NeumorphShapeDrawable extends Drawable {
         }
 
         if (shadow != null) {
-            shadow.draw(canvas, outlinePath);
+            try {
+                shadow.draw(canvas, outlinePath);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         if (hasStroke()) {
