@@ -16,312 +16,6 @@
         <item name="colorControlNormal">#555770</item>
     </style>
 
-    <style name="LightTheme" parent="AppTheme">
-        <item name="startColorBgMain">#F7F8FA</item>
-        <item name="endColorBgMain">#E7E8ED</item>
-
-
-        <item name="startColorBgIntro">#F7F8FA</item>
-        <item name="endColorBgIntro">#E7E8ED</item>
-
-        <item name="startColorBgSignup">#F7F8FA</item>
-        <item name="endColorBgSignup">#E7E8ED</item>
-
-        <item name="startColorBgDialog">#F4F5F8</item>
-        <item name="endColorBgDialog">#E2E3E7</item>
-
-
-        <item name="bgColorDialog">#F1F1F1</item>
-        <item name="bgColorItemSensorMinMax">#ffffff</item>
-        <item name="bgDrawerLayoutColor">#f1f1f1</item>
-
-        <item name="fillColorIconUser">#3074ff</item>
-        <item name="fillColorDialogIcons">#FF000000</item>
-        <item name="fillColorDialogSortIcons">#2b2c44</item>
-        <item name="fillColorIconMain">#555770</item>
-        <item name="fillColorSortItemIcon">#2b2c44</item>
-
-        <item name="fillColorFabIcon">#555770</item>
-        <item name="bgColorFabIcon">#f5f6f9</item>
-
-        <item name="textColorDialogTitle">#5c5d6d</item>
-        <item name="textColorDialogItem">#202020</item>
-
-        <item name="textColorCarCompanyItem">#202020</item>
-
-        <item name="textColorDrawerItem">#202020</item>
-        <item name="textColorDrawerTitle">#0063f7</item>
-        <item name="textColorDrawerAppVersion">#A4202020</item>
-
-        <item name="textColorTextViewIntroLogin">#8f90a6</item>
-        <item name="textColorTextViewIntro">#7d8490</item>
-
-        <item name="textColorTextViewSingupLogin">#373960</item>
-        <item name="textColorTextViewSingupRegister">#555770</item>
-        <item name="textColorTextViewSingupLoading">#555770</item>
-        <item name="textColorTextViewCheckSensorItem">#202020</item>
-        <item name="textColorTextViewCheckSensorItemDesc">#4d131313</item>
-
-        <!--    EditTextSignupRegister    -->
-        <item name="textColorEditTextSigupRegister">#555770</item>
-        <item name="hintTextColorEditTextSigupRegister">#87555770</item>
-
-
-        <!--    EditTextHomeSearch    -->
-        <item name="textColorEditTextHomeSearch">#202020</item>
-        <item name="hintTextColorEditTextHomeSearch">#78202020</item>
-
-        <!--    ButtonIntroNext    -->
-        <item name="textColorButtonIntroNext">#3e7afa</item>
-        <item name="shadowColorLightButtonIntroNext">#AEFFFFFF</item>
-        <item name="shadowColorDarkButtonIntroNext">#C3CFCFCF</item>
-
-        <!--    ButtonSignupLogin    -->
-        <item name="textColorButtonSignupLogin">#ffffff</item>
-        <item name="shadowColorLightButtonSignupLogin">#610063f7</item>
-        <item name="shadowColorDarkButtonSignupLogin">#ADCFCFCF</item>
-        <item name="bgColorButtonSignupLogin">#0063F7</item>
-
-        <!--    ButtonHomeOBD    -->
-        <item name="textColorButtonHomeOBD">#202020</item>
-        <item name="shadowColorLightButtonHomeOBD">#f5f6f9</item>
-        <item name="shadowColorDarkButtonHomeOBD">#e1e2e6</item>
-        <item name="bgColorButtonHomeOBD">#e7e8ed</item>
-
-        <!--    ButtonLogout    -->
-        <item name="textColorButtonLogout">#2b2c44</item>
-        <item name="shadowColorLightButtonLogout">#AEFFFFFF</item>
-        <item name="shadowColorDarkButtonLogout">#C3CFCFCF</item>
-        <item name="bgColorButtonLogout">#e7e8ed</item>
-
-
-        <!--    ImageButtonCheckSensorsMore    -->
-        <item name="shadowColorLightImageButtonCheckSensorsMore">#f5f6f9</item>
-        <item name="shadowColorDarkImageButtonCheckSensorsMore">#26131313</item>
-        <item name="bgColorImageButtonCheckSensorsMore">#80E1E2E6</item>
-
-        <!--    ImageButtonHome    -->
-        <item name="shadowColorLightImageButtonHome">#f5f6f9</item>
-        <item name="shadowColorDarkImageButtonHome">#1e131313</item>
-        <item name="bgColorImageButtonHome">#E1E2E6</item>
-
-
-        <!--    CircleViewIntroIcon    -->
-        <item name="shadowColorLightCircleViewIntroIcon">#FFFFFF</item>
-        <item name="shadowColorDarkCircleViewIntroIcon">#6A000000</item>
-        <item name="bgColorCircleViewIntroIcon">#eaebf0</item>
-        <item name="borderColorCircleViewIntroIcon">#0D000000</item>
-
-        <!--    PageIndicatorView    -->
-        <item name="selectedColorPIV">#0063f7</item>
-        <item name="unselectedColorPIV">#F7F8FA</item>
-
-
-        <!-- Switch -->
-        <item name="colorSwitchChecked">#55586f</item>
-        <item name="colorSwitchUnchecked">#e6e7eb</item>
-        <item name="colorSwitchButton">#CCEeEcf1</item>
-        <item name="colorSwitchBackground">#66FFFFFF</item>
-        <item name="colorSwitchShadow">#33000000</item>
-
-        <!--    SortItem    -->
-        <item name="shadowColorLightSortItem">#4DFFFFFF</item>
-        <item name="shadowColorDarkSortItem">#26131313</item>
-        <item name="bgColorSortItem">#e9eaed</item>
-
-        <!--    CompanyItem    -->
-        <item name="shadowColorLightCompanyItem">#D8FFFFFF</item>
-        <item name="shadowColorDarkCompanyItem">#1E131313</item>
-        <item name="bgColorCompanyItem">#EBEBEB</item>
-
-        <!--    CheckSensorItem    -->
-        <item name="shadowColorLightCheckSensorItem">#4DFFFFFF</item>
-        <item name="shadowColorDarkCheckSensorItem">#33131313</item>
-        <item name="bgColorCheckSensorItem">#e9eaed</item>
-
-
-        <!--    SearchImageButton    -->
-        <item name="shadowColorLightSearchImageButton">#f5f6f9</item>
-        <item name="shadowColorDarkSearchImageButton">#e1e2e6</item>
-        <item name="bgColorSearchImageButton">#80E1E2E6</item>
-
-        <!--    CarPartCardView    -->
-        <item name="shadowColorLightCarPartCardView">#4DFFFFFF</item>
-        <item name="shadowColorDarkCarPartCardView">#26131313</item>
-        <item name="bgColorCarPartCardView">#e9eaed</item>
-
-        <!--    DrawerButtonCardView    -->
-        <item name="shadowColorLightDrawerButtonCardView">#80FFFFFF</item>
-        <item name="shadowColorDarkDrawerButtonCardView">#E2E3E7</item>
-        <item name="bgColorDrawerButtonCardView">#80E2E3E7</item>
-
-        <!--    DashboardCardView    -->
-        <item name="shadowColorLightDashboardCardView">#FFFFFF</item>
-        <item name="shadowColorDarkDashboardCardView">#51000000</item>
-        <!--        <item name="bgColorDashboardCardView"></item>-->
-
-        <!--    RegisterCardView    -->
-        <item name="shadowColorLightRegisterCardView">#ECEEFA</item>
-        <item name="shadowColorDarkRegisterCardView">#4D000000</item>
-        <item name="bgColorRegisterCardView">#4FE7E8ED</item>
-        <item name="borderColorRegisterCardView">#72E7E8ED</item>
-
-
-        <item name="bgColorMain">#ffffff</item>
-    </style>
-
-    <style name="DarkTheme" parent="AppTheme">
-        <item name="startColorBgMain">#353A40</item>
-        <item name="endColorBgMain">#16171B</item>
-
-
-        <item name="startColorBgIntro">#34393F</item>
-        <item name="endColorBgIntro">#17181C</item>
-
-        <item name="startColorBgSignup">#34393F</item>
-        <item name="endColorBgSignup">#17181C</item>
-
-        <item name="startColorBgDialog">#1a1c1f</item>
-        <item name="endColorBgDialog">#1f2328</item>
-
-
-        <item name="bgColorDialog">#23252A</item>
-        <item name="bgColorItemSensorMinMax">#2A3037</item>
-        <item name="bgDrawerLayoutColor">#23252a</item>
-
-        <item name="fillColorIconUser">#3074FF</item>
-        <item name="fillColorDialogIcons">#EFEFEF</item>
-        <item name="fillColorDialogSortIcons">#EBEBF0</item>
-        <item name="fillColorIconMain">#ebebf0</item>
-        <item name="fillColorSortItemIcon">#ebebf0</item>
-
-        <item name="fillColorFabIcon">#fafafc</item>
-        <item name="bgColorFabIcon">#121416</item>
-
-        <item name="textColorDialogTitle">#FAFAFC</item>
-        <item name="textColorDialogItem">#EBEBF0</item>
-
-        <item name="textColorCarCompanyItem">#FAFAFC</item>
-
-        <item name="textColorDrawerItem">#FAFAFC</item>
-        <item name="textColorDrawerTitle">#0063F7</item>
-        <item name="textColorDrawerAppVersion">#A4202020</item>
-
-        <item name="textColorTextViewIntroLogin">#8F90A6</item>
-        <item name="textColorTextViewIntro">#7d8490</item>
-
-        <item name="textColorTextViewSingupLogin">#FFFFFF</item>
-        <item name="textColorTextViewSingupRegister">#F8F8F8</item>
-        <item name="textColorTextViewSingupLoading">#F8F8F8</item>
-        <item name="textColorTextViewCheckSensorItem">#fafafc</item>
-        <item name="textColorTextViewCheckSensorItemDesc">#4dfafafc</item>
-
-        <!--    EditTextSignupRegister    -->
-        <item name="textColorEditTextSigupRegister">#fafafc</item>
-        <item name="hintTextColorEditTextSigupRegister">#87979797</item>
-
-
-        <!--    EditTextHomeSearch    -->
-        <item name="textColorEditTextHomeSearch">#E5E5E5</item>
-        <item name="hintTextColorEditTextHomeSearch">#D1D1D1</item>
-
-        <!--    ButtonIntroNext    -->
-        <item name="textColorButtonIntroNext">#3E7AFA</item>
-        <item name="shadowColorLightButtonIntroNext">#02FFFFFF</item>
-        <item name="shadowColorDarkButtonIntroNext">#111111</item>
-
-        <!--    ButtonSignupLogin    -->
-        <item name="textColorButtonSignupLogin">#ffffff</item>
-        <item name="shadowColorLightButtonSignupLogin">#26AACCFE</item>
-        <item name="shadowColorDarkButtonSignupLogin">#000000</item>
-        <item name="bgColorButtonSignupLogin">#0063F7</item>
-
-        <!--    ButtonHomeOBD    -->
-        <item name="textColorButtonHomeOBD">#FFFFFF</item>
-        <item name="shadowColorLightButtonHomeOBD">#0DFFFFFF</item>
-        <item name="shadowColorDarkButtonHomeOBD">#4D000000</item>
-        <item name="bgColorButtonHomeOBD">#1f2328</item>
-
-        <!--    ButtonLogout    -->
-        <item name="textColorButtonLogout">#fafafc</item>
-        <item name="shadowColorLightButtonLogout">#0eFFFFFF</item>
-        <item name="shadowColorDarkButtonLogout">#000000</item>
-        <item name="bgColorButtonLogout">#22252A</item>
-
-
-        <!--    ImageButtonCheckSensorsMore    -->
-        <item name="shadowColorLightImageButtonCheckSensorsMore">#0fFFFFFF</item>
-        <item name="shadowColorDarkImageButtonCheckSensorsMore">#000000</item>
-        <item name="bgColorImageButtonCheckSensorsMore">#17181C</item>
-
-        <!--    ImageButtonHome    -->
-        <item name="shadowColorLightImageButtonHome">#1AFFFFFF</item>
-        <item name="shadowColorDarkImageButtonHome">#4D000000</item>
-        <item name="bgColorImageButtonHome">#25292e</item>
-
-
-        <!--    CircleViewIntroIcon    -->
-        <item name="shadowColorLightCircleViewIntroIcon">#404347</item>
-        <item name="shadowColorDarkCircleViewIntroIcon">#161719</item>
-        <item name="bgColorCircleViewIntroIcon">#2A2E33</item>
-        <item name="borderColorCircleViewIntroIcon">#707070</item>
-
-        <!--    PageIndicatorView    -->
-        <item name="selectedColorPIV">#0063f7</item>
-        <item name="unselectedColorPIV">#CC1A1B20</item>
-
-
-        <!-- Switch -->
-        <item name="colorSwitchChecked">#3568D4</item>
-        <item name="colorSwitchUnchecked">#1C2024</item>
-        <item name="colorSwitchButton">#FFFFFF</item>
-        <item name="colorSwitchBackground">#66FFFFFF</item>
-        <item name="colorSwitchShadow">#33000000</item>
-
-        <!--    SortItem    -->
-        <item name="shadowColorLightSortItem">#0eFFFFFF</item>
-        <item name="shadowColorDarkSortItem">#000000</item>
-        <item name="bgColorSortItem">#1F2328</item>
-
-        <!--    CompanyItem    -->
-        <item name="shadowColorLightCompanyItem">#0dFFFFFF</item>
-        <item name="shadowColorDarkCompanyItem">#4d000000</item>
-        <item name="bgColorCompanyItem">#1f2328</item>
-
-        <!--    CheckSensorItem    -->
-        <item name="shadowColorLightCheckSensorItem">#0eFFFFFF</item>
-        <item name="shadowColorDarkCheckSensorItem">#000000</item>
-        <item name="bgColorCheckSensorItem">#1F2328</item>
-
-
-        <!--    SearchImageButton    -->
-        <item name="shadowColorLightSearchImageButton">#1AFFFFFF</item>
-        <item name="shadowColorDarkSearchImageButton">#4D000000</item>
-        <item name="bgColorSearchImageButton">#25292e</item>
-
-        <!--    CarPartCardView    -->
-        <item name="shadowColorLightCarPartCardView">#0eFFFFFF</item>
-        <item name="shadowColorDarkCarPartCardView">#4d000000</item>
-        <item name="bgColorCarPartCardView">#1a1c1f</item>
-
-        <!--    DrawerButtonCardView    -->
-        <item name="shadowColorLightDrawerButtonCardView">#0eFFFFFF</item>
-        <item name="shadowColorDarkDrawerButtonCardView">#000000</item>
-        <item name="bgColorDrawerButtonCardView">#1E2227</item>
-
-        <!--    DashboardCardView    -->
-        <item name="shadowColorLightDashboardCardView">#1AFFFFFF</item>
-        <item name="shadowColorDarkDashboardCardView">#6B000000</item>
-        <!--        <item name="bgColorDashboardCardView"></item>-->
-
-        <!--    RegisterCardView    -->
-        <item name="shadowColorLightRegisterCardView">#1AECEEFA</item>
-        <item name="shadowColorDarkRegisterCardView">#4D000000</item>
-        <item name="bgColorRegisterCardView">#4f23262A</item>
-        <item name="borderColorRegisterCardView">#7223252a</item>
-
-    </style>
-
 
     <!-- set the rounded drawable as background to your bottom sheet -->
     <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
@@ -452,7 +146,7 @@
     <style name="TextView.Home.CheckSensorItem" parent="">
         <item name="android:fontFamily">@font/iransans_medium</item>
         <item name="android:gravity">end</item>
-        <item name="android:textColor">?attr/textColorTextViewCheckSensorItem</item>
+        <item name="android:textColor">@color/textColorTextViewCheckSensorItem</item>
         <item name="android:textSize">16sp</item>
     </style>
 
@@ -460,12 +154,12 @@
     <style name="TextView.Home.CheckSensorItem.Description" parent="">
         <item name="android:fontFamily">@font/lato</item>
         <item name="android:gravity">end</item>
-        <item name="android:textColor">?attr/textColorTextViewCheckSensorItemDesc</item>
+        <item name="android:textColor">@color/textColorTextViewCheckSensorItemDesc</item>
         <item name="android:textSize">14sp</item>
     </style>
 
     <style name="TextView.Intro.Title" parent="TextView.Intro">
-        <item name="android:textColor">?attr/textColorTextViewIntro</item>
+        <item name="android:textColor">@color/textColorTextViewIntro</item>
         <item name="android:textSize">22sp</item>
     </style>
 
@@ -474,7 +168,7 @@
         <item name="android:ems">8</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">17sp</item>
-        <item name="android:textColor">?attr/textColorTextViewIntro</item>
+        <item name="android:textColor">@color/textColorTextViewIntro</item>
     </style>
 
     <style name="TextView.Intro.Login" parent="TextView.Intro">
@@ -482,7 +176,7 @@
         <item name="android:lines">1</item>
         <item name="android:maxLines">1</item>
         <item name="android:singleLine">true</item>
-        <item name="android:textColor">?attr/textColorTextViewIntroLogin</item>
+        <item name="android:textColor">@color/textColorTextViewIntroLogin</item>
         <item name="android:textSize">18sp</item>
     </style>
 
@@ -490,7 +184,7 @@
         <item name="fontFamily">@font/iransans_bold</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">28sp</item>
-        <item name="android:textColor">?attr/textColorTextViewSingupLogin</item>
+        <item name="android:textColor">@color/textColorTextViewSingupLogin</item>
     </style>
 
     <style name="TextView.Signup.Register" parent="TextView.Signup">
@@ -498,20 +192,20 @@
         <item name="android:gravity">center</item>
         <item name="lineHeight">29sp</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:textColor">?attr/textColorTextViewSingupRegister</item>
+        <item name="android:textColor">@color/textColorTextViewSingupRegister</item>
     </style>
 
     <style name="TextView.Signup.Loading">
         <item name="android:fontFamily">@font/iransans_light</item>
         <item name="android:gravity">end</item>
-        <item name="android:textColor">?attr/textColorTextViewSingupLoading</item>
+        <item name="android:textColor">@color/textColorTextViewSingupLoading</item>
         <item name="android:textSize">18sp</item>
     </style>
 
     <style name="TextView.Home.Title" parent="TextView.Home.">
         <item name="android:fontFamily">@font/iransans_medium</item>
         <item name="android:gravity">end</item>
-        <item name="android:textColor">?attr/fillColorIconMain</item>
+        <item name="android:textColor">@color/fillColorIconMain</item>
         <item name="android:textSize">20sp</item>
     </style>
 
@@ -520,7 +214,7 @@
         <item name="android:fontFamily">@font/iransans_medium</item>
         <item name="android:gravity">center</item>
         <item name="android:textAlignment">gravity</item>
-        <item name="android:textColor">?attr/textColorCarCompanyItem</item>
+        <item name="android:textColor">@color/textColorCarCompanyItem</item>
     </style>
 
     <style name="TextView.Home.ItemCompany.Title" parent="TextView.Home.ItemCompany">
@@ -537,7 +231,7 @@
         <item name="android:fontFamily">@font/iransans_medium</item>
         <item name="android:gravity">center</item>
         <item name="android:textAlignment">gravity</item>
-        <item name="android:textColor">?attr/textColorCarCompanyItem</item>
+        <item name="android:textColor">@color/textColorCarCompanyItem</item>
     </style>
 
     <style name="TextView.Home.ItemCar.Title" parent="TextView.Home.ItemCar">
@@ -550,7 +244,7 @@
 
     <style name="TextView.Home.Drawer.Item" parent="TextView.Home.Drawer">
         <item name="android:textAlignment">viewEnd</item>
-        <item name="android:textColor">?attr/textColorDrawerItem</item>
+        <item name="android:textColor">@color/textColorDrawerItem</item>
         <item name="android:textSize">16sp</item>
         <item name="android:gravity">center|end</item>
         <item name="android:fontFamily">@font/iransans_normal</item>
@@ -562,14 +256,14 @@
     <style name="TextView.Home.Drawer.Title" parent="TextView.Home.">
         <item name="android:fontFamily">@font/iransans_bold</item>
         <item name="android:gravity">end</item>
-        <item name="android:textColor">?attr/textColorDrawerTitle</item>
+        <item name="android:textColor">@color/textColorDrawerTitle</item>
         <item name="android:textSize">24sp</item>
     </style>
 
     <style name="TextView.Home.Drawer.AppVersion">
         <item name="android:fontFamily">@font/lato</item>
         <item name="android:gravity">end</item>
-        <item name="android:textColor">?attr/textColorDrawerAppVersion</item>
+        <item name="android:textColor">@color/textColorDrawerAppVersion</item>
         <item name="android:textSize">13sp</item>
     </style>
 
@@ -577,14 +271,14 @@
     <style name="TextView.Home.SortDialog.Title" parent="">
         <item name="android:fontFamily">@font/iransans_bold</item>
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:textColor">?attr/textColorDialogTitle</item>
+        <item name="android:textColor">@color/textColorDialogTitle</item>
         <item name="android:textSize">16sp</item>
     </style>
 
     <style name="TextView.Home.CarPartsDialog.Title" parent="">
         <item name="android:fontFamily">@font/iransans_bold</item>
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:textColor">?attr/textColorDialogTitle</item>
+        <item name="android:textColor">@color/textColorDialogTitle</item>
         <item name="android:textSize">16sp</item>
     </style>
 
@@ -596,28 +290,28 @@
         <item name="android:paddingStart">14dp</item>
         <item name="android:paddingEnd">14dp</item>
         <item name="android:textAlignment">viewEnd</item>
-        <item name="android:textColor">?attr/textColorDialogItem</item>
+        <item name="android:textColor">@color/textColorDialogItem</item>
         <item name="android:textSize">16sp</item>
     </style>
 
     <style name="TextView.CheckSensors.Title" parent="">
         <item name="android:fontFamily">@font/iransans_medium</item>
         <item name="android:textAlignment">textStart</item>
-        <item name="android:textColor">?attr/textColorDialogTitle</item>
+        <item name="android:textColor">@color/textColorDialogTitle</item>
         <item name="android:textSize">20sp</item>
     </style>
 
     <style name="TextView.ShowedItems.Title" parent="">
         <item name="android:fontFamily">@font/iransans_normal</item>
         <item name="android:gravity">end</item>
-        <item name="android:textColor">?attr/textColorDialogItem</item>
+        <item name="android:textColor">@color/textColorDialogItem</item>
         <item name="android:textSize">16sp</item>
     </style>
 
     <style name="TextView.ShowedItems.Desc" parent="">
         <item name="android:fontFamily">@font/iransans_normal</item>
         <item name="android:gravity">end</item>
-        <item name="android:textColor">?attr/textColorDialogItem</item>
+        <item name="android:textColor">@color/textColorDialogItem</item>
         <item name="android:textSize">14sp</item>
     </style>
 
@@ -628,8 +322,8 @@
 
     <style name="EditText.Signup.Register" parent="EditText.Signup">
         <item name="fontFamily">@font/iransans_normal</item>
-        <item name="android:textColorHint">?attr/hintTextColorEditTextSigupRegister</item>
-        <item name="android:textColor">?attr/textColorEditTextSigupRegister</item>
+        <item name="android:textColorHint">@color/hintTextColorEditTextSigupRegister</item>
+        <item name="android:textColor">@color/textColorEditTextSigupRegister</item>
         <item name="android:textSize">16sp</item>
         <item name="android:paddingStart">15dp</item>
         <item name="android:paddingEnd">15dp</item>
@@ -643,8 +337,8 @@
 
     <style name="EditText.Home.Search" parent="EditText">
         <item name="fontFamily">@font/iransans_normal</item>
-        <item name="android:textColorHint">?attr/hintTextColorEditTextHomeSearch</item>
-        <item name="android:textColor">?attr/textColorEditTextHomeSearch</item>
+        <item name="android:textColorHint">@color/hintTextColorEditTextHomeSearch</item>
+        <item name="android:textColor">@color/textColorEditTextHomeSearch</item>
         <item name="android:textSize">16sp</item>
         <item name="android:padding">5dp</item>
         <item name="android:gravity">end|center</item>
@@ -672,7 +366,7 @@
     </style>
 
     <style name="Button.Intro.Next" parent="Button.Intro">
-        <item name="android:textColor">?attr/textColorButtonIntroNext</item>
+        <item name="android:textColor">@color/textColorButtonIntroNext</item>
         <item name="android:textSize">18sp</item>
 
         <item name="android:gravity">center_vertical|center_horizontal</item>
@@ -684,15 +378,15 @@
         <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkButtonIntroNext</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightButtonIntroNext</item>
+        <item name="neumorph_shadowColorDark">@color/shadowColorDarkButtonIntroNext</item>
+        <item name="neumorph_shadowColorLight">@color/shadowColorLightButtonIntroNext</item>
         <item name="neumorph_shadowElevation">6dp</item>
         <item name="neumorph_shapeType">flat</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Intro</item>
     </style>
 
     <style name="Button.Signup.Login" parent="Button.Signup">
-        <item name="android:textColor">?attr/textColorButtonSignupLogin</item>
+        <item name="android:textColor">@color/textColorButtonSignupLogin</item>
         <!--        <item name="android:background">@color/btnLoginBackgroundSignup</item>-->
         <item name="android:textSize">18sp</item>
 
@@ -705,12 +399,12 @@
         <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkButtonSignupLogin</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightButtonSignupLogin</item>
+        <item name="neumorph_shadowColorDark">@color/shadowColorDarkButtonSignupLogin</item>
+        <item name="neumorph_shadowColorLight">@color/shadowColorLightButtonSignupLogin</item>
         <item name="neumorph_shadowElevation">3dp</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Signup</item>
         <item name="neumorph_shapeType">flat</item>
-        <item name="neumorph_backgroundColor">?attr/bgColorButtonSignupLogin</item>
+        <item name="neumorph_backgroundColor">@color/bgColorButtonSignupLogin</item>
     </style>
 
     <style name="Button.Home.OBD" parent="">
@@ -723,21 +417,21 @@
         <item name="android:clickable">true</item>
         <item name="android:gravity">center_vertical|center_horizontal</item>
         <item name="neumorph_shadowElevation">8dp</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightButtonHomeOBD</item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkButtonHomeOBD</item>
+        <item name="neumorph_shadowColorLight">@color/shadowColorLightButtonHomeOBD</item>
+        <item name="neumorph_shadowColorDark">@color/shadowColorDarkButtonHomeOBD</item>
         <item name="neumorph_shapeType">flat</item>
-        <item name="neumorph_backgroundColor">?attr/bgColorButtonHomeOBD</item>
+        <item name="neumorph_backgroundColor">@color/bgColorButtonHomeOBD</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.OBD</item>
 
         <item name="android:textAlignment">center</item>
-        <item name="android:textColor">?attr/textColorButtonHomeOBD</item>
+        <item name="android:textColor">@color/textColorButtonHomeOBD</item>
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/iransans_medium</item>
     </style>
 
 
     <style name="Button.Logout" parent="">
-        <item name="android:textColor">?attr/textColorButtonLogout</item>
+        <item name="android:textColor">@color/textColorButtonLogout</item>
         <item name="android:textSize">18sp</item>
         <item name="fontFamily">@font/iransans_normal</item>
 
@@ -749,9 +443,9 @@
         <item name="android:stateListAnimator">@animator/button_state_list_anim_neumorph</item>
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkButtonLogout</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightButtonLogout</item>
-        <item name="neumorph_backgroundColor">?attr/bgColorButtonLogout</item>
+        <item name="neumorph_shadowColorDark">@color/shadowColorDarkButtonLogout</item>
+        <item name="neumorph_shadowColorLight">@color/shadowColorLightButtonLogout</item>
+        <item name="neumorph_backgroundColor">@color/bgColorButtonLogout</item>
         <item name="neumorph_shadowElevation">6dp</item>
         <item name="neumorph_shapeType">flat</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Intro</item>
@@ -769,12 +463,12 @@
         <item name="android:clickable">true</item>
         <item name="android:scaleType">center</item>
         <item name="neumorph_shadowElevation">6dp</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightImageButtonCheckSensorsMore
+        <item name="neumorph_shadowColorLight">@color/shadowColorLightImageButtonCheckSensorsMore
         </item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkImageButtonCheckSensorsMore
+        <item name="neumorph_shadowColorDark">@color/shadowColorDarkImageButtonCheckSensorsMore
         </item>
         <item name="neumorph_shapeType">flat</item>
-        <item name="neumorph_backgroundColor">?attr/bgColorImageButtonCheckSensorsMore</item>
+        <item name="neumorph_backgroundColor">@color/bgColorImageButtonCheckSensorsMore</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.ImageButton</item>
     </style>
 
@@ -785,10 +479,10 @@
         <item name="android:clickable">true</item>
         <item name="android:scaleType">center</item>
         <item name="neumorph_shadowElevation">8dp</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightImageButtonHome</item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkImageButtonHome</item>
+        <item name="neumorph_shadowColorLight">@color/shadowColorLightImageButtonHome</item>
+        <item name="neumorph_shadowColorDark">@color/shadowColorDarkImageButtonHome</item>
         <item name="neumorph_shapeType">flat</item>
-        <item name="neumorph_backgroundColor">?attr/bgColorImageButtonHome</item>
+        <item name="neumorph_backgroundColor">@color/bgColorImageButtonHome</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.ImageButton</item>
     </style>
 
@@ -799,13 +493,13 @@
     <style name="CircleView.Intro" parent="CircleView"></style>
 
     <style name="CircleView.Intro.Icon" parent="CircleView.Intro">
-        <item name="shape_circle_dark_color">?attr/shadowColorDarkCircleViewIntroIcon</item>
-        <item name="shape_circle_light_color">?attr/shadowColorLightCircleViewIntroIcon</item>
+        <item name="shape_circle_dark_color">@color/shadowColorDarkCircleViewIntroIcon</item>
+        <item name="shape_circle_light_color">@color/shadowColorLightCircleViewIntroIcon</item>
         <item name="shape_circle_shadow_type">small_inner_shadow</item>
-        <item name="shape_circle_backgroundColor">?attr/bgColorCircleViewIntroIcon</item>
+        <item name="shape_circle_backgroundColor">@color/bgColorCircleViewIntroIcon</item>
         <item name="shape_circle_radius">3dp</item>
         <item name="shape_circle_borderWidth">0.1dp</item>
-        <item name="shape_circle_borderColor">?attr/borderColorCircleViewIntroIcon</item>
+        <item name="shape_circle_borderColor">@color/borderColorCircleViewIntroIcon</item>
         <item name="shape_circle_shadow_position_x">5dp</item>
         <item name="shape_circle_shadow_position_y">8dp</item>
     </style>
@@ -818,12 +512,12 @@
 
     <style name="CardView.Signup.Register" parent="">
         <item name="android:padding">@dimen/design_default_shadow_padding</item>
-        <item name="neumorph_backgroundColor">?attr/bgColorRegisterCardView</item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkRegisterCardView</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightRegisterCardView</item>
+        <item name="neumorph_backgroundColor">@color/bgColorRegisterCardView</item>
+        <item name="neumorph_shadowColorDark">@color/shadowColorDarkRegisterCardView</item>
+        <item name="neumorph_shadowColorLight">@color/shadowColorLightRegisterCardView</item>
         <item name="neumorph_shadowElevation">5dp</item>
         <item name="neumorph_shapeType">pressed</item>
-        <item name="neumorph_strokeColor">?attr/borderColorRegisterCardView</item>
+        <item name="neumorph_strokeColor">@color/borderColorRegisterCardView</item>
         <item name="neumorph_strokeWidth">1dp</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Signup.Register</item>
     </style>
@@ -831,9 +525,9 @@
     <style name="CardView.Home.Dashboard" parent="CardView">
         <item name="android:padding">10dp</item>
         <item name="neumorph_shadowElevation">0.5dp</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightDashboardCardView</item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkDashboardCardView</item>
-        <!--        <item name="neumorph_backgroundColor">?attr/bgColorDashboardCardView</item>-->
+        <item name="neumorph_shadowColorLight">@color/shadowColorLightDashboardCardView</item>
+        <item name="neumorph_shadowColorDark">@color/shadowColorDarkDashboardCardView</item>
+        <!--        <item name="neumorph_backgroundColor">@color/bgColorDashboardCardView</item>-->
         <item name="neumorph_shapeType">pressed</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.Dashboard</item>
     </style>
@@ -852,10 +546,10 @@
         <item name="android:clickable">true</item>
         <item name="android:gravity">center_vertical|center_horizontal</item>
         <item name="neumorph_shadowElevation">5dp</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightDrawerButtonCardView</item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkDrawerButtonCardView</item>
+        <item name="neumorph_shadowColorLight">@color/shadowColorLightDrawerButtonCardView</item>
+        <item name="neumorph_shadowColorDark">@color/shadowColorDarkDrawerButtonCardView</item>
         <item name="neumorph_shapeType">flat</item>
-        <item name="neumorph_backgroundColor">?attr/bgColorDrawerButtonCardView</item>
+        <item name="neumorph_backgroundColor">@color/bgColorDrawerButtonCardView</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.DrawerButton</item>
         <item name="layout_constrainedWidth">true</item>
         <item name="layout_constraintWidth_max">320dp</item>
@@ -874,10 +568,10 @@
         <item name="android:clickable">true</item>
         <item name="android:gravity">center_vertical|center_horizontal</item>
         <item name="neumorph_shadowElevation">5dp</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightSortItem</item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkSortItem</item>
+        <item name="neumorph_shadowColorLight">@color/shadowColorLightSortItem</item>
+        <item name="neumorph_shadowColorDark">@color/shadowColorDarkSortItem</item>
         <item name="neumorph_shapeType">flat</item>
-        <item name="neumorph_backgroundColor">?attr/bgColorSortItem</item>
+        <item name="neumorph_backgroundColor">@color/bgColorSortItem</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.SortItem</item>
         <item name="layout_constrainedWidth">true</item>
         <item name="layout_constraintWidth_max">320dp</item>
@@ -896,10 +590,10 @@
         <item name="android:clickable">true</item>
         <item name="android:gravity">center_vertical|center_horizontal</item>
         <item name="neumorph_shadowElevation">5dp</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightCompanyItem</item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkCompanyItem</item>
+        <item name="neumorph_shadowColorLight">@color/shadowColorLightCompanyItem</item>
+        <item name="neumorph_shadowColorDark">@color/shadowColorDarkCompanyItem</item>
         <item name="neumorph_shapeType">flat</item>
-        <item name="neumorph_backgroundColor">?attr/bgColorCompanyItem</item>
+        <item name="neumorph_backgroundColor">@color/bgColorCompanyItem</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.CompanyItem</item>
         <item name="layout_constrainedWidth">true</item>
         <item name="layout_constraintWidth_max">320dp</item>
@@ -918,10 +612,10 @@
         <item name="android:clickable">true</item>
         <item name="android:gravity">center_vertical|center_horizontal</item>
         <item name="neumorph_shadowElevation">5dp</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightCarPartCardView</item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkCarPartCardView</item>
+        <item name="neumorph_shadowColorLight">@color/shadowColorLightCarPartCardView</item>
+        <item name="neumorph_shadowColorDark">@color/shadowColorDarkCarPartCardView</item>
         <item name="neumorph_shapeType">flat</item>
-        <item name="neumorph_backgroundColor">?attr/bgColorCarPartCardView</item>
+        <item name="neumorph_backgroundColor">@color/bgColorCarPartCardView</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.CarPartItem</item>
         <item name="layout_constrainedWidth">true</item>
         <item name="layout_constraintWidth_max">320dp</item>
@@ -939,10 +633,10 @@
         <item name="android:clickable">true</item>
         <item name="android:gravity">center_vertical|center_horizontal</item>
         <item name="neumorph_shadowElevation">5dp</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightCheckSensorItem</item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkCheckSensorItem</item>
+        <item name="neumorph_shadowColorLight">@color/shadowColorLightCheckSensorItem</item>
+        <item name="neumorph_shadowColorDark">@color/shadowColorDarkCheckSensorItem</item>
         <item name="neumorph_shapeType">flat</item>
-        <item name="neumorph_backgroundColor">?attr/bgColorCheckSensorItem</item>
+        <item name="neumorph_backgroundColor">@color/bgColorCheckSensorItem</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.CarPartItem</item>
         <item name="layout_constrainedWidth">true</item>
         <item name="layout_constraintWidth_max">320dp</item>
@@ -954,10 +648,10 @@
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
         <item name="neumorph_shadowElevation">8dp</item>
-        <item name="neumorph_shadowColorLight">?attr/shadowColorLightSearchImageButton</item>
-        <item name="neumorph_shadowColorDark">?attr/shadowColorDarkSearchImageButton</item>
+        <item name="neumorph_shadowColorLight">@color/shadowColorLightSearchImageButton</item>
+        <item name="neumorph_shadowColorDark">@color/shadowColorDarkSearchImageButton</item>
         <item name="neumorph_shapeType">flat</item>
-        <item name="neumorph_backgroundColor">?attr/bgColorSearchImageButton</item>
+        <item name="neumorph_backgroundColor">@color/bgColorSearchImageButton</item>
         <item name="neumorph_shapeAppearance">@style/ShapeAppearance.Home.ImageButton</item>
     </style>
 
@@ -1003,12 +697,12 @@
 
     <style name="SwitchButton.ShowedItems" parent="">
         <item name="sb_show_indicator">false</item>
-        <item name="sb_uncheck_color">?attr/colorSwitchUnchecked</item>
+        <item name="sb_uncheck_color">@color/colorSwitchUnchecked</item>
         <item name="sb_shadow_offset">2dp</item>
-        <item name="sb_checked_color">?attr/colorSwitchChecked</item>
-        <item name="sb_button_color">?attr/colorSwitchButton</item>
-        <item name="sb_background">?attr/colorSwitchBackground</item>
-        <item name="sb_shadow_color">?attr/colorSwitchShadow</item>
+        <item name="sb_checked_color">@color/colorSwitchChecked</item>
+        <item name="sb_button_color">@color/colorSwitchButton</item>
+        <item name="sb_background">@color/colorSwitchBackground</item>
+        <item name="sb_shadow_color">@color/colorSwitchShadow</item>
     </style>
 
     <style name="PIV.Intro" parent="">
@@ -1021,8 +715,8 @@
         <item name="android:paddingBottom">15dp</item>
         <item name="android:paddingTop">15dp</item>
         <item name="piv_rtl_mode">off</item>
-        <item name="piv_selectedColor">?attr/selectedColorPIV</item>
-        <item name="piv_unselectedColor">?attr/unselectedColorPIV</item>
+        <item name="piv_selectedColor">@color/selectedColorPIV</item>
+        <item name="piv_unselectedColor">@color/unselectedColorPIV</item>
     </style>
 
 

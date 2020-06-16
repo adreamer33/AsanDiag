@@ -430,7 +430,10 @@ public class NeumorphShapeDrawable extends Drawable {
         boolean invalidateSelf = false;
 
         int previousFillColor = fillPaint.getColor();
-        int newFillColor = drawableState.fillColor.getColorForState(state, previousFillColor);
+        int newFillColor = 0;
+        if (drawableState.fillColor != null) {
+            newFillColor = drawableState.fillColor.getColorForState(state, previousFillColor);
+        }
         if (previousFillColor != newFillColor) {
             fillPaint.setColor(newFillColor);
             invalidateSelf = true;

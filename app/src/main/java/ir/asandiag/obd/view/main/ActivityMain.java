@@ -6,6 +6,7 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -72,6 +73,10 @@ public class ActivityMain extends MyActivity implements NavigationView.OnNavigat
         });
 
         btnTerminal.setOnClickListener(v -> {
+            darkStateClicked = true;
+            darkState = !darkState;
+            AppCompatDelegate.setDefaultNightMode(darkState ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
+            ActivityMain.this.recreate();
         });
     }
 

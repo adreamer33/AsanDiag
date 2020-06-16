@@ -6,4 +6,157 @@
 
     <color name="iconFillColorIntro">#3074ff</color>
     <color name="fillColorViewSeperator">#5c5d6d</color>
+
+    <!--    Light Theme Colors-->
+    <color name="startColorBgMain">#F7F8FA</color>
+    <color name="endColorBgMain">#E7E8ED</color>
+
+
+    <color name="startColorBgIntro">#F7F8FA</color>
+    <color name="endColorBgIntro">#E7E8ED</color>
+
+    <color name="startColorBgSignup">#F7F8FA</color>
+    <color name="endColorBgSignup">#E7E8ED</color>
+
+    <color name="startColorBgDialog">#F4F5F8</color>
+    <color name="endColorBgDialog">#E2E3E7</color>
+
+
+    <color name="bgColorDialog">#F1F1F1</color>
+    <color name="bgColorItemSensorMinMax">#ffffff</color>
+    <color name="bgDrawerLayoutColor">#f1f1f1</color>
+
+    <color name="fillColorIconUser">#3074ff</color>
+    <color name="fillColorDialogIcons">#FF000000</color>
+    <color name="fillColorDialogSortIcons">#2b2c44</color>
+    <color name="fillColorIconMain">#555770</color>
+    <color name="fillColorSortItemIcon">#2b2c44</color>
+
+    <color name="fillColorFabIcon">#555770</color>
+    <color name="bgColorFabIcon">#f5f6f9</color>
+
+    <color name="textColorDialogTitle">#5c5d6d</color>
+    <color name="textColorDialogItem">#202020</color>
+
+    <color name="textColorCarCompanyItem">#202020</color>
+
+    <color name="textColorDrawerItem">#202020</color>
+    <color name="textColorDrawerTitle">#0063f7</color>
+    <color name="textColorDrawerAppVersion">#A4202020</color>
+
+    <color name="textColorTextViewIntroLogin">#8f90a6</color>
+    <color name="textColorTextViewIntro">#7d8490</color>
+
+    <color name="textColorTextViewSingupLogin">#373960</color>
+    <color name="textColorTextViewSingupRegister">#555770</color>
+    <color name="textColorTextViewSingupLoading">#555770</color>
+    <color name="textColorTextViewCheckSensorItem">#202020</color>
+    <color name="textColorTextViewCheckSensorItemDesc">#4d131313</color>
+
+    <!--    EditTextSignupRegister    -->
+    <color name="textColorEditTextSigupRegister">#555770</color>
+    <color name="hintTextColorEditTextSigupRegister">#87555770</color>
+
+
+    <!--    EditTextHomeSearch    -->
+    <color name="textColorEditTextHomeSearch">#202020</color>
+    <color name="hintTextColorEditTextHomeSearch">#78202020</color>
+
+    <!--    ButtonIntroNext    -->
+    <color name="textColorButtonIntroNext">#3e7afa</color>
+    <color name="shadowColorLightButtonIntroNext">#AEFFFFFF</color>
+    <color name="shadowColorDarkButtonIntroNext">#C3CFCFCF</color>
+
+    <!--    ButtonSignupLogin    -->
+    <color name="textColorButtonSignupLogin">#ffffff</color>
+    <color name="shadowColorLightButtonSignupLogin">#610063f7</color>
+    <color name="shadowColorDarkButtonSignupLogin">#ADCFCFCF</color>
+    <color name="bgColorButtonSignupLogin">#0063F7</color>
+
+    <!--    ButtonHomeOBD    -->
+    <color name="textColorButtonHomeOBD">#202020</color>
+    <color name="shadowColorLightButtonHomeOBD">#f5f6f9</color>
+    <color name="shadowColorDarkButtonHomeOBD">#e1e2e6</color>
+    <color name="bgColorButtonHomeOBD">#e7e8ed</color>
+
+    <!--    ButtonLogout    -->
+    <color name="textColorButtonLogout">#2b2c44</color>
+    <color name="shadowColorLightButtonLogout">#AEFFFFFF</color>
+    <color name="shadowColorDarkButtonLogout">#C3CFCFCF</color>
+    <color name="bgColorButtonLogout">#e7e8ed</color>
+
+
+    <!--    ImageButtonCheckSensorsMore    -->
+    <color name="shadowColorLightImageButtonCheckSensorsMore">#f5f6f9</color>
+    <color name="shadowColorDarkImageButtonCheckSensorsMore">#26131313</color>
+    <color name="bgColorImageButtonCheckSensorsMore">#80E1E2E6</color>
+
+    <!--    ImageButtonHome    -->
+    <color name="shadowColorLightImageButtonHome">#f5f6f9</color>
+    <color name="shadowColorDarkImageButtonHome">#1e131313</color>
+    <color name="bgColorImageButtonHome">#E1E2E6</color>
+
+
+    <!--    CircleViewIntroIcon    -->
+    <color name="shadowColorLightCircleViewIntroIcon">#FFFFFF</color>
+    <color name="shadowColorDarkCircleViewIntroIcon">#6A000000</color>
+    <color name="bgColorCircleViewIntroIcon">#eaebf0</color>
+    <color name="borderColorCircleViewIntroIcon">#0D000000</color>
+
+    <!--    PageIndicatorView    -->
+    <color name="selectedColorPIV">#0063f7</color>
+    <color name="unselectedColorPIV">#F7F8FA</color>
+
+
+    <!-- Switch -->
+    <color name="colorSwitchChecked">#55586f</color>
+    <color name="colorSwitchUnchecked">#e6e7eb</color>
+    <color name="colorSwitchButton">#CCEeEcf1</color>
+    <color name="colorSwitchBackground">#66FFFFFF</color>
+    <color name="colorSwitchShadow">#33000000</color>
+
+    <!--    SortItem    -->
+    <color name="shadowColorLightSortItem">#4DFFFFFF</color>
+    <color name="shadowColorDarkSortItem">#26131313</color>
+    <color name="bgColorSortItem">#e9eaed</color>
+
+    <!--    CompanyItem    -->
+    <color name="shadowColorLightCompanyItem">#D8FFFFFF</color>
+    <color name="shadowColorDarkCompanyItem">#1E131313</color>
+    <color name="bgColorCompanyItem">#EBEBEB</color>
+
+    <!--    CheckSensorItem    -->
+    <color name="shadowColorLightCheckSensorItem">#4DFFFFFF</color>
+    <color name="shadowColorDarkCheckSensorItem">#33131313</color>
+    <color name="bgColorCheckSensorItem">#e9eaed</color>
+
+
+    <!--    SearchImageButton    -->
+    <color name="shadowColorLightSearchImageButton">#f5f6f9</color>
+    <color name="shadowColorDarkSearchImageButton">#e1e2e6</color>
+    <color name="bgColorSearchImageButton">#80E1E2E6</color>
+
+    <!--    CarPartCardView    -->
+    <color name="shadowColorLightCarPartCardView">#4DFFFFFF</color>
+    <color name="shadowColorDarkCarPartCardView">#26131313</color>
+    <color name="bgColorCarPartCardView">#e9eaed</color>
+
+    <!--    DrawerButtonCardView    -->
+    <color name="shadowColorLightDrawerButtonCardView">#80FFFFFF</color>
+    <color name="shadowColorDarkDrawerButtonCardView">#E2E3E7</color>
+    <color name="bgColorDrawerButtonCardView">#80E2E3E7</color>
+
+    <!--    DashboardCardView    -->
+    <color name="shadowColorLightDashboardCardView">#FFFFFF</color>
+    <color name="shadowColorDarkDashboardCardView">#51000000</color>
+    <!--        <color name="bgColorDashboardCardView"></color>-->
+
+    <!--    RegisterCardView    -->
+    <color name="shadowColorLightRegisterCardView">#ECEEFA</color>
+    <color name="shadowColorDarkRegisterCardView">#4D000000</color>
+    <color name="bgColorRegisterCardView">#4FE7E8ED</color>
+    <color name="borderColorRegisterCardView">#72E7E8ED</color>
+
+
+    <color name="bgColorMain">#ffffff</color>
 </resources>

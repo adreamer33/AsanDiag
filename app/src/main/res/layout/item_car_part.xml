@@ -12,5 +12,5 @@
         android:layout_height="match_parent"
         android:text="موتور"
         app:drawableEndCompat="@drawable/ic_motor_small"
-        app:drawableTintCompat="?attr/fillColorDialogIcons" />
+        app:drawableTintCompat="@color/fillColorDialogIcons" />
 </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>

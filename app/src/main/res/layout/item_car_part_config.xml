@@ -12,5 +12,5 @@
         android:layout_height="match_parent"
         android:text="بررسی سنسورها"
         app:drawableEndCompat="@drawable/ic_sensor"
-        app:drawableTintCompat="?attr/fillColorDialogIcons" />
+        app:drawableTintCompat="@color/fillColorDialogIcons" />
 </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>

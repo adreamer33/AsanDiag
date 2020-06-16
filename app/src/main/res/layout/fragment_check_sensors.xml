@@ -32,7 +32,7 @@
         style="@style/ImageButton.CheckSensorsMore"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:tint="?attr/fillColorIconMain"
+        android:tint="@color/fillColorIconMain"
         app:layout_constraintStart_toStartOf="@+id/guideline_check_sensors_left"
         app:layout_constraintTop_toTopOf="@+id/guideline_check_sensors_more_top"
         app:srcCompat="@drawable/ic_more" />
@@ -44,7 +44,7 @@
         android:layout_marginTop="9dp"
         android:layout_marginEnd="10dp"
         android:background="@android:color/transparent"
-        android:tint="?attr/fillColorIconMain"
+        android:tint="@color/fillColorIconMain"
         app:layout_constraintBottom_toBottomOf="@+id/tv_check_sensors_title"
         app:layout_constraintEnd_toStartOf="@+id/guideline_check_sensors_right"
         app:layout_constraintTop_toTopOf="@+id/imgBtn_check_sensors_more"
@@ -89,7 +89,7 @@
         android:layout_marginBottom="44dp"
         android:background="@drawable/bg_check_sensors_fab"
         android:clickable="true"
-        android:tint="?attr/fillColorFabIcon"
+        android:tint="@color/fillColorFabIcon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_pause" />

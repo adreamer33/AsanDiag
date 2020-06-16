@@ -12,5 +12,5 @@
         android:layout_height="match_parent"
         android:text="بر اساس حروف الفبا"
         app:drawableEndCompat="@drawable/ic_sort_alpha_down"
-        app:drawableTintCompat="?attr/fillColorSortItemIcon" />
+        app:drawableTintCompat="@color/fillColorSortItemIcon" />
 </ir.asandiag.neumorphism.widgetMode.NeumorphCardView>

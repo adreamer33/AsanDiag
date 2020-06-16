@@ -7,8 +7,8 @@
 
     <ir.asandiag.neumorphism.shapeMode.neu.shapes.CircleView
         style="@style/CircleView.Intro.Icon"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_signup_login_img_bottom"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,14 +72,11 @@
         app:layout_constrainedHeight="true"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="@id/guideline_signup_login_btn_bottom"
-        app:layout_constraintDimensionRatio="w,3.8"
+        app:layout_constraintDimensionRatio="w,0.25"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_max="80dp"
-        app:layout_constraintHeight_min="73dp"
-        app:layout_constraintHeight_percent="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline_signup_login_btn_top"
-        app:layout_constraintWidth_max="280dp"
-        app:layout_constraintWidth_min="260dp" />
+        app:layout_constraintWidth_max="290dp"
+        app:layout_constraintWidth_percent="0.69" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
