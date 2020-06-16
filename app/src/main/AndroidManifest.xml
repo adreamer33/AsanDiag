@@ -12,10 +12,12 @@
         <activity
             android:name=".view.signup.ActivitySignUp"
             android:configChanges="uiMode"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
             android:name=".view.intro.ActivityIntro"
             android:configChanges="uiMode"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +28,7 @@
         <activity
             android:name=".view.main.ActivityMain"
             android:configChanges="uiMode"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
