@@ -13,10 +13,12 @@ import androidx.appcompat.app.AppCompatDelegate;
 import ir.asandiag.obd.R;
 
 public class MyActivity extends AppCompatActivity {
+    public UiModeManager uiManager;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        UiModeManager uiManager = (UiModeManager) getSystemService(Context.UI_MODE_SERVICE);
+        uiManager = (UiModeManager) getSystemService(Context.UI_MODE_SERVICE);
 
         switch (uiManager.getNightMode()) {
             case UiModeManager.MODE_NIGHT_YES:
